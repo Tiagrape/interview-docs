@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>央国企计算机开发岗面试全攻略（合并版）</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      {   }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { color: #7d9029; } /* Attribute */
+    code span.bn { color: #40a070; } /* BaseN */
+    code span.bu { color: #008000; } /* BuiltIn */
+    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #4070a0; } /* Char */
+    code span.cn { color: #880000; } /* Constant */
+    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+    code span.dt { color: #902000; } /* DataType */
+    code span.dv { color: #40a070; } /* DecVal */
+    code span.er { color: #ff0000; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #40a070; } /* Float */
+    code span.fu { color: #06287e; } /* Function */
+    code span.im { color: #008000; font-weight: bold; } /* Import */
+    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+    code span.op { color: #666666; } /* Operator */
+    code span.ot { color: #007020; } /* Other */
+    code span.pp { color: #bc7a00; } /* Preprocessor */
+    code span.sc { color: #4070a0; } /* SpecialChar */
+    code span.ss { color: #bb6688; } /* SpecialString */
+    code span.st { color: #4070a0; } /* String */
+    code span.va { color: #19177c; } /* Variable */
+    code span.vs { color: #4070a0; } /* VerbatimString */
+    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <style>
+    html { -webkit-text-size-adjust: 100%; }
+    body { font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      max-width: 900px; margin: 0 auto; padding: 48px 28px 80px; background: #f7f8fa; color: #2f3437; line-height: 1.9; font-size: 16px; }
+    h1 { color: #1a3a6b; border-bottom: 3px solid #4477ce; padding-bottom: .4em; font-size: 1.9em; }
+    h2 { color: #1a3a6b; border-bottom: 2px solid #b8cbe8; padding-bottom: .3em; margin-top: 2.6em; }
+    h3 { color: #2c5f9e; border-left: 5px solid #6fa8dc; padding-left: 12px; margin-top: 2.2em; }
+    a { color: #2563a8; text-decoration: none; -webkit-tap-highlight-color: rgba(68,119,206,.15); } a:hover { text-decoration: underline; }
+    blockquote { background: #fff8e6; border-left: 5px solid #f0b429; color: #5a4a1f;
+      padding: 12px 18px; border-radius: 8px; margin: 1em 0; }
+    blockquote p { margin: .4em 0; }
+    blockquote ul { margin: .4em 0; padding-left: 1.3em; }
+    blockquote li { margin: .55em 0; }
+    table { border-collapse: collapse; width: 100%; margin: 1.2em 0; background: #fff; font-size: 15px; display: block; overflow-x: auto; white-space: nowrap; }
+    th { background: #e8effa; color: #1a3a6b; }
+    th, td { border: 1px solid #d5dce6; padding: 9px 13px; text-align: left; }
+    tr:nth-child(even) { background: #fafbfd; }
+    code { background: #e9edf2; padding: 2px 6px; border-radius: 4px; font-size: .9em; color: #b34700; word-break: break-all; }
+    pre { background: #2b303b; color: #e8eaf0; padding: 16px; border-radius: 10px; overflow-x: auto; line-height: 1.6; }
+    pre code { background: none; color: inherit; padding: 0; }
+    p { margin: .85em 0; }
+    ol, ul { padding-left: 1.6em; }
+    li { margin: .35em 0; }
+    hr { border: none; border-top: 1px solid #d8dee9; margin: 2.5em 0; }
+    p.q { background: #ffffff; border: 1px solid #ccd8ea; border-left: 5px solid #4477ce;
+      border-radius: 8px; padding: 12px 16px; margin: 1.6em 0 0.4em; box-shadow: 0 1px 3px rgba(30,60,110,.06); }
+    p.q > strong:first-child { color: #1a3a6b; }
+    .top-btn { position: fixed; right: 20px; bottom: 28px; background: #4477ce; color: #fff; border-radius: 50%;
+      width: 46px; height: 46px; line-height: 46px; text-align: center; font-size: 22px;
+      box-shadow: 0 2px 8px rgba(0,0,0,.25); text-decoration: none; z-index: 99; }
+    .top-btn:hover { background: #2c5f9e; text-decoration: none; }
+    header#title-block-header { border-bottom: none; }
+    @media (max-width: 640px) {
+      body { padding: 20px 14px 90px; font-size: 15px; line-height: 1.85; }
+      h1 { font-size: 1.5em; } h2 { font-size: 1.3em; } h3 { font-size: 1.1em; }
+      blockquote { padding: 10px 12px; }
+      p.q { padding: 10px 12px; }
+      .top-btn { width: 52px; height: 52px; line-height: 52px; }
+    }
+  </style>
+  <script>
+  window.addEventListener('DOMContentLoaded', function() {
+    var top = document.createElement('a');
+    top.href = '#s0'; top.className = 'top-btn'; top.textContent = '↑'; top.title = '回到目录';
+    document.body.appendChild(top);
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click', function(e){
+        var t = document.querySelector(a.getAttribute('href'));
+        if (t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">央国企计算机开发岗面试全攻略（合并版）</h1>
+</header>
+<h1 id="央国企计算机开发岗面试-总文档">00 · 央国企计算机开发岗面试 ·
+总文档</h1>
+<blockquote>
+<p><strong>定位</strong>：主文档和唯一入口。<strong>题库三层结构：第三章技术基础题（按简历技能栏顺序）→
+第四章项目深挖题（按简历项目顺序，每题带通俗答案）→
+第五章综合面试题。</strong>四段经历的完整技术详解在配套详版文档（见索引）。<strong>以后有新面试问题，直接补充到对应章节并更新日志。</strong></p>
+<p><strong>配套详版索引</strong>： - 01 · 美团充电宝项目（链路详解
++ 工程八股 + MQ/Redis 小抄） - 02 · 中青旅
+Text-to-SQL/RAG/Agent（AI 应用全链路 + 问答库） - 04 · MSTGN-Wheat
+科研项目（模型细节 + 归因三家族） - 03 ·
+神农大模型平台（待补写）</p>
+<p><strong>更新日志</strong>：2026-09-17
+创建；同日新增「吃茶去」项目、2022 国赛 C 题（本人负责问题 2
+分类建模，Python，奖级待确认）、题库重组三层结构；同日晚：第四章全部题目补齐通俗答案，第三章新增/充实
+Metadata、HNSW、jieba 词典、FastAPI 开发模式、装饰器、MQ
+订阅与顺序等题（均为白话版）；<strong>第三、四章各节开头补入简历原文（含技能栏全文），文档可脱离简历独立使用。</strong></p>
+</blockquote>
+<hr />
+<a id="s0"></a><h2>📑 目录</h2>
+<ul>
+<li><a href="#s1">一、面试全景（流程/形式/与互联网差异）</a></li>
+<li><a href="#s2">二、自我介绍（1 分钟标准版）</a></li>
+<li><a href="#s3">三、技术基础题库（35 题，按简历技能栏五行顺序）</a>
+<ul>
+<li><a href="#s31">3.1 AI Application 行</a>｜<a href="#s32">3.2 Backend
+行</a>｜<a href="#s33">3.3 Retrieval &amp; Data 行</a>｜<a
+href="#s34">3.4 ML 行</a>｜<a href="#s35">3.5 Engineering 行</a></li>
+</ul></li>
+<li><a href="#s4">四、项目深挖题库（按简历项目顺序，每题带答案）</a>
+<ul>
+<li><a href="#s41">4.1 美团</a>｜<a href="#s42">4.2 中青旅</a>｜<a
+href="#s43">4.3 神农</a>｜<a href="#s44">4.4 MSTGN-Wheat</a>｜<a
+href="#s45">4.5 教育与竞赛</a></li>
+</ul></li>
+<li><a href="#s5">五、综合面试题库（23 题）</a>
+<ul>
+<li><a href="#s51">5.1 动机与稳定性</a>｜<a href="#s52">5.2
+性格与团队</a>｜<a href="#s53">5.3 工作现实类</a>｜<a href="#s54">5.4
+认知加分题</a>｜<a href="#s55">5.5 教育与背景</a></li>
+</ul></li>
+<li><a href="#s6">六、数字口径总表</a>｜<a
+href="#s7">七、细节与礼仪清单</a>｜<a href="#s8">八、待补充区</a></li>
+</ul>
+<hr />
+<p><a id="s1"></a></p>
+<h2
+id="一央国企开发岗面试全景先建立认知">一、央国企开发岗面试全景（先建立认知）</h2>
+<h3 id="典型流程">1.1 典型流程</h3>
+<pre><code>网申 → 笔试（行测 + 专业知识）→ 专业面/技术面 → 综合面（半结构化）→ HR 面 → 体检 + 政审/背调 → 录用</code></pre>
+<p>有的单位把专业面和综合面合成一轮（多考官同场：一半问技术一半问综合素质）；部分单位有无领导小组讨论（群面）。</p>
+<h3 id="面试形式结构化-半结构化">1.2 面试形式：结构化 / 半结构化</h3>
+<ul>
+<li><strong>结构化</strong>：所有候选人抽同样的题、同样时间、同样的评分表——像标准化考试；</li>
+<li><strong>半结构化</strong>（最常见）：固定题 +
+考官自由追问，追问多来自<strong>你的简历和前面的回答</strong>——所以简历每个词都是”自邀考点”。</li>
+</ul>
+<h3 id="和互联网面试的核心差异策略调整依据">1.3
+和互联网面试的核心差异（策略调整依据）</h3>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>维度</th>
+<th>互联网大厂</th>
+<th>央国企开发岗</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>技术占比</td>
+<td>80%+，深挖原理和手撕代码</td>
+<td>约 40-50%，<strong>广度 &gt; 深度</strong>，基础概念说清即可</td>
+</tr>
+<tr>
+<td>综合素质</td>
+<td>几乎不问</td>
+<td><strong>权重很高</strong>：稳定性、价值观、团队、服从性、抗压</td>
+</tr>
+<tr>
+<td>隐形考察</td>
+<td>聪明、能卷</td>
+<td><strong>稳定、靠谱、留得住</strong></td>
+</tr>
+<tr>
+<td>加分认知</td>
+<td>开源、新框架</td>
+<td><strong>数字化转型、信创（国产化替代）</strong></td>
+</tr>
+<tr>
+<td>礼仪着装</td>
+<td>随意</td>
+<td><strong>正装</strong>、称呼”各位考官好”、离场致谢</td>
+</tr>
+<tr>
+<td>反问环节</td>
+<td>问技术栈</td>
+<td>问培养机制、业务方向（不问薪资加班）</td>
+</tr>
+</tbody>
+</table>
+<p><strong>策略结论</strong>：技术按”每个概念 30 秒说清 +
+一层追问”的标准（第三章）；项目按第四章深挖题准备；综合面按第五章逐题过；每题答案往”稳定、踏实、长期”的人设上靠。</p>
+<hr />
+<p><a id="s2"></a></p>
+<h2 id="二自我介绍1-分钟标准版">二、自我介绍（1 分钟标准版）</h2>
+<blockquote>
+<p>各位考官好，我叫李方好，中国农业大学计算机科学与技术专业 2027
+届硕士，本科软件工程。研究生期间我的科研课题是遥感与图神经网络的小麦产量估测，发表了两篇
+SCI 论文；实习和项目经历集中在后端和 AI
+应用开发方向：在中青旅科技创新部实习，做的是让 AI
+帮管理层用自然语言查经营数据、帮游客智能问答政策这两套系统；在美团做充电宝设备运营平台的后端研发，负责设备异常的自动发现和自动处理；在北京市农林科学院参与大模型平台的后端开发，负责知识检索和智能问答服务。希望我的这些经历和能力，能为贵单位的发展贡献一份力量。</p>
+</blockquote>
+<p>要点：慢、稳、有结构（学业→科研→实习→意愿）。<strong>注意口径</strong>：科研方向
+= 遥感/GNN 产量估测；求职方向 = 后端 AI
+应用开发——分开说。被问”研究方向和岗位不一致”时答：“科研给我的是方法和深度，实习证明了我的工程能力，求职选自己实习验证过、也更喜欢的工程方向，是理性选择而不是放弃科研。”</p>
+<hr />
+<p><a id="s3"></a></p>
+<h2
+id="三技术基础题库按简历技能栏顺序每题通俗答案">三、技术基础题库（按简历技能栏顺序，每题通俗答案）</h2>
+<blockquote>
+<p>这章对应简历”专业技能”五行——面试官扫着技能栏抽问。每题 30
+秒答案，“追问下限”是被再问一层时必须接住的。</p>
+</blockquote>
+<p><strong>简历原文（专业技能栏，三章各小节按这五行顺序对应）：</strong></p>
+<blockquote>
+<ul>
+<li><strong>AI Application</strong>：RAG、Agent、Text-to-SQL、Tool
+Calling、Prompt Engineering、LangGraph、具备 Query Rewrite、Metadata
+Filter、Rerank、Query Plan、AST Validation 与 Badcase Evaluation
+实践。</li>
+<li><strong>Backend</strong>：Python、FastAPI、Starlette、Uvicorn、asyncio
+/ anyio；java；SpringBoot及 RESTful API 开发经验。</li>
+<li><strong>Retrieval &amp;
+Data</strong>：Milvus、jieba、SQL；具备向量检索、关键词检索、知识库构建、Metadata
+建模及指标语义映射经验。</li>
+<li><strong>ML</strong>：PyTorch、PyTorch
+Geometric、Transformer、GAT；具备图神经网络、时序建模及多源数据训练经验。</li>
+<li><strong>Engineering</strong>：Git、Linux；具备
+Trace/Log排障、Badcase 分析、回归评测及接口联调经验。</li>
+<li><strong>开源项目</strong>：DeepSeek Harness 计费插件
+https://github.com/kbtime/DSH-plugin.git</li>
+</ul>
+</blockquote>
+<p><a id="s31"></a></p>
+<h3 id="第一行-ai-application">3.1 第一行 · AI Application</h3>
+<p class="q"><strong>Q1. RAG 是什么？</strong> &gt;
+开卷考试：先从知识库里把相关材料翻出来，塞给大模型，要求它只照着材料回答。因为大模型不知道企业自己的数据，硬答会编。我在神农和中青旅都做过，优化过”翻错书”的各种毛病。
+&gt;
+追问下限：检索用向量搜索+按条件过滤；生成时强约束”无依据就明说”。</p>
+<p class="q"><strong>Q2. Agent 是什么？</strong> &gt; 让 AI
+不只动嘴还能动手干活的系统：模型决定调什么工具、填什么参数，系统真去执行再把结果喂回来。比如查实时门票库存这种事，模型自己不知道，就得调工具。
+&gt; 追问下限：我们用 LangGraph
+把流程拆成节点编排，而不是让模型自由发挥。</p>
+<p class="q"><strong>Q3. 大模型的原理？为什么会有幻觉？</strong> &gt;
+它在海量文本上训练”预测下一个词”，学会的是语言的统计规律——所以生成很流畅，但不知道的东西它没有”我不会”的机制，会一本正经地编。工程上用
+RAG 给它供真实数据、用约束压住它别乱说。 &gt;
+追问下限：幻觉只能压制不能根除——检索给依据、提示词强约束、输出带出处可核查。</p>
+<p class="q"><strong>Q4. Prompt Engineering 是什么？</strong> &gt;
+写好给模型的指令的技术。四要素：角色、任务、约束、输出格式（配示例）。最关键是约束——“只准依据给定材料回答，无依据则明说”是压幻觉的核心。
+&gt; 追问下限：改提示词必须过回归评测，防止修好一个坏三个。</p>
+<p class="q"><strong>Q5. Tool Calling 是什么？</strong> &gt;
+模型输出一个结构化的”工具调用指令”（比如
+<code>查库存(景区=X, 日期=Y)</code>），系统执行后把结果喂回模型。常见错误是参数填错——日期格式不对、ID
+填错，解法是工具说明里写清参数格式。 &gt;
+追问下限：它返回的是可执行的指令不是聊天文本。</p>
+<p class="q"><strong>Q6. LangGraph 是什么？</strong> &gt; 一个把 AI
+流程写成”流程图”的 Python 框架。理解成医院：分诊台（识别问题类型）→
+按病情分流 → 各科室干活（检索/调工具/生成答案）→
+病历本（状态对象）全程传递数据。<strong>可以理解为”用白盒方式构建
+Agent”——整体流程由代码写死，个别环节允许模型自主。</strong> &gt;
+追问下限：比黑盒 Agent
+强在流程可控：强制先检索再生成、每步能打日志、出错能定位到节点。</p>
+<p class="q"><strong>Q7. Query Rewrite 是什么？</strong> &gt;
+检索前先把口语问题改写成好检索的标准问——游客问”那学生呢”，先补全成”学生门票优惠政策”再去搜。不改写的话，指代不清、口语词根本搜不到东西。
+&gt; 追问下限：神农平台的第一个节点就是干这个的。</p>
+<p class="q"><strong>Q8. Metadata 是什么？</strong> &gt;
+“关于数据的数据”——数据本身之外那层结构化小标签。就像图书馆的编目卡片：找书不是通读全馆的书，而是先按分类号锁书架再翻。我们用在两处：①文档块打上景区
+ID、生效时间等标签，检索先按标签过滤再语义搜索（“当前生效”这种精确条件靠语义搜索表达不了）；②指标词典——别名到标准指标到物理字段的三层映射表。<strong>一句话：大模型擅长”意思相近”、不擅长”精确相等”，Metadata
+就是给它配的精确锚点。</strong> &gt;
+追问下限：什么字段值得打标签——会被拿来过滤和统计的才打。</p>
+<p class="q"><strong>Q9. Metadata Filter 和 Rerank 分别解决什么？</strong> &gt;
+Filter
+解决”范围”：先锁对本景区、当前生效的文档再搜——结构化条件，一个等号搞定。Rerank
+解决”排序”：先粗召回 50 条，再用更精细的模型慢而准地挑出最好的 5
+条——海选加复审。 &gt;
+追问下限：为什么不全部精挑——精挑每条几十毫秒，只能用在漏斗末端。</p>
+<p class="q"><strong>Q10. Text-to-SQL 难在哪？</strong> &gt; 就是让 AI
+当翻译官：领导说人话，数据库只懂
+SQL。三种典型翻车：把”回款额”翻译成”合同额”（听岔词）、漏翻”华东区、Q2”（漏条件，数字能查出来但口径是错的，最危险）、编造不存在的字段（瞎编，好在会当场报错）。
+&gt;
+追问下限：解法是三段式——先查词典、列提纲、按提纲写，最后过”安检”。</p>
+<p class="q"><strong>Q11. AST 校验是什么？</strong> &gt; 生成的 SQL
+过一遍”安检机”：把 SQL 解析成结构化的语法树（用
+sqlglot），核对里面的表和字段是不是真的存在、必要条件带没带。不合格打回重写，再不行就降级用固定模板——保证返回的东西至少能跑。
+&gt; 追问下限：为什么需要——语法正确不等于表和字段真实存在。</p>
+<p class="q"><strong>Q12. Badcase 和回归评测是什么？</strong> &gt; Badcase
+就是线上答错的案例。回归评测 = 错题本 +
+模拟卷：错误按病因分类收进固定的题集，每次改系统（检索/提示词/工具配置）都先全量重考一遍，分数不退步才准上线——防止修好一个毛病带出三个新毛病。
+&gt;
+追问下限：四类错误——没知识（库里没有）、过期政策（旧文档没清）、工具参数错、没依据硬编。</p>
+<p><a id="s32"></a></p>
+<h3 id="第二行-backendpythonfastapi-等javaspringboot-建议删">3.2 第二行
+· Backend（Python、FastAPI 等；⚠java/SpringBoot 建议删）</h3>
+<p class="q"><strong>Q13. Python 的 GIL？</strong> &gt; 全局解释器锁：Python
+同一个进程里同一时刻只允许一个线程真正执行代码——所以多线程加速不了纯计算，计算密集要用多进程；但等待网络这类
+I/O 场景多线程/异步没问题，我们的模型调用正是 I/O 密集。 &gt;
+追问下限：CPU 密集任务混进异步服务会卡死整个事件循环——丢进程池跑。</p>
+<p class="q"><strong>Q14. 装饰器和类型注解是什么？</strong> &gt;
+<code>@app.post("/ask")</code> 那种 @
+写法是<strong>装饰器</strong>：Python
+里它在程序加载时就真的执行了，把你的函数登记进路由表——类似 Java Spring
+的注解，但 Java 注解是被动标签要框架扫描，Python
+装饰器是主动执行的代码。<code>question: str</code>
+那个叫<strong>类型注解</strong>，本来只是备注，但 FastAPI
+拿它实现了自动参数校验。 &gt;
+追问下限：装饰器一句话——“接收函数、返回函数的函数，不改函数本体给它附加功能”。</p>
+<p class="q"><strong>Q15. FastAPI 的开发模式是怎么回事？</strong> &gt;
+我按它的格式写（装饰器登记 +
+参数标注），给出业务逻辑代码；它负责整个流程——接请求、找到我的函数、校验参数、调用我的逻辑、把结果转成响应发回去。<strong>登记一次，之后全自动。</strong>这叫控制反转：普通脚本是代码驱动自己，框架是它驱动你的代码。
+&gt;
+追问下限：函数内部的业务逻辑（检索、调模型）还是我写的，框架只负责”什么时候调用和进出转换”。</p>
+<p class="q"><strong>Q16. FastAPI、Starlette、Uvicorn 什么关系？</strong> &gt;
+客服中心三层：<strong>Uvicorn
+是接线员</strong>（服务器进程，守着端口接网络请求——没有它外界根本碰不到我的代码）；<strong>Starlette
+是前台</strong>（把请求整理成标准单据、按地址分派给对应函数）；<strong>FastAPI
+是坐席办公系统</strong>（让我写得舒服：路由写法、参数自动校验、自动文档）。日常我只跟
+FastAPI 打交道，另两个装一次就不管了。 &gt; 追问下限：ASGI
+是异步服务器网关接口标准（对应同步时代的 WSGI）；为什么不用 Flask——Flask
+同步，模型调用等几秒会把吞吐拖死。</p>
+<p class="q"><strong>Q17. RESTful API 是什么？</strong> &gt;
+一套约定俗成的接口设计风格（不是技术）。三条规矩：<strong>地址表示东西（名词），HTTP
+动词表示操作（GET 查 / POST 建 / PUT 改 / DELETE
+删），无状态</strong>（服务器不记你是谁，每个请求自带全部信息，方便随时加机器扩容）。比如
+<code>GET /farms/42</code> 就是”查 42 号田块”。 &gt; 追问下限：状态码
+200/404/400/429/500；“无状态怎么记住登录”→ 靠
+token，凭证随每次请求自带。</p>
+<p><strong>⚠
+java/SpringBoot</strong>：无出处支撑、与人设不搭，建议删除；若目标岗 JD
+明确要 Java，改”了解 Java 基础”并补三天八股（HashMap 结构 / JVM 三大区域
+/ IOC 概念——IOC 就是 Q15 说的控制反转，Spring 靠它成名）。</p>
+<p><a id="s33"></a></p>
+<h3 id="第三行-retrieval-datasqlmilvusjiebaredismq">3.3 第三行 ·
+Retrieval &amp; Data（SQL、Milvus、jieba、Redis、MQ）</h3>
+<p class="q"><strong>Q18. SQL 手写（必须裸写）</strong>：</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode sql"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> s.scenic_name, <span class="fu">SUM</span>(f.amount) <span class="kw">AS</span> total_income</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> fact_finance f <span class="kw">JOIN</span> dim_scenic s <span class="kw">ON</span> f.scenic_id <span class="op">=</span> s.<span class="kw">id</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> f.<span class="dt">year</span> <span class="op">=</span> <span class="dv">2026</span> <span class="kw">AND</span> f.quarter <span class="op">=</span> <span class="st">&#39;Q2&#39;</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> s.scenic_name <span class="kw">ORDER</span> <span class="kw">BY</span> total_income <span class="kw">DESC</span>;</span></code></pre></div>
+<blockquote>
+<p>追问下限：left join 保左表全量；where 过滤行、having
+过滤聚合结果；索引像书的目录，避免一页页翻全表。</p>
+</blockquote>
+<p class="q"><strong>Q19. 事务 ACID？</strong> &gt;
+四个保证：原子（一组操作要么全做成要么当没发生）、一致（数据从一个合理状态到另一个合理状态）、隔离（同时进行的操作互不捣乱）、持久（确认保存了就丢不了）。MySQL
+默认隔离级别”可重复读”。 &gt;
+追问下限：并发三毛病——脏读、不可重复读、幻读，级别逐级解决。</p>
+<p class="q"><strong>Q20. 向量检索和关键词检索的区别？</strong> &gt;
+向量认”意思”（问”优惠”能搜到写着”减免”的文档），关键词认”字面”（“戊唑醇”这种专业词一字不差才命中）。农业术语和冷门知识向量算不准，所以两个一起用，结果按排名融合（RRF——只用排名不用分数，因为两把刀的分数量纲不一样）。
+&gt; 追问下限：混合检索正是我们神农项目的做法。</p>
+<p class="q"><strong>Q21. Milvus 是什么？HNSW 是什么？</strong> &gt; Milvus
+是向量数据库——专存”语义坐标”、回答”谁离我的问题最近”。HNSW
+是它里面的<strong>索引结构</strong>（不是检索方式本身——检索是找最近，HNSW
+是让找得快）：把向量组织成多层图，<strong>上层像高速公路快速逼近，底层像乡道精确到位</strong>，最终答案从最底层（全员层）的小范围精搜里出。牺牲一点准确率（95%+）换毫秒级速度。
+&gt; 追问下限：为什么近似可接受——top20
+里漏一两条，整体问答无感；库百万级以内选
+HNSW（吃内存换速度），亿级内存紧换 IVF（聚类分桶）。</p>
+<p class="q"><strong>Q22. jieba 干嘛的？为什么要灌自定义词典？</strong> &gt;
+中文没空格，得先切成词（“小麦条锈病防治”→小麦/条锈病/防治）。jieba
+用的是通用词典，不认识农业术语，会把”条锈病”切成”条/锈/病”——词被切碎等于不存在，关键词检索通道直接失效。所以我们整理农业词表（病名、药名、生育期术语），一行
+load_userdict 灌进去，保证专业词整体切分。 &gt;
+追问下限：词表来源——领域资料 + 用户提问日志里挖高频词，越用越全。</p>
+<p class="q"><strong>Q23. Redis 是什么？</strong> &gt;
+用内存存数据的键值数据库——内存比磁盘快十万倍，单机每秒 10 万+
+次读写。但它不只是快，还自带”自动化工具”：<strong>TTL</strong>（key
+到期自动删——心跳 key 设 3
+分钟，设备活着就一直续命，死了自动消失）、<strong>ZSet</strong>（按分数排序取——延迟队列：分数填到期时间，到点一把取出）、<strong>SETNX</strong>（原子占位——同一个位置只允许一个人占住，做幂等锁）。我们项目这四个用法全用上了。
+&gt; 追问下限：单线程为什么快（内存+epoll+免锁）；持久化 RDB 快照/AOF
+日志，我们存的心跳数据可重建、对持久化不敏感。</p>
+<p class="q"><strong>Q24. 消息队列是什么？</strong> &gt;
+两个程序之间的”传达室”：发消息的写张便条投进信箱就走（不用等谁来取），取消息的有空了来取，便条在信箱排队、不丢。解决三件事：<strong>解耦</strong>（发件人不用认识所有取件人，新订阅方零改动）、<strong>异步</strong>（投完就走，主流程不被拖慢）、<strong>削峰</strong>（一波消息涌进来先排队，下游按自己节奏取）。
+&gt; 追问下限：消息可能重复（处理完没来得及确认，传达室又发一份）→
+消费端必须幂等；延迟消息（指定 10
+分钟后才能取）是”延迟确认”的实现载体。</p>
+<p class="q"><strong>Q25. 消息队列的消息是按顺序还是谁能取谁的？</strong> &gt;
+两层：<strong>按”信箱”（主题
+Topic）归类，取件人订阅信箱</strong>——不是每条消息写收件人，是人守着信箱。一个信箱两种玩法：多人抢着取（每条只给一个人——我们的巡检任务，100
+个任务 10 个 worker
+抢）或每家发一份拷贝（发布订阅——恢复事件，工单系统和分析组各拿一份）。<strong>信箱内先投先取</strong>，但多人同取或多分区时全局顺序不保证——需要严格顺序就按设备
+ID
+分格（同一设备的消息永远进同一格），我们工单闭环还用”执行前二次校验”兜住乱序。
+&gt;
+追问下限：这就是为什么二次校验以数据库当前状态为准、不信消息顺序。</p>
+<p><a id="s34"></a></p>
+<h3 id="第四行-ml">3.4 第四行 · ML</h3>
+<p class="q"><strong>Q26. Transformer 的自注意力？</strong> &gt;
+序列里每个时间点给其他时间点打”重要分”、按分数加权综合——“谁对我最重要”模型自己学。我们的场景：生育期序列里灌浆期权重自动升高，符合农学规律。
+&gt;
+追问下限：注意力本身不识先后，要加位置编码——我们注入的是生育期阶段标记。</p>
+<p class="q"><strong>Q27. 为什么用 Transformer 不用 LSTM？</strong> &gt; LSTM
+像逐字读文章，读到最后忘了开头（长序列前忘后），而且必须一个接一个算、没法并行；Transformer
+全局直接建立联系 +
+可并行训练。小麦生长季是典型的”长序列、关键期稀疏”结构，正适合。 &gt;
+追问下限：LSTM
+靠门控（遗忘门/输入门/输出门）决定记什么忘什么，能说出即可。</p>
+<p class="q"><strong>Q28. GAT 和 GCN 区别？</strong> &gt;
+都是图神经网络：节点=田块、边=地理邻近。GCN
+对邻居”一视同仁”（权重按连接数固定）；GAT
+让模型自己学”听哪个邻居的、听几分”——地里邻居影响本来就不均等，GAT 合适。
+&gt; 追问下限：GAT
+流程——两节点特征打分、归一化成权重、加权聚合邻居信息，多头（几套独立打分）增强稳定。</p>
+<p class="q"><strong>Q29. 什么是过拟合？怎么防？</strong> &gt;
+死记硬背训练数据、没学到规律——训练集上很好、新数据上拉胯。防法：早停（验证集不再变好就收手）、Dropout（训练时随机关掉一些神经元防死记）、控制模型规模、正确的数据划分（我们按年份留出——同年地块相关，随机划分会”泄题”）。
+&gt; 追问下限：为什么按年份不随机——就是防数据泄露。</p>
+<p class="q"><strong>Q30. 训练一个模型的完整流程？</strong> &gt; 数据对齐清洗 →
+按年份划分 → 模型猜答案 → 损失函数打分”错多少” →
+算出每个参数该往哪调（梯度）→ 小步调整 → 循环几百轮 →
+验证集不再变好就停。 &gt;
+追问下限：学习率是步长——太大来回震荡不收敛，太小学得太慢。</p>
+<p class="q"><strong>Q31. 扰动归因和 IG 是一回事吗？</strong>（高频陷阱题） &gt;
+不是，是归因的三个家族：<strong>扰动是黑盒试错派</strong>（遮住某个输入看预测变多少，变化大=重要——像判断菜里哪种调料重要，每次少放一种尝味道）；<strong>IG
+是白盒求导派</strong>（从基线到输入一路累加敏感度，解决”咸到头再加盐没感觉”的单点失灵问题）；<strong>SHAP
+是博弈论分账派</strong>。我们选扰动：语义贴合”遮某段时期”、实现简单、特征少成本付得起。
+&gt; 追问下限：扰动法的坑——特征相关时会低估（成组扰动缓解）；IG
+的坑——基线怎么选很敏感。</p>
+<p><a id="s35"></a></p>
+<h3 id="第五行-engineering">3.5 第五行 · Engineering</h3>
+<p class="q"><strong>Q32. Git 的 merge 和 rebase 区别？</strong> &gt; merge
+把两条分支拧成一股（保留分叉历史）；rebase
+把你的提交搬到最新代码后面（历史一条直线更干净，但改写了历史）。工作流：开分支开发、合并前提
+PR 让 mentor 审查。 &gt;
+追问下限：冲突怎么解——两人改了同一行，工具标出来人工选择保留哪边。</p>
+<p class="q"><strong>Q33. Linux 排查一个线上报错的过程？</strong> &gt;
+场景化答：先 <code>grep 'ERROR' app.log</code> 定位报错时间点，再
+<code>tail -f</code> 盯实时输出看复现，<code>ps</code> 看进程状态。比背
+20 个命令有效。 &gt; 追问下限：grep -C 3 带上下文三行；tail -n 200
+看最近两百行。</p>
+<p class="q"><strong>Q34. Trace 排障是什么？</strong> &gt;
+给每个请求发一个”编号”，它跨服务流转的每一步都记着这个号——排障时把一台设备的完整轨迹串成时间线。我在美团查误报就是拉一台设备的轨迹，把”判离线的时刻”和”最后心跳时刻”对齐，发现只差一个心跳周期——根因就出来了。
+&gt; 追问下限：和看日志的区别——日志是散的，Trace 串成线。</p>
+<p class="q"><strong>Q35. 接口联调是什么？</strong> &gt;
+前后端（或多个系统）把接口对接调通：对字段名和格式、处理边界情况（参数没传、类型不对）。常用
+Postman 手工调接口。经验：接口文档先行，联调能省一半时间。 &gt;
+追问下限：最常见的锅——两边对字段的理解不同步，所以要文档加评审。</p>
+<hr />
+<p><a id="s4"></a></p>
+<h2
+id="四项目深挖题库按简历项目顺序每题带通俗答案">四、项目深挖题库（按简历项目顺序，每题带通俗答案）</h2>
+<blockquote>
+<p>原则：先一句话结论，再两三句展开；数字必须带口径。需要更深追问链时看对应详版文档。</p>
+</blockquote>
+<p><a id="s41"></a></p>
+<h3 id="美团-充电宝设备运营与异常治理平台详版01">4.1 美团 ·
+充电宝设备运营与异常治理平台（详版：01）</h3>
+<p><strong>简历原文</strong>（北京三快在线科技有限公司 · 后端研发实习生
+· 2026.06-2026.09）：</p>
+<blockquote>
+<ul>
+<li><strong>总述</strong>：负责充电宝运营侧设备异常治理与巡检能力建设，围绕弱网场景下设备离线误报、异常工单无法及时闭环以及人工巡检成本较高等问题，参与存量业务规则优化及运营工具建设。</li>
+<li><strong>①
+设备异常误报治理</strong>：基于线上心跳Trace与设备事件日志排查弱网场景下状态频繁翻转问题，定位单次心跳超时即判离线导致的误报；参与将判定逻辑调整为连续失联窗口+恢复防抖，并通过历史事件回放验证阈值，最终同设备重复异常下降58%，离线误报率降低约21%。</li>
+<li><strong>②
+异常工单自动闭环</strong>：针对设备恢复后异常工单长期停留在待处理状态的问题，梳理设备状态事件→异常状态→工单状态流转关系，补充恢复事件监听、延迟确认与二次状态校验逻辑，使约46%的设备异常可自动完成闭环，减少人工确认操作。</li>
+<li><strong>③
+DeviceOps自动巡检</strong>：参与设备异常巡检任务开发，将长时间无心跳、状态不一致等人工排查规则沉淀为可执行巡检规则，并实现分片扫描、失败重试与结果记录；单轮巡检由约2小时缩短至20分钟以内，人工巡检工作量下降约40%。</li>
+</ul>
+</blockquote>
+<p class="q"><strong>Q1. 介绍一下这个项目？</strong> &gt;
+平台负责全国充电宝机柜的监控、异常处理和巡检。机柜在商场餐厅走 4G
+弱网，必须在线才能支持扫码借还。我参与三块工作：弱网误报治理（同设备重复异常降
+58%）、异常工单自动闭环（46% 不用人工处理了）、人工巡检自动化（单轮 2
+小时缩到 20 分钟以内）。</p>
+<p class="q"><strong>Q2. 心跳是什么？为什么会误报？</strong> &gt; 心跳是设备每 30
+秒发一次的”我还活着”小包。地下室信号差，偶尔丢一两个包很正常，但旧逻辑是丢一个就判”离线”——把正常当异常，报警响个不停，运维白跑。</p>
+<p class="q"><strong>Q3. 防抖怎么做的？参数怎么定的？</strong> &gt;
+两个方向都防抖：判离线要连续 3 个周期没消息（约 90
+秒），不是丢一个就算；恢复后要稳定 5
+分钟才算真回来（像退烧要观察一天不反复才算好）。参数不是拍的——拿历史日志回放，把窗口从
+2 试到 10，画”误报率 vs 发现变慢”的权衡曲线选拐点。</p>
+<p class="q"><strong>Q4. 重复异常下降 58% 怎么统计的？</strong> &gt;
+分子分母是治理前后”每台故障设备平均产生的异常条数”。核心改动是离线期间状态抖动不再重复记异常——一次故障只记一条，以前能记三五条。</p>
+<p class="q"><strong>Q5. 为什么不用机器学习做异常检测？</strong> &gt;
+设备行为很简单（有心跳/没心跳），规则够用；规则可解释可回放，误报了能讲清原因，模型是黑盒没法向运营解释；误报直接产生人力成本，需要的是随时可调的机制不是要重训练的模型。要做”故障预测”那种复杂目标才值得上模型。</p>
+<p class="q"><strong>Q6. 工单闭环三步各防什么坑？</strong> &gt;
+像请假销假：①监听恢复事件=装门铃，设备自愈有人知道（以前没人通知，僵尸工单堆积）；②延迟确认=观察
+10
+分钟再办，防止”假恢复”（弱网下冒个头又消失很常见）；③二次校验=办手续前再打电话确认——查一下设备当前真在线、工单没被同事领走，都确认才关单，防误关。</p>
+<p class="q"><strong>Q7. 为什么只有 46% 自动闭环？</strong> &gt; 剩下的 54%
+是真异常：硬件坏了、断电没人管、设备被挪走，必须人上门。自动闭环的定位是消化”自己能好的”那部分，不追求
+100%——硬提比例只会引入误关风险。</p>
+<p class="q"><strong>Q8. 分片怎么保证不重不漏？</strong> &gt; 按设备 ID 除以 100
+取余数分 100
+片——规则是固定公式，每台设备永远属于唯一一片，所有片合起来正好是全部设备，数学上保证不重不漏。10
+个工人并行取任务，谁快谁多干。</p>
+<p class="q"><strong>Q9. 任务跑到一半挂了怎么办？</strong> &gt;
+每处理完一台记一次进度（checkpoint），重试从断点继续不用从头来。就算整片重跑也没事——结果写入有去重键，同一台设备不会重复告警，幂等让重跑变成安全操作。</p>
+<p class="q"><strong>Q10. 这段实习最大的困难？</strong> &gt;
+定阈值没有标准答案。“连续 N 个周期没心跳才判离线”听着是一行代码的事，但
+N 取多少？两边都是代价：N 取大，误报少了，但真故障被发现得越来越晚；N
+取小，发现快了，误报又回来了——没有两全的答案。我的做法是拿历史心跳日志做回放：把
+N 从 2 到 10 逐个试，每个 N
+都算出一组”误报率”和”平均发现延迟”，画成一条曲线。曲线前段很陡——N 从 2
+到 3，误报率大幅下降；后面越走越平——再加大
+N，误报率几乎不降了，延迟却一直在涨。<strong>那个”由陡变平”的位置就是拐点，N=3
+就选在拐点上：用最小的发现延迟代价，换到了绝大部分的误报改善。</strong>这件事让我真正理解了什么叫数据驱动决策——不是找到完美答案，而是在两难里用数据找到性价比最高的那个点。</p>
+<p class="q"><strong>Q11. 犯过什么错？</strong> &gt;
+巡检任务第一版我设计了”失败就整个重跑”，但没想过重跑的后果。联调时扫到第
+60
+台数据库卡了一下、任务失败，系统自动重跑——重跑是从头扫的，前面扫过的设备里命中过规则的又被记了一遍告警，<strong>同一台设备同一个问题，运营看到两条一模一样的告警</strong>，测试同学发现的。修复两刀：①给结果表加唯一键——同一台设备+同一条规则+同一个时间窗只允许存一条，重跑再插入同样的记录数据库直接拒绝，从此重跑多少遍都只记第一次（这就是幂等：做一次和做一百次效果一样）；②顺手把重跑改成从断的地方继续扫，连重复扫描都省了。教训：只要系统里有”重试”这个动作，就必须先问一句——重跑一遍，之前做过的事会不会再做一遍？</p>
+<p><a id="s42"></a></p>
+<h3 id="中青旅-text-to-sql-rag-agent详版02">4.2 中青旅 · Text-to-SQL /
+RAG / Agent（详版：02）</h3>
+<p><strong>简历原文</strong>（中青旅控股股份有限公司(央企) · 科技创新部
+· 后端/AI应用研发实习生 · 2025.06-2025.09）：</p>
+<blockquote>
+<ul>
+<li><strong>总述</strong>：围绕集团经营分析与智慧文旅问答场景，开展
+Text-to-SQL、RAG 检索及 Agent
+工具调用链路优化，重点解决指标理解偏差、知识召回错误与生成结果可信度问题。</li>
+<li><strong>① 经营分析Copilot</strong>：基于真实经营问数Badcase排查
+Text-to-SQL
+错误，定位回款额、预算完成率、应收余额等问题中的指标误映射、组织/期间解析遗漏及字段幻觉；参与将生成链路拆分为指标解析、QueryPlan与SQL构建，并增加Metadata匹配及AST校验。基于218条典型问数回归验证，SQL可执行率由76.1%提升至89.4%（+13.3pp）。</li>
+<li><strong>②
+集团指标语义治理</strong>：针对景区、酒店、旅行服务等系统存在同名指标口径不同、同义指标字段不一致的问题，参与梳理指标定义、计算口径及来源字段，建立业务别名→标准指标→物理字段的Metadata映射；对存在多口径的问题增加指标消歧与澄清机制，累计沉淀126个核心指标、247组字段及别名映射。</li>
+<li><strong>③
+智慧文旅RAG</strong>：基于线上咨询Badcase定位跨景区串召、过期政策误召回及长文档关键条件丢失问题，在向量检索基础上增加景区ID、生效时间等MetadataFilter，并采用父子Chunk+Rerank优化政策文档召回；在326条真实咨询问题集上，Top-5知识命中率由80.4%提升至90.2%（+9.8pp）。</li>
+<li><strong>④
+AIBadcase回归评测</strong>：围绕线上问答错误建立Badcase分类，重点覆盖无知识命中、过期政策、Tool参数错误及无依据生成等问题，并构建固定回归集验证Retrieval、Prompt与ToolCalling改动；累计分析137条典型Badcase、完成7轮策略迭代，核心问题端到端正确率由78.6%提升至87.3%（+8.7pp）。</li>
+</ul>
+</blockquote>
+<p class="q"><strong>Q1. 介绍这段实习？</strong> &gt; 集团两个 AI
+场景：给管理层用的”用自然语言查经营数据”（Text-to-SQL），给游客用的”智能问答政策”（RAG）。我做了四块：问数链路优化（可执行率
+76.1%→89.4%）、指标治理（126 个指标、247 组映射）、问答检索优化（Top-5
+命中率 80.4%→90.2%）、以及贯穿全程的回归评测体系（端到端正确率
+78.6%→87.3%）。</p>
+<p class="q"><strong>Q2. Text-to-SQL 三段式是什么？为什么拆？</strong> &gt;
+以前是”一句问题直接生成
+SQL”，错了不知道错在哪。拆成三段：指标解析（先查指标词典，把”回款额”锁定成唯一定义）、查询计划（列提纲，把”华东区、Q2”强制写成过滤条件）、按模板生成
+SQL。三类错误各有专人拦：听岔词的词典拦、漏条件的提纲拦、编字段的最后安检拦。</p>
+<p class="q"><strong>Q3. 可执行率和正确率是一回事吗？</strong>（最常考） &gt;
+不是。可执行率 = SQL 能跑通不报错的比例；正确率 =
+口径也对。最阴险的是漏了过滤条件的
+SQL——照样能跑出数字，看着挺正常，实际查的是全公司全年。所以可执行率只是下界，我们另有人工抽检口径正确率。</p>
+<p class="q"><strong>Q4. 跨景区串召怎么定位、怎么解的？</strong> &gt;
+每个回答都带”出处”标注，抽错误案例一看：召回的文档根本不是问的那个景区。根因是各景区政策文本太像（都是”XX
+人群半价”就差景区名），语义搜索分不出来。解法是给文档打标签（景区
+ID、生效时间），检索先按标签过滤再语义搜——一个等号解决的问题，不值得换更强的模型。</p>
+<p class="q"><strong>Q5. 父子 Chunk 为什么有效？</strong> &gt;
+检索和生成对文本块的要求相反：检索要小块（语义集中搜得准），生成要大块（上下文完整不被断章取义——“仅限学生”和”半价”不能被切开）。父子结构解耦两者：小块拿来搜，命中后换成它所属的大块喂给模型。</p>
+<p class="q"><strong>Q6. Rerank 用的什么？</strong> &gt;
+bge-reranker。流程是海选加复审：向量搜索先快而粗地捞 50
+条，精排模型慢而准地逐条细读挑出 5
+条。代价是每条几十毫秒，但答案错误的代价（游客投诉、口径事故）远大于这点延迟。</p>
+<p class="q"><strong>Q7. 指标治理为什么是地基？</strong> &gt;
+集团各系统黑话不统一：同一个东西 N
+种叫法（入园人数/客流量/接待人次），同一个叫法 N
+种含义（各家的”营收”口径不同）。翻译 AI
+被这个害惨。我们编官方词典：各种叫法→标准名（带精确定义和口径）→仓库里的真实字段。126
+个指标 247 组映射。AI
+应用的上限取决于数据治理，不取决于模型——这是这段实习最大的认知。</p>
+<p class="q"><strong>Q8. 多口径指标怎么消歧？</strong> &gt;
+解析置信度高就用默认口径，但答案里显式标注”按含税口径”；置信度低就反问用户，给选项不让开放填——宁可多问一句，不可猜错口径，错数字进了汇报材料是事故。</p>
+<p class="q"><strong>Q9. 回归集怎么用？</strong> &gt;
+把错误案例和典型好题固化成一套不变的考卷。每次改检索、改提示词、改工具配置，先全量重考，各项正确率不许退步才上线。AI
+系统改动的后果不可预测——教会它”没依据别乱答”，它可能变得过度保守；没有固定考卷，这种悄悄退步根本发现不了。7
+轮迭代就是 7 次这个循环。</p>
+<p class="q"><strong>Q10. 这段最大的困难？</strong> &gt;
+归因。同一个错误答案，检索、生成、工具五个环节都可能背锅。一开始只看结果就动手改，方向错过一次（以为要修提示词，实际那批题根本没检索到材料）。后来养成逐环节留痕：把检索结果、给模型的提示词、工具参数都打出来，先定位错在哪环再动手。</p>
+<p class="q"><strong>Q11. 为什么不微调一个模型？</strong> &gt;
+三原因：标注数据只有百级，微调要千级以上；微调贵且慢，业务口径还在变；链路工程可解释可干预——出问题能定位到环节，微调是黑盒。而且基础模型一直在换代，链路方案换个模型能直接用。</p>
+<p><a id="s43"></a></p>
+<h3 id="神农-大模型平台详版03-待写">4.3 神农 · 大模型平台（详版：03
+待写）</h3>
+<p><strong>简历原文</strong>（神农大模型平台 · 北京市农林科学院 ·
+2025.02-2025.08）：</p>
+<blockquote>
+<ul>
+<li><strong>技术栈</strong>：Python、FastAPI、Starlette、Uvicorn、LangGraph、Milvus、jieba、asyncio、anyio</li>
+<li><strong>项目描述</strong>：参与农业领域大模型应用平台开发，面向农业知识问答、智慧种植、病虫害分析、遥感气象等场景，结合农业知识库与大语言模型构建智能问答及任务处理能力；本人主要负责后端AI应用相关功能开发。</li>
+<li><strong>①
+农业知识检索</strong>：参与RAG问答链路开发，对农业教材、科研资料及种植技术文档进行清洗、切分和向量化，基于jieba+Milvus完成关键词与向量检索，将召回知识片段注入Prompt，改善农业专业术语及长尾知识的检索效果。</li>
+<li><strong>②
+Agent流程编排</strong>：基于LangGraph将Query处理、知识检索、模型调用和工具执行等步骤拆分为独立节点，通过状态对象维护会话上下文和中间结果，并根据不同农业场景组合执行流程，降低复杂问答链路的耦合度。</li>
+<li><strong>③
+异步模型服务</strong>：基于FastAPI+Starlette+Uvicorn搭建AI服务接口，使用asyncio/anyio处理模型调用、向量检索等I/O密集型任务，并通过CapacityLimiter控制模型调用并发，避免瞬时请求造成服务拥塞。</li>
+</ul>
+</blockquote>
+<p class="q"><strong>Q1. 介绍这个项目？</strong> &gt;
+农林科学院的农业大模型平台，四个场景：知识问答、智慧种植、病虫害分析、遥感气象。我负责后端
+AI 应用开发：知识检索链路、AI
+流程编排、异步服务接口。定位是从零搭建（0→1），这段让我把 RAG 和 Agent
+从”会调 API”打到”知道每层为什么这么设计”。</p>
+<p class="q"><strong>Q2. 为什么要混合检索？</strong> &gt;
+农业专业术语（条锈病、戊唑醇）和冷门病害，向量模型训练时见得少，算”语义坐标”不准；关键词检索恰好相反——专业词一字不差精确命中，但”打什么药”搜不到写着”防治用药”的文档。两个各补各的短板，结果按排名融合。</p>
+<p class="q"><strong>Q3. jieba 自定义词典做了什么？</strong> &gt;
+“小麦条锈病”默认会被切成”小麦/条/锈/病”——词碎了等于不存在，关键词检索通道失效。我们把农业词表（病名、药名、生育期术语）灌进
+jieba，保证专业词整体切分。词表从领域资料和用户提问日志里持续补充。</p>
+<p class="q"><strong>Q4. 向量库为什么选 HNSW 索引？</strong> &gt; HNSW
+是多层图结构，上层像高速公路快速逼近目标、底层精确到位，毫秒级出结果，代价是吃内存。我们的库百万级以内、内存扛得住，选它拿低延迟高召回；如果上亿条向量内存紧张，会换
+IVF（聚类分桶）那类省内存的方案。</p>
+<p class="q"><strong>Q5. Agent 编排讲一下？</strong> &gt;
+像医院：分诊台先识别问题类型（病虫害还是知识问答，顺便把口语改写成标准问）→
+按类型分流 → 各科室干活（查知识库、调天气工具、生成答案）→
+病历本（状态对象）全程传递，每步结果都记在上面。好处：每步只干一件事、出错翻开病历本就知道哪步错、加新场景加节点就行不动老代码。</p>
+<p class="q"><strong>Q6. 为什么用 LangGraph 不用黑盒 Agent？</strong> &gt; 黑盒
+Agent
+是模型自己决定下一步干什么、循环到它觉得完——流程不受控，可能跳过检索直接生成。LangGraph
+是显式的图，先走哪步、什么条件走哪条路全写在代码里：强制先检索再生成、每步可打日志可单测。生产系统要确定性。</p>
+<p class="q"><strong>Q7. 为什么服务要做成异步？</strong> &gt;
+调一次模型要等好几秒，这段是纯等待不是计算——同步模式下程序干等着，别的请求全堵着。异步像烧水泡茶：点上火转身去拿茶叶，水开了回来冲——单线程同时照看几十个请求，等待时间被利用起来了。</p>
+<p class="q"><strong>Q8. CapacityLimiter 是干嘛的？</strong> &gt;
+给模型调用装”景区限流”：最多 10
+个请求同时调模型，其他的排队，完成一个放行一个——防止瞬时洪峰把下游推理服务打爆。上限数字靠压测：并发逐步加大，看下游延迟和错误率在哪拐弯，取拐弯前留余量。</p>
+<p class="q"><strong>Q9. FastAPI 那套框架怎么理解？</strong> &gt;
+三层分工：Uvicorn 是接线员（守着端口接网络请求），Starlette
+是前台（把请求整理成单据分派），FastAPI
+是办公系统（我按它的格式写：装饰器登记路由+类型标注，给出业务逻辑，接请求、校验参数、调用我的代码、返回响应全自动）。我日常只跟
+FastAPI 打交道。</p>
+<p class="q"><strong>Q10. 平台规模多大？</strong> &gt;
+科研院属平台、内部使用，量级不大——这段的价值在工程方法和从零搭建，不在流量。主动讲这层比被追问穿了好。（红线：不吹高并发大数字。）</p>
+<p><a id="s44"></a></p>
+<h3 id="mstgn-wheat-科研项目详版04">4.4 MSTGN-Wheat ·
+科研项目（详版：04）</h3>
+<p><strong>简历原文</strong>（MSTGN-Wheat：一种地理知识引导的田块尺度小麦产量可解释估测模型
+· 2024.10-2026.06）：</p>
+<blockquote>
+<ul>
+<li><strong>项目描述</strong>：提出MSTGN-Wheat模型，融合遥感、气象与土壤多源数据，在田块尺度开展冬小麦产量估算；基于图神经网络建模地块间空间依赖关系，并结合生育期信息进行时空特征学习，有效提升预测精度与稳定性。</li>
+<li><strong>技术栈</strong>：Python + PyTorch + PyTorch Geometric +
+Transformer + Graph Attention Network</li>
+<li><strong>我的职责</strong>：负责MSTGN-Wheat模型研发，基于PyTorch与PyTorch
+Geometric构建图注意力网络刻画空间依赖；设计Transformer时序模块融合多源数据，实现端到端产量预测；完成数据处理与训练流程；通过扰动归因分析可解释性；优化训练效率约30%，预测精度提升约10%–18%。</li>
+</ul>
+</blockquote>
+<p class="q"><strong>Q1. 介绍一下你的科研？</strong> &gt;
+预测每块地能打多少小麦。数据三路：卫星看长势（植被指数）、气象（积温降水）、土壤（肥力）。模型两个核心：图注意力网络建模相邻地块的空间影响（小气候、土壤、病虫害都跨地块），Transformer
+读生育期的生长日记（不同阶段对产量贡献不同，灌浆期最关键）。精度比基线相对提升
+10-18%，产出了两篇 SCI。</p>
+<p class="q"><strong>Q2. 为什么要图结构？</strong> &gt;
+空间影响是真实存在的：挨着的地气候土质相通、病虫害会传播——隔壁长势好你这块大概率也好。最有说服力的证据是消融实验：把图模块拆掉其他不变，精度明显下降——证明空间建模本身有效，不是堆料。</p>
+<p class="q"><strong>Q3. GAT 在模型里做什么？</strong> &gt;
+节点是田块、边是地理邻近。注意力机制让每块地自己学”听哪个邻居的、听几分”——紧挨着长势典型的影响大，隔条河的可能没关系，权重是训练学出来的不是人定的。</p>
+<p class="q"><strong>Q4. 生育期信息怎么结合的？</strong> &gt; Transformer
+的注意力本身不知道时间先后，需要额外注入”这是第几期”的标记——我们注入的是生育期阶段标签（返青、拔节、灌浆），等于告诉模型”这不仅是一个时间点，还是小麦生命的特定阶段”。模型学出来灌浆期权重高，和农学常识一致。</p>
+<p class="q"><strong>Q5. 多源数据怎么对齐？</strong> &gt;
+最脏最重的活：卫星数据按田块边界聚合（一块地一个值）、不同来源的时间粒度统一重采样到每旬、云遮住的缺失期用前后插值补。数据对齐占了大半时间，但它决定上限。</p>
+<p class="q"><strong>Q6. 精度提升 10-18% 是相对谁？</strong> &gt;
+四个基线：线性回归、随机森林、LSTM、还有拆掉图结构的自己。指标是均方根误差的相对下降——弱基线（线性回归）提升接近
+18%，强基线（LSTM）约 10%，所以是区间不是单点。</p>
+<p class="q"><strong>Q7. 训练效率提升 30% 哪来的？</strong> &gt;
+三件事合计：混合精度（用 16 位数字代替 32
+位算，快且省显存）、多进程数据加载（不让显卡等饭吃）、图结构缓存（邻居关系不变，提前算好不重复建）。</p>
+<p class="q"><strong>Q8. 可解释性怎么做的？</strong> &gt;
+扰动归因：把某个输入遮住（比如抹掉灌浆期的降水），看预测变了多少——变化大就是模型依赖它。判断一道菜哪种调料重要，每次少放一种尝味道变化。得到的重要性排序和农学规律一致（灌浆期气象权重高），说明模型学到的是真规律不是数据巧合——这也是农业模型能被信任的前提。</p>
+<p class="q"><strong>Q9. 泛化性怎么样？</strong> &gt;
+跨区域会掉点——气候、品种、种植制度不同。诚实讲这是论文里也讨论的局限，跨区需要局部微调。讨论局限是科研素养，回避才是心虚。</p>
+<p><a id="s45"></a></p>
+<h3 id="教育与竞赛经历">4.5 教育与竞赛经历</h3>
+<p><strong>简历原文</strong>（教育经历 · 科研与竞赛部分）：</p>
+<blockquote>
+<ul>
+<li><strong>硕士</strong>：中国农业大学(985/211/双一流) ·
+计算机科学与技术 · 专业前10% · 2024.09-2027.06</li>
+<li><strong>科研与竞赛</strong>：发表英文SCI论文2篇、获得软件著作权*1、获校级奖学金、中国农业大学优秀研究生（前3%）、国家级大学生创新创业项目负责人、CET-6、美国数学建模竞赛国际一等奖(全球前7%)、全国大学生数学建模竞赛二等奖(前30%)</li>
+<li><strong>本科</strong>：河南财经政法大学 · 软件工程 · 专业前7% ·
+2020.09-2024.06</li>
+</ul>
+</blockquote>
+<p><strong>SCI 论文×2</strong>：用 04 文档第 1
+章口语稿；如实答期刊、分区、作者顺序（论文可查，不编）。</p>
+<p><strong>「吃茶去」互联网+ 项目</strong>： - 一句话：信阳毛尖年轻化 +
+电商助农，寝室四人，本人负责商业计划书； -
+面试故事：背景（毛尖有品质无品牌：年轻人不喝、茶农被渠道压价）→
+我做商业计划书（竞品分析对标小罐茶/CHALI、问卷调研、商业模式与财务预测）→
+收获”商业视角”（做 AI 应用先问价值主张和用户是谁）； -
+追问：为什么叫吃茶去（禅宗公案，品牌记忆点）；与小罐茶差异（礼品场景 vs
+年轻人自饮 + 产地直连助农）； -
+待补：年份、获奖/晋级级别、问卷份数、<strong>是否立项大创</strong>（若是，与简历”国家级大创负责人”两线合一）。</p>
+<p><strong>2022 国赛 C 题《古代玻璃制品的成分分析与鉴别》</strong>： -
+分工（已确认）：<strong>本人负责问题 2——高钾 vs 铅钡玻璃分类建模，Python
+实现</strong>；第三问未知样品判别复用该模型； - 1 分钟故事： &gt; “2022
+年 9 月国赛，三人队选 C
+题古代玻璃制品成分分析。我负责第二问的分类建模：用 Python
+先做特征选择——看哪些化学成分对区分高钾玻璃和铅钡玻璃区分度高，再建判别模型，交叉验证评估稳定性和准确率，第三问的未知样品判别也复用了它。其他队友负责问
+1 的卡方检验和风化前成分回归预测、问 4
+的相关性分析。最大感受是统计方法砸到真实脏数据上——缺失多、量纲乱，清洗和检验比建模本身占时间。最后拿了
+[奖级待确认]。” - 追问准备： - 特征选择怎么做的？→
+看各成分在两组间的分布差异/区分度，挑区分度高的进模型； -
+用的什么分类器？→
+[判别分析/决策树等，按真实回忆]；交叉验证——把数据分几折轮流做训练和测试，评估模型不是只会背训练集；
+- 卡方检验是干嘛的（队友做的也要能一句话）→ 检验两个分类变量有无关联； -
+国二还是省二？→ <strong>按奖状确认后秒答</strong>（国二约前 5%；“前
+30%”更像省二，简历表述需同步改准确）； -
+待补：奖级口径、分类器类型、队友姓名。</p>
+<p><strong>美赛 M
+奖</strong>：[待回忆——年份、题号、分工、结果；真实则按国赛方式补一节]</p>
+<hr />
+<p><a id="s5"></a></p>
+<h2
+id="五综合面试题库半结构化高频题-基于简历的参考回答">五、综合面试题库（半结构化高频题
++ 基于简历的参考回答）</h2>
+<p><a id="s51"></a></p>
+<h3 id="动机与稳定性央国企最看重的一组">5.1
+动机与稳定性（央国企最看重的一组）</h3>
+<p class="q"><strong>Q1. 为什么想进央企/国企，而不是互联网大厂？</strong> &gt;
+参考答（用中青旅经历做桥，真实可信）：“我在中青旅实习过三个月，是第一次在央企工作。感受很具体：一是业务有社会价值——我做的智慧文旅问答服务的是真实游客；二是规范——数据合规、流程严谨，私有化部署这些约束反而逼着我把工程做得更扎实；三是团队稳定，能沉下心做长周期的事。我实习过互联网（美团）也实习过央企，两边节奏都适应，但更认同央企的长期主义，希望技术积累能和单位的发展绑在一起。”</p>
+<p class="q"><strong>Q2. 为什么选择我们单位？</strong> &gt;
+模板（面试前按目标单位定制三件事）：主营业务 +
+数字化方向（提前查年报/公众号）+
+你的匹配点。例（文旅类）：“贵单位深耕文旅产业，我正好有中青旅智慧文旅的完整实战——RAG
+问答、Text-to-SQL
+问数都做过线上优化，来了不用从零学业务。”例（能源/制造类）：“贵单位设备资产规模大，我在美团做过设备异常治理平台，弱网设备监控、工单闭环、自动巡检这套方法论可以直接迁移。”</p>
+<p class="q"><strong>Q3. 你是河南人，为什么留在北京？能稳定吗？</strong> &gt;
+“本硕七年都在北京（本科河南、硕士北京——如实说），实习三段都在北京，职业圈子和生活基础都在这。北京户口和长期定居在我的规划里，选择央企本身就是因为想长期稳定发展，不是跳板心态。”</p>
+<p class="q"><strong>Q4. 职业规划 3-5 年？</strong> &gt; “前 1-2
+年：把单位的核心业务吃透，后端工程基本功再夯实（高并发、稳定性、规范流程）；3-5
+年：希望能独立负责一个业务域的方案设计，带小团队。方向上坚持 AI
+应用工程化——单位的数字化转型里大模型落地正是用人方向，我想成为懂业务的
+AI 工程化骨干。”</p>
+<p class="q"><strong>Q5. 还面了哪些单位？手上有 offer 吗？</strong> &gt;
+原则：<strong>如实但聚焦</strong>。答”投递集中在央国企的信息化/科技岗，比如××、××（同类单位），目前有进展中的”。不说”没有”（显得没竞争力）也不编具体
+offer（易被戳穿）。可加：“贵单位是我优先级最高的，业务方向和我三段实习的匹配度最高。”</p>
+<p><a id="s52"></a></p>
+<h3 id="性格与团队">5.2 性格与团队</h3>
+<p class="q"><strong>Q6. 你的优点？</strong> &gt;
+“拆解问题和用数据验证。两个例子：在美团治理设备误报，我没有直接改代码，是先拉误报设备的
+Trace
+还原时间线定位根因，再用历史日志回放验证阈值；在中青旅，每个优化方向都先从
+Badcase 归类开始。我习惯把’感觉’变成’数据’再动手。”</p>
+<p class="q"><strong>Q7. 你的缺点？</strong> &gt;
+“实习初期过于追求方案完美，出方案慢。美团 mentor
+教我’先用最小可行方案验证方向，再迭代’，后来好很多。现在会提醒自己：先对，再好。”</p>
+<p class="q"><strong>Q8. 团队合作中遇到分歧怎么处理？</strong> &gt;
+“先理解对方的上下文——对方的方案往往有我不知道的历史原因。然后用数据说话：在中青旅讨论阈值方案时，我把两个方案的回放结果摆出来对比，而不是各说各理。仍不一致就听项目负责人决策，执行中保留观察点。我信’对事不对人，数据不对感觉’。”</p>
+<p class="q"><strong>Q9. 举一个抗压的例子。</strong> &gt; 用中青旅 Badcase
+归因的故事：“有批线上答错的问题，压力在于不知道错在哪一环——检索、生成、工具五个环节都可能背锅。我的办法是逐环节留痕：把每一步中间结果打出来，先定位再改。最后定位是检索没召回而不是模型瞎编，避免了无效修复。压力之下我反而更依赖流程和方法，而不是堆时间。”</p>
+<p class="q"><strong>Q10. 最有成就感的事？</strong> &gt;
+美团工单自动闭环：“它不炫技，是把一个人人都烦但没人管的问题系统化解决了——46%
+的工单不用人工销。成就感来自真实减少了同事的无效劳动。”</p>
+<p class="q"><strong>Q11. 最大的挫折？</strong> &gt;
+科研侧：“研究生第一个课题方向跑了半年发现精度卡住，一度怀疑方向。后来把误差可视化，发现误差在空间上聚集，才意识到缺空间建模，转向图神经网络后突破。学到的是：卡住时先诊断（看误差分布）而不是换方向硬撞。”</p>
+<p><a id="s53"></a></p>
+<h3 id="工作现实类">5.3 工作现实类</h3>
+<p class="q"><strong>Q12. 能接受出差/驻场/值班吗？</strong> &gt;
+“实习经历过版本上线值班，理解保障类系统有应急响应需要，关键节点愿意顶上。平时会靠自动化、文档、预案把被动加班压到最低——比如我做自动巡检就是把手工人查变成程序跑。”</p>
+<p class="q"><strong>Q13. 怎么看加班？</strong> &gt;
+“分两种：项目冲刺和故障应急的加班，该上就上；我更在意用工程手段减少无效加班——我三段实习做的其实都是这类事（自动闭环减人工销单、自动巡检减人工排查、回归评测防反复返工）。”</p>
+<p class="q"><strong>Q14. 期望薪资？</strong> &gt;
+央企谈法（重点）：<strong>先问体系再答数字</strong>。“我想先了解贵单位的职级和薪酬结构，应届生按单位标准执行就好。我相信央企体系的规范性和长期回报。”若被逼报数：给区间且参考该单位公开的应届总包范围，不高开。<strong>不主动谈钱、不拿互联网
+offer 比价。</strong></p>
+<p class="q"><strong>Q15.（女生常见）婚育规划会影响工作吗？</strong> &gt;
+合规答：“近三到五年是我的职业成长关键期，全部重心放在工作和能力积累上，个人安排会以不影响工作为前提做好规划。”（简短、自信、不多解释。）</p>
+<p><a id="s54"></a></p>
+<h3 id="认知加分题答好直接和同批人拉开差距">5.4
+认知加分题（答好直接和同批人拉开差距）</h3>
+<p class="q"><strong>Q16. 你怎么理解央企的数字化转型？</strong> &gt;
+“我的理解是三层：业务数字化（纸质流程变线上系统，我做过的工单闭环就是典型）、数据资产化（把散在各系统的数据治理成能用的一致口径——我在中青旅做的指标治理就是这层，AI
+应用的上限取决于这层）、决策智能化（在大数据和 AI 基础上做问数
+Copilot、智能问答）。我三段实习正好分别踩在三层上，所以对这件事有完整的具体认识。”</p>
+<p class="q"><strong>Q17. 了解信创吗？</strong> &gt;
+“了解一些。信创是信息技术应用创新，核心是关键信息基础设施的国产化替代——芯片、操作系统（麒麟、统信）、数据库（达梦、OceanBase、人大金仓）、中间件到应用软件的全栈自主可控。对开发的实际影响是技术选型要考虑国产化适配——比如我在中青旅的私有化部署经验（bge
+模型本地部署、数据不出内网）就是这个逻辑的落地。如果单位有信创迁移的工作，我愿意深入学国产技术栈。”</p>
+<p class="q"><strong>Q18. 大模型在你们单位这类业务里能怎么用？</strong> &gt;
+“三类场景最现实：①知识问答——政策、规章、设备手册的 RAG
+问答，替代人工翻文档；②数据问数——Text-to-SQL
+让管理层用自然语言查经营数据；③流程自动化——Agent
+加工具调用做巡检、工单这类规则性流程。共同前提是数据治理和评测护栏先行——这正是我实习做过的完整闭环。”</p>
+<p class="q"><strong>Q19. AI 会取代程序员吗？</strong> &gt; “短期内它更像 Copilot
+而不是替代——我在实习里就是把它当’副驾驶’用的：生成 SQL、归纳
+Badcase，人负责确认口径和把关。真正被取代的是’只会翻译需求的岗位’，而懂业务、能把
+AI 工程化落地的人反而更值钱。我的定位就是后者。”</p>
+<p><a id="s55"></a></p>
+<h3 id="教育与背景类">5.5 教育与背景类</h3>
+<p class="q"><strong>Q20. 介绍一下你的 SCI
+论文？</strong>（两篇，按真实情况答：期刊名、几区、几作、主题）→ 用 04
+文档第 1 章口语稿。</p>
+<p class="q"><strong>Q21. 数学建模竞赛的经历？</strong> → 4.5 节国赛 1
+分钟故事（美赛待补后同样处理）。</p>
+<p class="q"><strong>Q22. 本科软件工程、硕士计算机，方向怎么变化的？</strong> &gt;
+“没有变化，是深化：本科打工程基础，研究生在计算机学科下做 AI
+方向的科研，实习又回到工程——最后收敛到’AI
+应用的后端开发’，正好是科研和工程的交叉点。”</p>
+<p class="q"><strong>Q23. 反问环节。</strong> &gt; 准备 2-3
+个：①”这个岗位未来一年最重要的目标是什么？“②”团队目前的技术栈和主要业务系统有哪些？“③”单位有导师制或轮岗培养吗？“——体现长期意愿，不问薪资加班。</p>
+<hr />
+<p><a id="s6"></a></p>
+<h2
+id="六数字口径总表全简历汇总必须张口就来">六、数字口径总表（全简历汇总，必须张口就来）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>经历</th>
+<th>数字</th>
+<th>口径一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>美团</td>
+<td>重复异常 −58%</td>
+<td>治理前后每台故障设备平均异常条数对比</td>
+</tr>
+<tr>
+<td>美团</td>
+<td>误报率 −21%</td>
+<td>被判离线中实际没坏的占比下降（回放+人工结果验证）</td>
+</tr>
+<tr>
+<td>美团</td>
+<td>自动闭环 46%</td>
+<td>自动关闭 / 符合条件的异常工单数</td>
+</tr>
+<tr>
+<td>美团</td>
+<td>巡检 2h→20min、人工 −40%</td>
+<td>10 worker 并行 + 40% 规则被系统覆盖</td>
+</tr>
+<tr>
+<td>美团</td>
+<td>关键参数</td>
+<td>心跳 30s / 连失窗口 3 周期 / 防抖 5min / 延迟确认 10min / 100 片 10
+worker</td>
+</tr>
+<tr>
+<td>中青旅</td>
+<td>可执行率 76.1→89.4</td>
+<td>218 条回归集；<strong>是下界</strong>，另有口径正确率</td>
+</tr>
+<tr>
+<td>中青旅</td>
+<td>126 指标 / 247 组映射</td>
+<td>一指标平均约 2 别名</td>
+</tr>
+<tr>
+<td>中青旅</td>
+<td>Top-5 命中率 80.4→90.2</td>
+<td>326 题；前 5 块含≥1 正确出处</td>
+</tr>
+<tr>
+<td>中青旅</td>
+<td>端到端正确率 78.6→87.3</td>
+<td>137 Badcase / 7 轮迭代；pp=百分点</td>
+</tr>
+<tr>
+<td>中青旅</td>
+<td>模型选型</td>
+<td>Embedding=bge 1024 维、Rerank=bge-reranker、私有化部署</td>
+</tr>
+<tr>
+<td>MSTGN</td>
+<td>精度 +10~18%</td>
+<td>RMSE 相对下降，相对线性回归/随机森林/LSTM/消融版</td>
+</tr>
+<tr>
+<td>MSTGN</td>
+<td>训练效率 +30%</td>
+<td>AMP+多进程加载+图缓存</td>
+</tr>
+<tr>
+<td>神农</td>
+<td>（无数字）</td>
+<td>讲架构：混合检索 RRF / LangGraph 节点 / CapacityLimiter</td>
+</tr>
+<tr>
+<td>教育</td>
+<td>前 10% / 优秀研究生前 3% / SCI×2 / 软著×1 / 美赛 M 奖 / 国赛二等奖 /
+CET-6</td>
+<td>按真实情况如实答，奖项可查；国赛奖级待确认国二/省二</td>
+</tr>
+</tbody>
+</table>
+<p><a id="s7"></a></p>
+<h2 id="七细节与礼仪清单">七、细节与礼仪清单</h2>
+<ol type="1">
+<li><strong>正装</strong>（深色西装，女生淡妆盘发或马尾均可）；纸质简历带
+3 份；进屋”各位考官好”，坐姿端正，结束”感谢各位考官”；</li>
+<li><strong>回答节奏</strong>：综合题控制在 1
+分钟内，先结论后展开；技术题允许思考 2-3
+秒——“这个问题我想一下”是完全得体的；</li>
+<li><strong>所有数字的分子分母</strong>：第六章总表过到张口就来；</li>
+<li><strong>简历每个词的 30 秒答案</strong>：第三章 35
+题全覆盖技能栏；</li>
+<li><strong>时间线自洽</strong>：神农
+2025.02-08（校内课题，定期去院里，可与坐班实习并行）→ 中青旅 2025.06-09
+→ 美团 2026.06-09；</li>
+<li><strong>背调相关</strong>：时间、单位名、部门名与简历完全一致，不主动加戏；央企数据保密（“涉内部数据，我讲方法和口径”）；</li>
+<li><strong>红线继承</strong>：各详版文档红线全部适用（角色说”参与”、不说微调、指标方向不说反、可执行率≠正确率、神农别吹流量）。</li>
+</ol>
+<p><a id="s8"></a></p>
+<h2 id="八待补充区新问题往这记">八、待补充区（新问题往这记）</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />美赛 M
+奖回忆（年份/题号/分工/结果）→ 补进 4.5</label></li>
+<li><label><input type="checkbox" />国赛奖级口径确认（国二/省二）+
+简历表述同步修改</label></li>
+<li><label><input
+type="checkbox" />吃茶去：年份/晋级级别/问卷份数/<strong>是否立项大创</strong>（两线合一的关键）</label></li>
+<li><label><input type="checkbox" />03 神农详版文档写入；05
+DSH-plugin</label></li>
+<li><label><input type="checkbox" />java/SpringBoot
+删除决策落地（改简历）</label></li>
+<li><label><input
+type="checkbox" />具体单位定制：目标单位的业务/年报/数字化动态（每次面试前补一节”本单位定制”）</label></li>
+<li><label><input
+type="checkbox" />笔试准备：行测（数量关系、言语、逻辑）+
+专业笔试题库</label></li>
+<li><label><input
+type="checkbox" />无领导小组讨论应对（如目标单位有群面）</label></li>
+</ul>
+<hr />
+<p><em>创建：2026-09-17。新面试问题直接补充进对应章节并更新更新日志。</em></p>
+<hr />
+<h1 id="美团充电宝设备运营与异常治理平台-面试全攻略">01 ·
+美团充电宝设备运营与异常治理平台 —— 面试全攻略</h1>
+<blockquote>
+<p><strong>三遍读法</strong>：第一遍只读每节的【先用大白话理解】，建立直觉，不看术语；第二遍读【展开讲】，把直觉对应到技术细节；第三遍用第
+5
+章问答库自测。参考回答不要逐字背——背出来的一听就假；要背的是<strong>答题骨架</strong>（问题→定位→方案→权衡→结果）。第
+7 章红线务必看。</p>
+</blockquote>
+<hr />
+<h2 id="口语稿项目介绍的两个版本">1. 口语稿：项目介绍的两个版本</h2>
+<h3 id="秒版介绍一下你的实习项目首选">30
+秒版（“介绍一下你的实习/项目”首选）</h3>
+<blockquote>
+<p>我在美团充电宝的设备运营平台做后端研发实习，这个平台负责全国充电宝机柜的设备监控、异常处理和巡检。我主要参与三块工作：一是<strong>弱网场景下的离线误报治理</strong>，把”单次心跳超时就判离线”改成”连续失联窗口
++ 恢复防抖”，同设备重复异常下降了 58%，离线误报率降了约
+21%；二是<strong>异常工单自动闭环</strong>，设备自愈后系统自动确认并关单，约
+46%
+的工单不再需要人工处理；三是把人工巡检规则做成<strong>自动巡检任务</strong>，分片并行扫描，单轮巡检从约
+2 小时缩短到 20 分钟以内。</p>
+</blockquote>
+<h3 id="分钟版面试官说详细讲讲时">2 分钟版（面试官说”详细讲讲”时）</h3>
+<blockquote>
+<p>背景：充电宝机柜铺在商场、餐厅，走 4G
+弱网，设备必须在线才能支持扫码借还。运营团队要监控设备异常、派工单、安排巡检。我实习时围绕三个问题做优化。</p>
+<p>第一个问题是<strong>离线误报</strong>。原逻辑是丢一个心跳就判离线，但弱网下偶发丢包是常态，导致设备状态频繁在线离线来回翻转，一台设备一次故障被记成多条重复异常，运营被误报骚扰。我的做法是把判定改成”连续
+N
+个周期无心跳才判离线”，恢复时再加一段稳定期观察（我们叫恢复防抖，借鉴硬件按键消抖的思想），阈值不是拍脑袋定的，是用历史心跳日志做回放，画误报率和检测延迟的权衡曲线选的拐点。上线后同设备重复异常降了
+58%。</p>
+<p>第二个问题是<strong>僵尸工单</strong>。设备断电离线会生成异常工单，但很多时候来电后设备自己就好了，而旧系统不监听恢复事件，工单永远挂在待处理，运营每天人工销一堆单。我补充了”恢复事件监听
+→ 延迟确认 → 二次状态校验”的自动闭环链路：收到恢复消息不马上关单，先等
+10
+分钟确认稳定，执行关单前再实时查一遍设备状态和工单状态（防止误关运营正在处理的单），用
+CAS 式更新防竞态。约 46% 的工单实现了自动闭环。</p>
+<p>第三个是<strong>自动巡检</strong>。原来运营每周人工拉各种列表排查，一轮约
+2 小时。我们把排查规则沉淀成代码，用设备 ID
+取模分片、多任务并行扫描，带失败重试和断点续扫，单轮缩到 20
+分钟以内，人工巡检工作量降了约 40%。</p>
+</blockquote>
+<hr />
+<h2 id="系统全景">2. 系统全景</h2>
+<h3 id="先用大白话理解">2.1 先用大白话理解</h3>
+<p>把充电宝机柜想成<strong>一群派驻在全国餐厅、地下室干活的员工</strong>：干活环境差（手机信号时好时坏），但必须随时联系得上，否则顾客借还不了充电宝。这个平台就是<strong>管家系统</strong>：盯着所有员工的状况，发现不对就开任务单，派人处理，定期体检。</p>
+<p>管家系统当时有三个毛病，你的三块工作正好治这三个病：</p>
+<ol type="1">
+<li><strong>报警器太灵敏</strong>：员工只是进了个电梯没信号，系统就喊”人失踪了！“——天天误报；</li>
+<li><strong>任务单没人销</strong>：很多员工睡一觉自己恢复了，但没人告诉系统，任务单永远挂着，堆成山；</li>
+<li><strong>体检靠老师傅人工翻本子</strong>：一查两小时，还容易漏。</li>
+</ol>
+<h3 id="展开讲业务背景与链路">2.2 展开讲：业务背景与链路</h3>
+<p><strong>业务背景</strong>：充电宝机柜是 IoT
+设备，用户扫码借充电宝的链路是”手机扫码 → 云端 → 通过长连接下发指令 →
+机柜弹仓”。机柜离线 = 用户借还不了 =
+直接损失收入。机柜联网环境差（地下室、商场深处），4G
+弱网高丢包是常态。</p>
+<p><strong>整条链路</strong>（面试可画在白板上）：</p>
+<pre><code>机柜设备（4G）
+   │  ①心跳（约30s一次：设备ID+时间戳+槽位/电量/信号快照）
+   │  ②事件（上线/离线/故障上报/借还流水…）
+   ▼
+接入网关（MQTT/长连接，维持连接、收包转发）
+   ▼
+设备状态服务
+   │  收心跳 → 刷 Redis（device_id→最后心跳时间，带TTL）
+   │  状态/事件流水定期落 MySQL
+   │  离线判定逻辑 ←【误报治理改的就是这里】
+   ▼
+异常检测规则引擎（命中规则 → 生成异常记录）
+   ▼
+工单系统（状态机：待处理→处理中→已解决→已关闭）←【自动闭环改的是这里】
+   ▼
+运营工作台（运营派单 → 运维上门 → 关单）
+
+另有一条旁路：定时巡检任务（分片扫描全量设备规则）←【自动巡检】</code></pre>
+<p>三块工作在链路上的位置：<strong>误报治理改”检测离线”的判定逻辑</strong>（状态服务层）、<strong>工单闭环补状态机流转</strong>（工单层）、<strong>巡检是把人工规则代码化</strong>（横跨数据层的离线批处理）。</p>
+<hr />
+<h2 id="名词卡片速查第二遍读时对照">3.
+名词卡片（速查，第二遍读时对照）</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>术语</th>
+<th>一句话解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>心跳</td>
+<td>设备每 30s 发一次”我还活着”的小包，服务端刷新 last_heartbeat_at</td>
+</tr>
+<tr>
+<td>心跳超时</td>
+<td>当前时间 − 最后心跳时间 &gt; 阈值 = 失联；应用层扫描判定，不依赖 TCP
+断连回调</td>
+</tr>
+<tr>
+<td>弱网</td>
+<td>高丢包/高延迟/频繁断连（地下室 4G），偶发丢 1-2
+个心跳是<strong>常态</strong></td>
+</tr>
+<tr>
+<td>误报</td>
+<td>设备被判异常但其实没坏；代价 = 白派单 + 报警脱敏（狼来了效应）</td>
+</tr>
+<tr>
+<td>状态翻转</td>
+<td>在线↔︎离线快速来回跳，一次故障被记成多条重复异常</td>
+</tr>
+<tr>
+<td>连续失联窗口</td>
+<td>连续 N 个周期无心跳才判离线（对”离线信号”防抖）</td>
+</tr>
+<tr>
+<td>恢复防抖</td>
+<td>心跳恢复后观察 M
+分钟、持续稳定才承认恢复（对”恢复信号”防抖）；源自硬件按键消抖</td>
+</tr>
+<tr>
+<td>延迟确认</td>
+<td>收到消息不立刻行动，丢延迟队列，到点再处理</td>
+</tr>
+<tr>
+<td>二次状态校验</td>
+<td>执行动作前重查”现在”的真实状态，不信旧消息；配合 CAS 更新防竞态</td>
+</tr>
+<tr>
+<td>工单/闭环</td>
+<td>带状态机的任务记录；闭环 = 从发现到关闭走完整回路</td>
+</tr>
+<tr>
+<td>幂等</td>
+<td>执行 1 次和 N 次效果一样；消息 at-least-once + 重试都必须幂等</td>
+</tr>
+<tr>
+<td>历史事件回放</td>
+<td>把新逻辑跑在历史日志上对比效果（类似量化回测），不上线就能量化收益</td>
+</tr>
+<tr>
+<td>Trace</td>
+<td>分布式链路追踪，trace_id 串联一台设备的完整轨迹，排障用</td>
+</tr>
+<tr>
+<td>分片扫描</td>
+<td>device_id % N 把全量设备切成 N 片并行处理；确定性保证不重不漏</td>
+</tr>
+<tr>
+<td>断点续扫</td>
+<td>片内记录处理进度（checkpoint），重试从断点继续</td>
+</tr>
+<tr>
+<td>命中/失败</td>
+<td>命中 = 设备数据符合可疑规则（业务发现，带快照留证）；失败 =
+检查动作本身没做成（技术故障，登记补扫）</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="三大工作块详解">4. 三大工作块详解</h2>
+<h3 id="误报治理连续失联窗口-恢复防抖">4.1 误报治理：连续失联窗口 +
+恢复防抖</h3>
+<h4 id="先用大白话理解-1">先用大白话理解</h4>
+<p>公司规定员工每 30
+秒在群里报到一次。<strong>旧规矩</strong>：一次没报到就算”失踪”，立刻报警。地下室信号差，偶尔漏报一两次太正常了——于是警报天天误响，保安白跑，真出事反而没人当回事。</p>
+<p><strong>新规矩</strong>改了两处：①
+连着几次（一分半钟左右）都没消息，才算真失踪；②
+失踪的人重新冒头后，还得<strong>连续在线几分钟才算”真回来了”</strong>——就像孩子退烧了不能立刻宣布痊愈，要观察一天不反复才算好。防的就是”冒个头又消失”来回折腾。</p>
+<h4 id="展开讲">展开讲</h4>
+<ul>
+<li><strong>根因</strong>：单次心跳超时即判离线 → 弱网丢包常态被当成异常
+→ 状态翻转 → 同设备重复异常刷屏。</li>
+<li><strong>方案</strong>：两段式防抖——在线→离线需连续 N
+周期无心跳；离线→在线需心跳持续稳定 M 分钟。Redis 维护失联计数器，超时
++1、收到心跳清 0，≥N
+才翻转并生成异常；<strong>离线期间的状态抖动不再产生新异常记录</strong>（这是重复异常降
+58% 的主要来源）。</li>
+<li><strong>阈值确定</strong>：历史日志回放，N 从 2 遍历到 10，画”误报率
+vs 平均检测延迟”权衡曲线选拐点。核心 trade-off：N
+越大误报越少、但真故障被发现越晚（检测延迟 = N×心跳周期）。</li>
+<li><strong>数字口径</strong>：重复异常 58% =
+治理前后每台故障设备平均异常条数对比（回放可算）；误报率降约 21% =
+被判离线中”实际没坏”的占比下降（以最终人工处理结果/后续心跳为 ground
+truth）；是”降低21%“不是”降到21%“，剩下的误报是断电、设备被挪走这类检测逻辑覆盖不了的。</li>
+</ul>
+<h3 id="工单自动闭环监听-延迟确认-二次校验">4.2 工单自动闭环：监听 →
+延迟确认 → 二次校验</h3>
+<h4 id="先用大白话理解-2">先用大白话理解</h4>
+<p>员工生病了，公司开了张<strong>请假条</strong>（工单）。很多时候他睡一觉自己好了、正常回来上班了——<strong>但没人告诉
+HR，请假条永远挂着</strong>，HR 每天手工销一堆”其实人早好了”的假条。</p>
+<p>修这个流程就三步：<strong>①装个门铃</strong>——员工一返岗 HR
+就收到通知（别再靠人肉发现）；<strong>②别急着销假</strong>——先观察一天，别是反复发烧那种假恢复；<strong>③销假前打个电话</strong>——确认人现在真在公司、假条也没被别的经理拿去处理中，都确认了才盖章。</p>
+<h4 id="展开讲-1">展开讲</h4>
+<ul>
+<li><strong>根因</strong>：异常→工单有人写，设备自愈后没人监听恢复事件 →
+工单永远”待处理”（僵尸单）。</li>
+<li><strong>流程</strong>：心跳稳定满 M 分钟（复用防抖产物）→ 发
+RECOVERY 事件到 MQ →
+闭环消费者：①查有无”待处理”关联工单（无则结束，幂等）→
+②不立即关，丢延迟队列 10 分钟（延迟确认）→
+③到点二次校验：最后心跳是否新鲜 + 工单是否仍待处理 → CAS
+关单（<code>UPDATE ... WHERE id=? AND status='待处理'</code>，影响行数 0
+= 已被处理，放弃）。</li>
+<li><strong>为什么三步缺一不可</strong>：没监听=自愈无人知晓；没延迟确认=假恢复导致开了关关了开；没二次校验=旧消息当现在事实，可能误关运营正在处理的单。</li>
+<li><strong>为什么只有
+46%</strong>：自动闭环定位是消化”自愈型异常”（断电后来电、网络波动后恢复）；硬件损坏、设备被挪走的必须人工现场处理。边界感是加分项。</li>
+</ul>
+<h3 id="自动巡检规则代码化-分片扫描">4.3 自动巡检：规则代码化 +
+分片扫描</h3>
+<h4 id="先用大白话理解-3">先用大白话理解</h4>
+<p>以前有个老师傅，每天花 2
+小时挨个翻记录本，检查”哪些设备不对劲”（多久没消息了、账本和实际对不对得上、电量正不正常）。</p>
+<p>你做的事：<strong>①把老师傅的检查口诀写成程序</strong>，自动跑；<strong>②把检查任务分堆并行干</strong>——就像
+2000 份试卷按学号尾号分成 10 堆，10
+个助教同时改，一人一堆，谁快谁多干；<strong>③查到问题的拍照留证</strong>（记下当时的数据）；<strong>④某堆没查成的（比如系统卡了）老实记下来改天补查</strong>——绝不说谎假装全查完了。</p>
+<h4 id="展开讲-2">展开讲</h4>
+<ul>
+<li><strong>根因</strong>：运营人工拉列表逐条排查（无心跳超 24h
+但状态”在线”、接着电但电量长期低、槽位与借还流水不一致…），一轮约 2
+小时。</li>
+<li><strong>架构</strong>：定时调度 → 生成 run_id → 按片号拆 100
+个任务进队列（任务只带片号，设备列表执行时查，shard_no
+预计算建索引避免全表取模）→ 10 个 worker 并行消费（片数 &gt; 工人数 =
+天然负载均衡 + 失败重试粒度小）→ 片内分批加载（内存可控）逐台跑规则 →
+命中写结果带快照（可审计）→ checkpoint 断点续扫 →
+失败退避重试（5s/15s/45s）3
+次仍败登记失败分片（<strong>巡检不撒谎</strong>：宁可承认 5%
+没查到，不可谎报全查完）→ 全片完成计数齐 → 出报告。</li>
+<li><strong>提速来源</strong>：并行（10 worker ≈ 墙钟时间 ÷10）+
+免人工拉表核对。2h→20min、人工量 −40%（40%
+的原人工规则被系统覆盖并直接产出工单）。</li>
+</ul>
+<hr />
+<h2 id="面试问答库">5. 面试问答库</h2>
+<h3 id="a.-项目总体类">A. 项目总体类</h3>
+<p><strong>A1. 介绍一下你的实习项目？</strong> → 用第 1
+章口语稿。先讲背景（为什么需要这个系统）再讲三块工作，每块带”问题→方案→数字”。</p>
+<p><strong>A2. 团队多少人？你具体负责什么，哪些是 mentor
+帮你的？</strong> 考察：诚实度 +
+角色定位。实习生说”我一个人撑起整个系统”是重大减分项。 &gt;
+参考：团队负责整个运营平台，我的 mentor
+是正式员工，负责整体方案设计和评审。我的工作是异常治理这一块的具体开发和验证：比如防抖逻辑的实现和回放验证脚本、闭环消费者的开发、巡检任务的分片改造。方案是我先出设计文档，mentor
+评审提意见后我再动手，上线是走团队的灰度流程。</p>
+<p><strong>A3. 你怎么理解这个业务/为什么要做异常治理？</strong> &gt;
+设备离线直接影响借还收入和用户体验；但比离线更隐蔽的是误报——每次误判都可能让运维白跑一趟，成本高且让运营对报警脱敏，真异常被淹没。所以治理的目标不是”消灭报警”，是把报警的<strong>信噪比</strong>提上去。</p>
+<p><strong>A4. 实习最大的收获是什么？</strong> &gt;
+两点。一是工程上：学校做项目只关心”跑通”，这里学到每个改动上线前要回答三个问题——怎么验证（回放）、怎么灰度（按城市逐步放开）、出了问题怎么回滚。二是问题定位方法：先挑
+badcase 拉 trace 还原时间线找根因，再改逻辑，而不是上来就猜。</p>
+<h3 id="b.-技术深挖类">B. 技术深挖类</h3>
+<h4 id="b1.-心跳与误报">B1. 心跳与误报</h4>
+<p><strong>B1-1. 心跳周期多长？连续失联窗口取几？为什么？</strong> &gt;
+心跳约 30 秒一次，窗口取连续 3 个周期（约 90
+秒）。不是拍的：回放两周边历史心跳日志，把 N 从 2 到 10 遍历，N=2
+时误报率还很高，N=3 相比 N=2
+误报率降得最陡，再往后收益递减但检测延迟线性增加，所以选
+3。真实故障场景下晚 90
+秒发现是可接受的——工单处理本身是分钟到小时级的事。</p>
+<p><strong>B1-2. 为什么不直接用 TCP 断连判离线？</strong> &gt; TCP
+断连只说明连接层断了，原因可能是 NAT
+超时、基站切换、弱信号，设备本身是好的、马上会重连。离线是业务概念不是连接概念，所以用应用层的心跳超时来判。</p>
+<p><strong>B1-3. 为什么不用机器学习做离线检测？</strong> &gt;
+四个理由：①设备行为模式简单（有心跳/没心跳），规则的判别力足够；②规则<strong>可解释、可回放验证</strong>，误报了能讲清为什么，ML
+是黑盒，出问题没法向运营解释；③每次误报直接产生人力成本，需要的是可控、可调阈值的机制，规则调参立竿见影，ML
+要重训；④开发和维护成本低。如果以后要做”故障预测”这种复杂目标，ML
+才有价值。</p>
+<p><strong>B1-4. 恢复防抖具体怎么实现的？为什么是 5 分钟？</strong> &gt;
+离线设备的心跳恢复后不立刻翻转状态，进”恢复观察期”，由延迟任务承载：到点检查这段时间内心跳是否连续稳定，中途再失联则计数清零、工单保持打开。M
+的取值也是回放定的：统计”心跳恢复后 N
+分钟内再次失联”的分布，取覆盖绝大多数真恢复的分位数。</p>
+<p><strong>B1-5. “58%”的分子分母是什么？怎么统计的？</strong> &gt;
+分母是治理前每台故障设备在一次故障周期内平均产生的异常记录条数，分子是治理后的平均条数。因为离线期间的状态抖动不再重复记异常（一次故障只记一条），所以下降明显。用回放对比就能算，上线后的线上数据也验证了这个量级。</p>
+<p><strong>B1-6. 防抖会让真故障的发现变慢，这个代价怎么权衡的？</strong>
+&gt; 明确承认
+trade-off：误报率换检测延迟。判断依据是业务容忍度——工单从生成到人工处理本身是小时级，多
+90
+秒检测延迟对业务几乎无感；但一次误报的代价是运维白跑一趟（几十分钟人力），所以方向上偏向压误报。</p>
+<h4 id="b2.-工单闭环">B2. 工单闭环</h4>
+<p><strong>B2-1. 自动闭环的完整流程讲一遍？</strong> &gt; 用 4.2
+的三步流程 +
+凌晨断电来电的具体例子（见下）。面试官想听的就是三步各自防什么坑。</p>
+<p><strong>B2-2. 恢复事件重复消费/乱序怎么办？</strong> &gt; 消息队列是
+at-least-once，重复和乱序都会发生。靠两层防护：消费端幂等——按设备+工单+动作做去重，关单用
+CAS 式状态更新（WHERE status=‘待处理’），重复消息第二次执行时影响行数为
+0
+自然失效；乱序靠二次校验兜底——关单动作执行前以<strong>当前数据库状态</strong>为准，不以消息内容为准。</p>
+<p><strong>B2-3. 延迟确认用什么实现的？</strong> &gt; 延迟消息（MQ
+的延迟级别）或 Redis ZSet 按到期时间排序、轮询到点任务。二者取舍：MQ
+延迟消息可靠、级别固定（如 10 分钟档）；ZSet
+灵活但轮询有空转和宕机恢复问题，需要持久化兜底。我们场景 10
+分钟是固定档位，用延迟消息更简单可靠。</p>
+<p><strong>B2-4. 运营正在处理的工单被自动关掉怎么办？</strong> &gt;
+这正是二次校验防的点：关单 SQL
+带状态条件，工单一旦被运营领走变成”处理中”，CAS 更新影响行数为
+0，自动关单自然放弃。即使极端时序下误关，关单记录了原因和快照，支持
+reopen，且可追溯。</p>
+<p><strong>B2-5. 为什么自动闭环率只有 46%？剩下呢？</strong> &gt;
+剩下的是真异常：硬件故障、断电无人恢复、设备被挪走，必须人工现场处理。自动闭环的定位是消化”自愈型异常”，不追求
+100%——强行提高比例只会引入误关风险。</p>
+<h4 id="b3.-巡检与分片">B3. 巡检与分片</h4>
+<p><strong>B3-1. 分片怎么做的？怎么保证不重不漏？</strong> &gt;
+device_id % 100 切 100
+片，分片规则是纯函数——同一设备永远属于同一片，所有片合起来恰好等于全量，数学上保证不重不漏。任务只带片号进队列，10
+个 worker 并行消费，片数大于工人数实现负载均衡和小的重试粒度。</p>
+<p><strong>B3-2. WHERE device_id % 100 = 37
+这种查询走不了索引，怎么办？</strong> &gt; 实际实现会预计算一列 shard_no
+存在设备表里并建索引，或者按 ID
+区间切分；片内再分批加载（每批几十台）控制内存。</p>
+<p><strong>B3-3. 任务跑到一半进程挂了怎么办？</strong> &gt;
+片内每处理完一台记
+checkpoint，重试从断点继续；即使整片重跑也安全，因为结果写入有去重键（设备+规则+时间窗），不会重复告警——幂等让”重跑”变成零成本的安全选项。</p>
+<p><strong>B3-4. 失败重试为什么要带退避？</strong> &gt;
+失败大多是暂时性故障（DB
+在备份、网络抖动），立刻重试等于往刚出问题的服务上再压一刀。退避（5s→15s→45s）给下游喘息时间；限定
+3 次是止损——3 次都不行说明是真故障，登记失败分片等补扫，别耗着。</p>
+<p><strong>B3-5. 怎么知道一轮巡检扫完了？</strong> &gt;
+完成片数/总片数计数器，全部回调齐才出报告。有失败分片则报告里显式标注覆盖率（如
+97/100），绝不把”部分完成”当”全部完成”上报——巡检的价值在全覆盖，谎报比不查更危险。</p>
+<p><strong>B3-6. 命中的结果为什么要带快照？</strong> &gt;
+数据是活的——半小时后设备可能被修复、状态被刷新。命中时把证据（最后心跳时间、DB
+状态、电量、规则类型、时刻）一起落库，事后才能审计”这单为什么报上来”。命中≠确诊，快照是复核的依据。</p>
+<h4 id="b4.-基础设施延伸八股从项目自然引出必准备">B4.
+基础设施延伸八股（从项目自然引出，必准备）</h4>
+<p><strong>B4-1. Redis 在这个系统里怎么用的？</strong> &gt;
+存设备实时状态热数据：device_id → 最后心跳时间戳/失联计数器，设 TTL
+兜底（即使检测任务漏扫，key 过期也能触发）。追问 TTL 删除策略：惰性删除
++ 定期删除；过期 key 大量堆积的问题答”我们按 device_id
+分散过期，不会集中过期打崩”。</p>
+<p><strong>B4-2. 为什么用消息队列？</strong> &gt; 解耦 + 削峰 +
+异步：设备状态服务和工单系统解耦，恢复事件、异常事件通过 MQ
+传递；心跳高峰期事件量大，MQ 缓冲。追问丢失怎么办：生产端确认 + 持久化 +
+消费端幂等（at-least-once + 幂等 = 效果上的 exactly-once）。</p>
+<p><strong>B4-3. CAS 更新是什么？为什么不用先查后改？</strong> &gt;
+先查后改在”查”和”改”之间状态可能被别人改掉（竞态）。CAS
+把条件和更新合并成一条原子
+SQL：<code>UPDATE ticket SET status='closed' WHERE id=? AND status='pending'</code>，靠数据库行锁保证原子性，影响行数为
+0 就说明状态已变。引申可讲乐观锁（版本号）与悲观锁（SELECT FOR
+UPDATE）的取舍。</p>
+<p><strong>B4-4. 幂等你们有哪几种实现？</strong> &gt;
+三种都用到了：状态机
+CAS（关单）、唯一键约束（巡检结果去重：设备+规则+时间窗）、Redis
+setnx（防并发重复触发）。核心思想：把”最多执行一次”转化为”执行多次但只有第一次生效”。</p>
+<h4 id="b5.-基础中间件小抄mq-redis从本项目长出来的概念">B5.
+基础中间件小抄（MQ / Redis，从本项目长出来的概念）</h4>
+<p><strong>MQ（消息队列）——两个系统中间的”快递柜”</strong></p>
+<ul>
+<li>模型：生产者（发消息）→ 队列（排队，先入先出）→
+消费者（取消息）；双方不需要同时在场、不需要认识对方，只需要认识快递柜。</li>
+<li><strong>三大价值（标准答案）</strong>：①解耦——发方代码里不写死收方，新订阅方零改动接入；②异步——发完就走，主链路不被慢操作拖住（打电话变发微信）；③削峰——流量洪峰进队列排队，下游按自己能力匀速消费（蓄水池）。</li>
+<li>项目位置：设备恢复事件（状态服务→工单系统）、巡检分片任务队列（100
+个任务排队，10 个 worker 取）。</li>
+<li><strong>投递语义</strong>：主流 MQ 是
+at-least-once（至少一次，可能重复——消费完还没确认网络断了就会重投）。所以消费端必须幂等：<strong>“至少一次
++ 幂等 ≈ 恰好一次”</strong>。</li>
+<li><strong>延迟消息</strong>：发送时指定延迟，消息到点才可被消费——“延迟确认
+10 分钟”的实现载体（RocketMQ 原生支持）。</li>
+<li>选型一句话：Kafka = 超高吞吐日志流；<strong>RocketMQ = 业务消息 +
+原生延迟消息（本项目最合理）</strong>；RabbitMQ =
+路由灵活、中小流量。</li>
+<li>追加追问：消息丢了怎么办（生产端确认 + 持久化 +
+消费幂等各兜一层）；消息积压怎么办（扩消费者 / 批量消费 /
+可重算的跳过）。</li>
+</ul>
+<p><strong>Redis——把热数据从仓库搬到桌面</strong></p>
+<ul>
+<li>本质：<strong>内存键值数据库</strong>。内存 vs 磁盘差 10 万倍 → 单机
+10 万+ QPS、亚毫秒延迟。类比：MySQL = 仓库（大、慢、持久），Redis =
+桌面（小、快、断电就没）。</li>
+<li>五种结构 +
+项目用法：<strong>String</strong>（<code>device:42:hb</code> →
+心跳时间戳 +
+TTL）、<strong>Hash</strong>（设备实时快照：槽位/电量/信号）、<strong>List</strong>（简单队列）、<strong>Set</strong>（本轮已处理设备，天然去重）、<strong>ZSet</strong>（延迟队列备选：score
+= 到期时间戳，轮询取到期的）。</li>
+<li><strong>TTL 过期</strong>：惰性删除 + 定期删除；设备 key 按
+device_id 分散过期，不会集中过期压垮 Redis。</li>
+<li><strong>持久化</strong>：RDB（快照，恢复快、可能丢最近数据）/
+AOF（命令日志，丢得少、恢复慢）；我们存的心跳类数据可重建，对持久化不敏感——<strong>能讲出这层比背定义高一个层次</strong>。</li>
+<li><strong>单线程为什么快</strong>：内存操作 + epoll IO 多路复用 +
+免加锁免切换；耗时命令会卡住所有人 → 生产禁 <code>KEYS *</code>，用
+<code>SCAN</code> 渐进遍历。</li>
+<li>项目四位置：心跳时间戳 TTL 兜底 / 失联计数器（INCR/DEL）/ ZSet
+延迟队列备选 / SETNX 幂等锁。</li>
+<li>追问预告：缓存穿透/击穿/雪崩、Redis 与 MySQL 一致性、分布式锁（SETNX
++ 过期时间 + 唯一标识）。</li>
+</ul>
+<h3 id="c.-难点与思考类央国企最爱问的困难与想法">C.
+难点与思考类（央国企最爱问的”困难与想法”）</h3>
+<p><strong>C1. 这段实习遇到的最大困难是什么？</strong>
+考察：是否真做过。答”没遇到困难”或答纯生活困难都减分。 &gt;
+参考：最大的难点不是写代码，是<strong>定阈值时没有标准答案</strong>。把”单次超时判离线”改成”连续
+N 周期”听起来一行代码的事，但 N 取多少？拍脑袋取
+3，凭什么说服别人？当时的困难是：设备”实际在不在线”这件事没有直接的
+ground
+truth——日志只告诉你心跳有没有到，不告诉你设备真实状态。最后的解法是拿两层近似标注：一是后续人工处理结果（最终被运维确认故障的），二是后续心跳是否长期恢复。用它们当基准做回放，才把
+N
+从”感觉”变成”数据”。这件事让我理解了工业界”数据驱动决策”不是口号，是真的在没有完美答案的场景里逼近答案。</p>
+<p><strong>C2. 你怎么定位到”单次超时判离线”这个根因的？</strong> &gt;
+排查方法讲出来比结论重要：①先挑几台被运营反馈”误报”的设备，拉它们的
+Trace
+和事件日志，把”判定离线的时刻”和”最后心跳时刻”对齐，发现间隔只有一个心跳周期——丢一个包就判死；②再统计弱网区域设备的丢包间隔分布，确认”连丢两个包”是低概率、“丢一个包”是常态；③结论：判定阈值和丢包分布错配。修复方向自然就出来了。</p>
+<p><strong>C3. 方案设计上你做过什么取舍（trade-off）？</strong> &gt;
+两个例子。①误报率 vs 检测延迟（B1-6）；②自动闭环的关单时效 vs
+误关风险：延迟确认等 10 分钟会晚关单 10
+分钟，但换来的是几乎零误关——工单晚 10
+分钟关闭对业务无感，误关一张正在处理的单会浪费一次上门人力，所以选了保守。</p>
+<p><strong>C4. 如果重来一遍，你会改进什么？</strong> &gt;
+两点：①防抖的阈值当时是全局统一值，其实不同网络环境（商圈/地下车库/写字楼）丢包特征差异很大，更优做法是按设备历史丢包率做个性化阈值或分档配置；②巡检规则和异常检测规则当时是两套配置，后期维护出现不同步，应该统一成一套规则中心的配置源。</p>
+<p><strong>C5. 上线流程是怎样的？怎么保证改动不出问题？</strong> &gt;
+回放验证（离线先量化收益和风险）→ 测试环境跑真实流量回放 →
+灰度（按城市/设备批次小流量放开，对比新旧逻辑的报警量、误报量指标）→
+全量。同时留监控看板盯核心指标，异常自动报警支持快速回滚。这套流程是我实习学到的最重要的东西——学校里”跑通就行”，工业界每个改动都要回答”怎么证明它没把别的东西搞坏”。</p>
+<p><strong>C6. 实习中犯过什么错？</strong> 考察：自省 +
+真实性。“没犯过错”不可信。 &gt;
+参考：巡检任务第一版我忘了做幂等，联调时任务失败重跑，同一台设备重复生成了两条告警，测试同学指出来才意识到。修复是给结果表加了”设备+规则+时间窗”的唯一键，顺手把重试逻辑从”整片重跑”改成了
+checkpoint
+断点续扫。教训：<strong>只要存在”重试”就要先想幂等</strong>，后来写任何消费逻辑都先设计去重键。</p>
+<p><strong>C7. 你怎么验证自己写的逻辑是对的？</strong> &gt;
+三层：单元测试（判定逻辑是纯函数，喂构造的心跳序列断言状态转换）；回放（历史日志跑新旧逻辑对比，差异逐条人工抽查）；灰度期指标对齐（线上新旧逻辑并行跑一段，报警量/误报量在预期区间才全量）。</p>
+<h3 id="d.-央国企综合面类半结构化面试常见">D.
+央国企综合面类（半结构化面试常见）</h3>
+<p><strong>D1. 自我介绍</strong> &gt; 1 分钟内：学校专业年级 →
+技术方向（后端/AI 应用开发）→ 两段实习各一句（平台 + 最大成果数字）→
+科研/项目一句 → 与岗位的连接点。不背稿，练到自然。</p>
+<p><strong>D2. 为什么想来我们单位/这个岗位？</strong> &gt;
+答题骨架：对单位业务的了解（提前查：主营业务、数字化方向）+
+自己的能力匹配点（设备运营/IoT 平台、AI 应用开发经验正好对应）+
+长期发展意愿（技术路线与单位规划契合）。避免空喊”平台大、稳定”。</p>
+<p><strong>D3. 实习中最有成就感的事？</strong> &gt;
+用工单闭环那块：它不是炫技，是把一个”大家都知道烦但没人管”的问题系统化解决了，46%
+的工单不用人工销——成就感来自真实减少了别人的无效劳动。（稳重、务实的叙事在央企面试更讨喜，比”性能优化了10倍”好。）</p>
+<p><strong>D4. 和 mentor/同事意见不一致怎么办？</strong> &gt;
+骨架：先理解对方理由（对方的方案通常有我不知道的上下文/历史包袱）→
+用数据说话（把两个方案的回放结果摆出来）→ 仍不一致听 mentor
+决策，执行中保留观察点。举例可编在阈值讨论上：我最初主张 N=4
+更保守，mentor 提醒检测延迟对部分高价值商圈敏感，回放后 N=3
+确实更均衡，我接受并补了分场景配置的后续优化项。</p>
+<p><strong>D5. 职业规划（3-5 年）？</strong> &gt; 稳健版：前 1-2
+年把后端工程基本功打扎实（高并发、稳定性、规范流程），同时深耕 AI
+应用工程化方向；3-5
+年希望能独立负责一个业务域的技术方案，带小团队。央企版可加”愿意长期在单位发展、参与数字化转型项目”。</p>
+<p><strong>D6. 你怎么看加班/出差/值班？</strong> &gt;
+如实但策略性：实习经历过版本上线值班，理解保障类系统有应急响应的需要，关键节点愿意顶上；同时表达会通过把事情做在前面（自动化、文档、预案）减少被动加班。不说”绝对接受无限加班”也不说”拒绝加班”。</p>
+<p><strong>D7. 你的优缺点？</strong> &gt;
+优点配实习证据：拆解问题、用数据验证（回放、badcase
+排查的故事可复用）。缺点选真实但不致命的 +
+改进动作：如”实习初期过于追求方案完美、出方案慢，mentor
+教我先用最小可行方案验证方向再迭代，后来好很多”。</p>
+<p><strong>D8. 反问环节问什么？</strong> &gt; 准备 2-3
+个：团队目前的技术栈和主要业务方向？新人培养机制（导师制）？这个岗位未来一年最重要的目标是什么？——避免问薪资加班（终面
+HR 环节再谈）。</p>
+<h3 id="e.-开放延伸类">E. 开放延伸类</h3>
+<p><strong>E1. 如果设备量涨 10 倍，你的巡检系统要改什么？</strong> &gt;
+分层答：①分片数和 worker
+数可配置化，量涨就加片加工人，架构不变；②数据访问从单库查询演进到按分片路由（甚至读从库/物化视图），避免热点；③规则计算从”每轮全量”优化为”增量”——只扫自上轮以来有心跳变化的设备，静默设备走低频兜底扫描；④结果聚合从同步等齐改为流式汇总。</p>
+<p><strong>E2. 怎么发现”该优化误报”这件事的？</strong> &gt;
+两个信号：运营侧反馈（每周例会抱怨误报多、销单烦）；数据侧（同设备异常条数分布的长尾——一台设备一个月几十条异常，明显不正常）。工业界的优化大多不是自己拍出来的，是从
+badcase 和用户（内部运营也是用户）反馈里长出来的。</p>
+<p><strong>E3. 如果让你给这套系统加监控，你盯什么指标？</strong> &gt;
+业务指标：误报率、同设备重复异常数、工单自动闭环率、巡检覆盖率与失败分片数。技术指标：心跳处理延迟、MQ
+堆积、检测任务耗时、Redis
+命中。原则：先盯业务结果指标（它们异常才说明系统真出问题），技术指标是定位手段。</p>
+<hr />
+<h2 id="数字口径速查表必须张口就来">6.
+数字口径速查表（必须张口就来）</h2>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>数字</th>
+<th>含义</th>
+<th>分子 / 分母</th>
+<th>怎么来的</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>重复异常 −58%</td>
+<td>同设备重复异常下降</td>
+<td>治理后/前：每台故障设备平均异常条数</td>
+<td>历史回放对比</td>
+</tr>
+<tr>
+<td>误报率 −21%（约）</td>
+<td>离线误报降低</td>
+<td>实际未故障数 / 被判离线数，前后对比</td>
+<td>回放 + 人工处理结果做 ground truth</td>
+</tr>
+<tr>
+<td>自动闭环 46%（约）</td>
+<td>工单自动闭环占比</td>
+<td>自动关闭数 / 符合闭环条件的异常工单数</td>
+<td>上线后统计</td>
+</tr>
+<tr>
+<td>2h → 20min</td>
+<td>单轮巡检耗时</td>
+<td>—</td>
+<td>并行化 + 免人工拉表</td>
+</tr>
+<tr>
+<td>人工巡检 −40%（约）</td>
+<td>人工工作量下降</td>
+<td>系统覆盖的规则量 / 原人工规则总量</td>
+<td>上线后运营侧统计</td>
+</tr>
+<tr>
+<td>心跳 30s / 窗口 3 周期 / 防抖 5min / 延迟确认 10min</td>
+<td>关键参数</td>
+<td>—</td>
+<td>回放画权衡曲线定</td>
+</tr>
+</tbody>
+</table>
+<h2 id="红线与自查清单">7. 红线与自查清单</h2>
+<ol type="1">
+<li><strong>不要背参考回答原文</strong>——面试官听过一百个背稿的。背骨架（问题→定位→方案→权衡→结果），用自己的话讲，允许有”嗯、这个我想一下”。</li>
+<li><strong>数字必须能拆分子分母</strong>（第 6
+章）。说不出口径的数字等于邀请面试官往死里追问。</li>
+<li><strong>角色说”参与”</strong>，主动区分”我做的”和”mentor/团队做的”。把系统都说成自己的，一个追问就穿。</li>
+<li><strong>不知道就说不知道 +
+给推理路径</strong>：“这个我没接触到，如果让我推测，可能是……我可以回去查证。”比硬编可信十倍。</li>
+<li><strong>不要过度声称规模</strong>：别说”千万级
+QPS”这种和充电宝业务对不上的数，设备量说”全国规模、百万级设备量级”以内最稳，再多的细节用”具体的量级我实习期间没有全局数据”挡住。</li>
+<li><strong>被问”这段经历最没意思/最坑的地方”</strong>：答真实的小抱怨（如配置管理分散、历史包袱多），不要说”没有坑”也不要贬低团队。</li>
+<li><strong>一致性检查</strong>：简历上的每个词都可能被问。写”心跳
+Trace”就要会讲
+Trace；写”分片扫描”就要会讲分片；写”幂等”就要会讲三种实现。</li>
+<li><strong>和背调边界有关的事实性内容</strong>（时间、部门、系统归属）不要主动加戏，回答保持和简历完全一致。</li>
+</ol>
+<hr />
+<p><em>配套：02 · 中青旅（Text-to-SQL / RAG / Agent）。待补充：03 ·
+神农大模型平台 / 04 · MSTGN-Wheat / 05 · DSH-plugin。</em></p>
+<hr />
+<h1 id="中青旅text-to-sql-rag-agent-面试全攻略">02 · 中青旅（Text-to-SQL
+/ RAG / Agent）—— 面试全攻略</h1>
+<blockquote>
+<p><strong>三遍读法</strong>：第一遍只读每节的【先用大白话理解】，建立直觉，不看术语；第二遍读【展开讲】，把直觉对应到技术细节；第三遍用第
+5 章问答库自测。央国企综合面（D 类题）见 01 号文档第 5.D
+节。中青旅这段的追问会比美团更狠——每个简历关键词（QueryPlan、AST、父子
+Chunk、Rerank……）都会被戳，第 3 章概念卡片务必逐张过关。</p>
+</blockquote>
+<hr />
+<h2 id="口语稿项目介绍的两个版本-1">1. 口语稿：项目介绍的两个版本</h2>
+<h3 id="秒版">30 秒版</h3>
+<blockquote>
+<p>我在中青旅科技创新部做后端 / AI
+应用研发实习，围绕集团两个场景做链路优化：<strong>经营分析问数
+Copilot</strong> 和<strong>智慧文旅问答</strong>。问数是 Text-to-SQL
+方向，我基于真实 Badcase
+把生成链路从一步生成拆成指标解析、QueryPlan、SQL
+构建三段，加上指标词典匹配和 AST 校验，在 218 条回归集上 SQL 可执行率从
+76.1% 提到 89.4%；同时参与集团指标语义治理，建了 126 个核心指标、247
+组别名到物理字段的映射。问答是 RAG 方向，用 Metadata Filter
+解决跨景区串召和过期政策误召回，用父子 Chunk 加 Rerank 优化召回，326
+条真实问题集上 Top-5 命中率从 80.4% 提到 90.2%。全程建了 Badcase
+回归评测体系，7 轮迭代把核心问题端到端正确率从 78.6% 提到 87.3%。</p>
+</blockquote>
+<h3 id="分钟版">2 分钟版</h3>
+<blockquote>
+<p>中青旅是央企文旅集团，旗下有景区、酒店、旅行社业务线。我实习的科技创新部做两个
+AI
+应用。我的工作重点是解决<strong>指标理解偏差、知识召回错误、生成结果可信度</strong>三类问题。</p>
+<p>第一个是<strong>经营分析问数
+Copilot</strong>，让分析师用自然语言查数。排查真实问数 Badcase
+后发现三类错误：指标误映射（问回款额查成了合同额）、组织和期间条件遗漏（漏了
+WHERE
+过滤，数字能跑出来但口径是错的）、字段幻觉（编造不存在的字段）。我把一步生成的链路拆成三段：指标解析先查指标词典锁定标准指标，QueryPlan
+强制把组织和期间写成过滤条件，SQL 构建按模板拼装，最后过 AST 校验——用
+sqlglot 把 SQL 解析成语法树，核对表和字段真实存在。218
+条回归集上可执行率从 76.1% 提到 89.4%。</p>
+<p>第二个是配套的<strong>指标语义治理</strong>：集团各业务系统同名指标口径不同、同义指标字段不一，我们梳理出业务别名→标准指标→物理字段的三层映射，126
+个核心指标、247
+组映射，多口径指标加了消歧和反问机制。这是指标解析的地基。</p>
+<p>第三个是<strong>智慧文旅 RAG</strong>。线上 Badcase
+集中在三类：跨景区串召（各景区政策文本太像，向量分不清）、过期政策误召回（旧版政策还在库里）、长文档条件丢失（限定句和条款被切分切开了）。解法是
+Metadata Filter——按景区 ID、生效时间先过滤再语义检索；父子
+Chunk——小块做检索、命中后取大块保上下文；再加 Rerank 精排。326
+条问题集上 Top-5 命中率从 80.4% 提到 90.2%。</p>
+<p>最后是贯穿全程的 <strong>Badcase
+回归评测</strong>：错误按无知识命中、过期政策、Tool
+参数错误、无依据生成分类，固化成固定回归集，任何检索、Prompt、工具配置的改动都要全量重跑、指标不许退化才能上线。7
+轮迭代，端到端正确率从 78.6% 提到 87.3%。</p>
+</blockquote>
+<hr />
+<h2 id="系统背景与两条链路">2. 系统背景与两条链路</h2>
+<h3 id="先用大白话理解-4">2.1 先用大白话理解</h3>
+<p>集团里两件烦事：</p>
+<p><strong>第一件：领导想看数字，得配个翻译。</strong>
+领导问”华东区上半年回款多少？“——数据都在电脑仓库里，但仓库只听得懂一种很专业的话（SQL），领导说的是人话。以前得靠懂数据库的人当中间翻译。我们要做的，就是让
+AI 来当这个翻译：领导说人话，AI 翻译成仓库的话，去查，报数。</p>
+<p><strong>第二件：游客问政策，得有人翻书。</strong>
+游客问”退役军人门票有优惠吗？“——答案在几百份政策文件里。AI
+大模型自己其实并不知道答案，硬答就会编。所以要让它<strong>开卷考试</strong>：先把相关政策那几页翻出来，摆在它面前，命令它”照着这段回答”。</p>
+<p>你的实习就是给这两个系统<strong>修毛病</strong>：翻译官经常翻错（第一块工作），各公司的”黑话”不统一害的（第二块），翻书经常翻错页（第三块），以及给整个系统建一套”改完必须复考”的规矩（第四块）。</p>
+<h3 id="展开讲业务背景与链路-1">2.2 展开讲：业务背景与链路</h3>
+<p><strong>业务背景</strong>：央企文旅集团（景区如乌镇/古北水镇、酒店、旅行社），科技创新部。两个场景：</p>
+<ul>
+<li><strong>场景 A · 经营分析问数
+Copilot</strong>：给高管/财务/分析师用，自然语言问数（“华东区 Q2
+回款额”），系统生成 SQL
+查数仓返回结果。技术方向：Text-to-SQL（自然语言转 SQL）。</li>
+<li><strong>场景 B ·
+智慧文旅问答</strong>：给游客/客服用，问政策（“退役军人门票优惠吗”），系统检索政策文档后由
+LLM 作答。技术方向：RAG（检索增强生成）。</li>
+</ul>
+<pre><code>【场景A：问数】
+用户问题 ──► 指标解析 ──► QueryPlan ──► SQL构建 ──► AST校验 ──► 数仓执行 ──► 答案
+              (查指标词典)   (列提纲)     (按模板拼)   (安检机)
+
+【场景B：问答】
+用户问题 ──► 向量化 ──► 检索(先Metadata过滤,再向量搜索) ──► Rerank精排 ──► 组装Prompt ──► LLM生成 ──► 带引用回答
+                                                                          ▲
+离线: 政策文档 → 清洗 → 父子Chunk切分 → 向量化 → 入库(每个子块带Metadata: 景区ID/生效时间/政策类型)</code></pre>
+<p><strong>四条 bullet 的关系（讲故事的正确顺序）</strong>：</p>
+<pre><code>指标语义治理(地基) ──► 指标解析(地基的消费者)
+        └──────────► Text-to-SQL链路(场景A) ──┐
+                                               ├──► Badcase回归评测(质量护栏,罩住两个场景)
+RAG优化(场景B: Filter+父子Chunk+Rerank) ────────┘</code></pre>
+<p>一句话叙事：“<strong>先用治理把语义地基打好，再分别优化问数和问答两条链路，全程用回归评测兜底，保证每次迭代只变好不变坏。</strong>”</p>
+<hr />
+<h2 id="地基概念卡片8-张第二遍读时逐张过关">3. 地基概念卡片（8
+张，第二遍读时逐张过关）</h2>
+<p><strong>① LLM 与 Prompt（大语言模型 与 提示词）</strong>：LLM
+是”接话机器”，给它一段文字（Prompt）它续写。它没有你们公司的数据、知识冻结在训练截止日——这个知识边界是所有工程的原因。</p>
+<p><strong>② 幻觉（Hallucination）</strong>：LLM
+不知道也照答、编得有鼻子有眼。无法从模型层面根除，只能工程压制——<strong>简历上所有工作的本质都是在压幻觉</strong>。</p>
+<p><strong>③ Embedding 与向量检索（向量化 与
+语义搜索）</strong>：把文字变成”语义坐标”（一串浮点数），意思近的坐标近。向量检索
+=
+拿问题坐标找最近的文档片段——认意思不认字面（“门票优惠”能搜到”票价减免”）。</p>
+<p><strong>④ RAG（检索增强生成）</strong>：开卷考试。先检索相关段落塞进
+Prompt，要求模型”只准根据材料回答”——从”凭记忆瞎编”变”照着材料念”。</p>
+<p><strong>⑤ Tool Calling / Agent（工具调用 /
+智能体）</strong>：让模型输出结构化的工具调用指令（<code>查库存(景区=X, 日期=Y)</code>），系统执行后把结果喂回。“Tool
+参数错误”= 模型填错参数（日期格式非法、景区 ID 错）。</p>
+<p><strong>⑥ Copilot（副驾驶）</strong>：嵌在工作流里的 AI
+助手——<strong>人做决策，AI 提效</strong>。Copilot ≠
+Autopilot（自动驾驶）：人在回路里，最终确认由人负责（企业场景的可追责性）。两个设计是它的体现：多口径时反问澄清、答案标注所用口径。</p>
+<p><strong>⑦
+Metadata（关于数据的数据）</strong>：内容之外的结构化小标签，类比图书馆编目卡片——找书先按分类号锁书架再翻内容。项目里两处：文档块的标签（景区
+ID/生效时间 →
+检索先过滤）、指标的词典（别名→标准指标→物理字段）。<strong>语义靠向量，精确靠
+Metadata</strong>——LLM 是模糊的概率系统，Metadata
+是钉进来的结构化锚点。</p>
+<p><strong>⑧ Badcase（坏例子）</strong>：线上答错的真实案例。Badcase
+分析是所有优化的起点：先收集归类，才知道该修哪。</p>
+<hr />
+<h2 id="四大工作块详解">4. 四大工作块详解</h2>
+<h3 id="经营分析-copilottext-to-sql">4.1 经营分析
+Copilot（Text-to-SQL）</h3>
+<h4 id="先用大白话理解-5">先用大白话理解</h4>
+<p>AI 翻译官把领导的人话翻译成数据库的话，犯的错就是翻译的三种事故：</p>
+<ol type="1">
+<li><strong>听岔了词</strong>：领导问”回款额”（实际收回来的钱），翻译官翻成了”合同额”（签了多少钱）——俩词长得像，意思完全不同；</li>
+<li><strong>漏听了限定词</strong>：领导问”<strong>华东区、上半年</strong>的回款额”，翻译官把”华东区”“上半年”漏了——翻出来的话语法完全正确，也能查出一个数字，<strong>但那个数字是全公司全年的</strong>。最阴险：数字看着挺正常，错进汇报材料都没人发现；</li>
+<li><strong>瞎编了一个词</strong>：翻译官写了个数据库里根本不存在的词——好在这种错当场穿帮（数据库直接报错），反而危害最小。</li>
+</ol>
+<p>治法是把”听题直接翻”改成专业流程：<strong>动笔前先查术语词典</strong>（“回款额”在词典里查到唯一对应）、<strong>先列提纲再写</strong>（把”华东区”“上半年”强制写成限定条件）、<strong>写完过一遍安检机</strong>（核对每个词库里真有）。</p>
+<h4 id="展开讲-3">展开讲</h4>
+<p><strong>是什么</strong>：翻译官——用户说人话，数仓只懂
+SQL。旧做法把问题直接丢 LLM 一步生成，错误无规律、不可归因。</p>
+<p><strong>三段流水线（把一步翻译变成专业翻译流程）</strong>：</p>
+<ol type="1">
+<li><strong>指标解析（查词典）</strong>：问题 + 指标 Metadata
+给模型，只输出结构化结果
+<code>{指标, 组织, 期间}</code>——误映射在词典被拦；</li>
+<li><strong>QueryPlan（查询计划，列提纲）</strong>：确定查哪些表、过滤条件、聚合方式、分组维度——组织和期间<strong>强制</strong>写成过滤条件，漏条件在这里堵住；</li>
+<li><strong>SQL 构建（按提纲动笔）</strong>：按 Plan +
+表元数据模板化拼装——字段都来自真实元数据，幻觉空间大幅压缩。</li>
+</ol>
+<p><strong>AST 校验（安检机）</strong>：AST（抽象语法树）= 把 SQL
+文本解析成的树状结构（“用了哪些表、哪些字段、什么条件”的结构化表示，用
+sqlglot
+实现）。核对：表名存在？字段属于这张表？时间/组织过滤带了吗？不合格打回重生成（有限次数），仍失败降级模板
+SQL。</p>
+<p><strong>数字口径</strong>：218 条回归集（真实 Badcase +
+高频问题沉淀）；可执行率
+76.1%→89.4%。<strong>必须会说</strong>：可执行率是<strong>下界</strong>——漏
+WHERE 的 SQL 照样能执行！字段幻觉的修复直接体现在可执行率，①②类靠词典和
+Plan
+堵、体现在人工抽检的口径正确率上。为什么报可执行率：它能自动化统计。</p>
+<h3 id="集团指标语义治理">4.2 集团指标语义治理</h3>
+<h4 id="先用大白话理解-6">先用大白话理解</h4>
+<p>集团旗下景区、酒店、旅行社各公司各系统建了多年，“黑话”严重不统一，两种病：</p>
+<ul>
+<li><strong>同一个东西 N 种叫法</strong>：“土豆 / 马铃薯 /
+洋芋”其实是一个东西——集团里”入园人数 / 客流量 /
+接待人次”就是一个指标的三种叫法；</li>
+<li><strong>同一个叫法 N
+种含义</strong>：“苹果”既可以是水果也可以是公司——“营收”在景区公司=门票+园内消费，在酒店公司=房费+餐饮，字面一模一样，含义完全两回事。</li>
+</ul>
+<p>AI
+翻译官被这两种病害惨（听岔词的一大根源）。治法：<strong>编一本全集团官方词典</strong>，三层结构：<strong>各种叫法（方言）→
+标准名+精确定义（普通话）→
+仓库里的货架号（身份证号）</strong>。遇到”营收”这种一词多义的，词典标出来，系统<strong>反问一句</strong>：“您要含税口径还是不含税口径？”——宁可多问，不可猜错。</p>
+<h4 id="展开讲-4">展开讲</h4>
+<p><strong>三层映射</strong>：</p>
+<pre><code>业务别名(用户叫法)      标准指标(唯一ID+定义+口径)      物理字段(数仓落点)
+回款额、已回款金额  →   指标#017: 已实际收到的合同款项 → dws_fin.received_amount
+入园人数、客流量    →   指标#042                      → dws_scenic.visitor_cnt</code></pre>
+<p><strong>口径</strong> =
+“这个数怎么算出来的”的官方说法（营收含不含税、退款扣不扣）。<strong>126
+个指标、247 组映射</strong>：247 &gt;
+126，一个指标平均约两个别名/字段——这个数量关系要能解释。</p>
+<p><strong>消歧与澄清</strong>：多口径指标（如”营收”）——解析置信度高 →
+自动选默认口径 + <strong>答案里标注所用口径</strong>；置信度低 →
+<strong>反问用户</strong>（“含税还是不含税？”）。</p>
+<p><strong>定位</strong>：第一块的地基。面试升华点：“<strong>AI
+应用的上限往往取决于数据治理，不取决于模型</strong>。”</p>
+<h3 id="智慧文旅-rag">4.3 智慧文旅 RAG</h3>
+<h4 id="先用大白话理解-7">先用大白话理解</h4>
+<p>AI 开卷考试翻书（政策文档库），翻错的方式就三种，各有各的药：</p>
+<ol type="1">
+<li><strong>拿错了书</strong>：游客问古北水镇，它翻到了乌镇的政策文件——因为各景区的政策写得太像了（都是”XX
+人群半价”，就差景区名），“按内容相似度找”这招分不出你我。<strong>药：翻书之前先把书架锁对</strong>——只在本景区、今年生效的文件里找；</li>
+<li><strong>翻到了旧书</strong>：书架上 2024 旧版和 2025
+新版票价并排放着，旧版写得反而更规整、更容易被”内容相似度”选中。<strong>药：还是锁书架——书架上只留当前生效的版本</strong>；</li>
+<li><strong>断章取义</strong>：一份政策开头写”<strong>仅限全日制学生</strong>享受以下优惠”，后面某条写”门票半价”。文件被切碎存档时，“仅限学生”和”半价”进了两个袋子——翻书只翻到”半价”那个袋子，谁来问都答半价。<strong>药：袋子做小卡片用（小卡片好定位），翻到之后展开成整页再读（整页上下文完整）</strong>。</li>
+</ol>
+<p>最后再加一道工序：先快速圈出 50
+份候选（快但粗），再一份份细看挑出最好的 5 份（慢但准）——<strong>海选 +
+复审</strong>。</p>
+<h4 id="展开讲-5">展开讲</h4>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>Badcase</th>
+<th>类比</th>
+<th>根因</th>
+<th>解法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>跨景区串召</td>
+<td>拿错了书</td>
+<td>各景区政策句式几乎一样，只差景区名，向量分不清</td>
+<td><strong>Metadata Filter</strong></td>
+</tr>
+<tr>
+<td>过期政策误召回</td>
+<td>旧书没下架</td>
+<td>新旧版本都在库里，旧版文本更”规整”相似度反而高</td>
+<td><strong>Metadata Filter</strong>（生效时间）</td>
+</tr>
+<tr>
+<td>长文档条件丢失</td>
+<td>断章取义</td>
+<td>“仅限全日制在校生”和”门票半价”被切进两个块</td>
+<td><strong>父子 Chunk</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Metadata Filter（元数据过滤）=
+先锁书架再搜内容</strong>：入库时给块打结构化标签（景区
+ID、生效/失效时间、政策类型），检索<strong>先过滤再语义搜索</strong>（pre-filter，先过滤避免召回后再滤导致数量不足）。为什么必须靠标签：①景区
+ID
+是精确字段，一个等号解决，语义分不清；②”当前生效”这种日期逻辑向量检索根本表达不了。</li>
+<li><strong>父子 Chunk（父子切块）=
+索引用小卡片，阅读展开整页</strong>：检索要小块（语义集中、向量不被稀释），生成要大块（上下文完整）——解耦两个需求。子块（约
+200 字）入向量库被检索；命中后<strong>替换成父块</strong>（约 1000-2000
+字或完整章节）送 Prompt。限定句和条款大概率同属一个父块。</li>
+<li><strong>Rerank（重排序/精排）= 海选 +
+复审</strong>：向量检索快但粗（只看语义坐标粗略距离）→ 海选
+top50；交叉编码器（如 bge-reranker，把问题和文档拼一起精细打分）慢但准 →
+复审取 top5。<strong>漏斗</strong>：全库几万块 → 海选 50 → 精排 5 进
+Prompt。Rerank
+每条几十毫秒，只能放漏斗末端——这就是不能全库精排的原因。</li>
+</ul>
+<p><strong>数字口径</strong>：326
+条真实咨询问题集（人工标注每个问题的标准出处）；<strong>Top-5
+命中率</strong> = 前 5 块中至少含 1 个正确出处的比例，80.4%→90.2%。剩余
+~9.8%
+是检索解决不了的：知识库本身缺内容、问题歧义、需跨文档多跳推理——<strong>边界感要讲得出</strong>。</p>
+<h3 id="badcase-回归评测错题本-模拟卷">4.4 Badcase 回归评测（错题本 +
+模拟卷）</h3>
+<h4 id="先用大白话理解-8">先用大白话理解</h4>
+<p>AI
+系统像学生：你改了它的”学习方法”（调整配置），可能治好了老毛病，<strong>也可能悄悄弄出新毛病</strong>——不考试你根本不知道。</p>
+<p>做法全是学校那套：<strong>把线上答错的题收进错题本</strong>，按病因分四堆——课本里没这知识（库里没这政策）/
+翻到了旧版教材（过期政策）/ 计算器按错了键（工具参数填错）/
+不会做还瞎编（没依据硬答）。<strong>每次改系统之前，把整本错题本加上本来就会的题，重新考一遍</strong>：分数没退步才准改，退步了就打回。改了
+7 轮，成绩从 78.6 分涨到 87.3 分。</p>
+<p>为什么这么死板？因为 AI
+系统<strong>改动的后果不可预测</strong>：你教它”没依据别乱答”，它可能变得过度保守，好多本来会的也不敢答了——错题本就是防这种”悄悄退步”的唯一手段。</p>
+<h4 id="展开讲-6">展开讲</h4>
+<p><strong>简历原文逐句翻译（先背这张表）</strong>：</p>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>简历原文</th>
+<th>人话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>围绕线上问答错误建立 Badcase 分类</td>
+<td>把线上答错的问题按出错原因分类</td>
+</tr>
+<tr>
+<td>重点覆盖无知识命中、过期政策、Tool 参数错误及无依据生成</td>
+<td>盯四类错误</td>
+</tr>
+<tr>
+<td>构建固定回归集验证 Retrieval、Prompt 与 ToolCalling 改动</td>
+<td>建固定考卷；每次改系统先全量重考，不退步才上线</td>
+</tr>
+<tr>
+<td>累计分析 137 条典型 Badcase</td>
+<td>错题本收录 137 道典型错题</td>
+</tr>
+<tr>
+<td>完成 7 轮策略迭代</td>
+<td>系统改了 7 版，每版过考</td>
+</tr>
+<tr>
+<td>核心问题端到端正确率由 78.6% 提升至 87.3%</td>
+<td>考卷上全流程答对的比例 78.6%→87.3%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>四类错误的病因与药方</strong>：</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>错误类型</th>
+<th>病因</th>
+<th>例子</th>
+<th>药方</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>无知识命中</td>
+<td>课本没这知识（检索空手而归）</td>
+<td>问”能带宠物吗”，库里没这政策</td>
+<td>补知识库</td>
+</tr>
+<tr>
+<td>过期政策</td>
+<td>翻到旧版教材</td>
+<td>按 2023 旧票价回答</td>
+<td>旧文档下架 / 时间过滤</td>
+</tr>
+<tr>
+<td>Tool 参数错误</td>
+<td>计算器按错键</td>
+<td>调工具时日期格式非法、景区 ID 错</td>
+<td>工具描述写清参数示例</td>
+</tr>
+<tr>
+<td>无依据生成</td>
+<td>不会做还瞎编（幻觉）</td>
+<td>没检索到还编”需购宠物票”</td>
+<td>Prompt 强约束”无材料则说不知道”</td>
+</tr>
+</tbody>
+</table>
+<p><strong>三个可调旋钮</strong>：Retrieval（检索，换翻书方式：加
+Filter、调切块、调召回量）、Prompt（提示词，改答题规矩：只准依据材料、必须附出处）、ToolCalling（工具调用，修工具使用：说明更清楚、参数给示例）。</p>
+<p><strong>“回归”的含义</strong>：来自软件测试 regression
+test（回归测试）——改完代码重测旧功能，确认没<strong>退步</strong>。AI
+系统的顽疾是<strong>改动不可预测</strong>，固定回归集是防”悄悄退步”的唯一护栏。</p>
+<p><strong>为什么这块值钱</strong>：大部分人只会做 demo，没有质量护栏的
+AI 系统不敢碰生产。<strong>“改动必须过回归、指标不许退化”= 工程能力和调
+API 能力的分水岭。</strong></p>
+<hr />
+<h2 id="面试问答库-1">5. 面试问答库</h2>
+<h3 id="a.-项目总体类-1">A. 项目总体类</h3>
+<p><strong>A1. 介绍一下这段实习？</strong> → 第 1
+章口语稿。结构：背景（两个场景）→ 三类问题 →
+四块工作各带”问题→方案→数字”。</p>
+<p><strong>A2. 你具体负责什么？</strong> &gt;
+参考口径：团队负责两个系统的整体架构，我的 mentor
+把关方案。我负责的是链路优化里的具体工作：Badcase
+的收集分析和归类、三段式链路中指标解析和 AST
+校验的开发、治理表条目的梳理和映射关系整理、RAG 侧 Metadata
+入库改造和父子切分方案、回归集的构建和评测脚本。方案我出设计、mentor
+评审后动手，改动能过回归才上线。</p>
+<p><strong>A3. 两段实习（中青旅 vs 美团）有什么区别和联系？</strong>
+&gt;
+考察叙事能力，标准答案：“技术底座相同——都是事件/数据链路上的工程问题，方法论一致：Badcase
+驱动、先定位根因再改、改动要可验证。区别在问题域：中青旅是 AI
+应用的<strong>可信度</strong>问题（幻觉、口径、召回），美团是分布式系统的<strong>稳定性</strong>问题（误报、状态一致、幂等）。中青旅教我
+AI 工程化，美团教我后端工程素养，我想要的方向正是两者交叉——AI
+应用的后端化。”</p>
+<p><strong>A4. 这段实习最大的收获？</strong> &gt; “一句话：AI
+应用的上限取决于数据治理而不是模型。指标误映射的解法不是更强的模型，是一张治理表；串召的解法不是更好的
+Embedding，是结构化过滤。第二个收获是质量意识：没有回归评测的 AI
+系统每次改动都是赌博。”</p>
+<h3 id="b.-技术深挖类-1">B. 技术深挖类</h3>
+<h4 id="b1.-text-to-sql">B1. Text-to-SQL</h4>
+<p><strong>B1-1. 为什么把一步生成拆成三段？</strong> &gt;
+一步生成是黑盒：错误无规律、不可归因、不可拦截。拆段后每段职责单一，三类错误各有人拦——误映射在词典、漏条件在
+Plan
+强制、幻觉在模板+AST。而且每段可独立测试和优化，出了错能精确定位到段。</p>
+<p><strong>B1-2. AST 校验具体校验什么？失败了怎么办？</strong> &gt; 用
+sqlglot 把 SQL 解析成语法树，核对四件事：表名在 schema
+里存在、每个字段真的属于所查的表、必要过滤（时间/组织）存在、无异常嵌套。失败带错误信息重新生成（限
+2-3 次），仍失败降级用模板 SQL，保证一定返回可执行结果。</p>
+<p><strong>B1-3. 可执行率和正确率是一回事吗？</strong> &gt;
+不是，这是我最注意区分的口径。可执行 = 语法和对象合法、能跑通；正确 =
+口径也对。漏了组织过滤的 SQL
+照样能执行、返回一个看起来正常的数字——最危险。可执行率能自动化统计所以作为主指标，同时人工抽检语义正确率，两者一起看。</p>
+<p><strong>B1-4. 表结构（schema）怎么给模型？全给吗？</strong> &gt;
+不全给，表多字段多会超上下文且干扰生成。按问题先检索相关表（表名/描述/字段也做成
+Metadata 做检索），只把相关表的 schema 放进 Prompt。</p>
+<p><strong>B1-5. 为什么不微调一个模型，而用 Prompt + 链路工程？</strong>
+&gt; 三个原因：标注数据量不够（Badcase
+才百级，微调要千级以上）；微调迭代慢、成本高，业务口径还在变；链路工程可解释可干预，出问题能定位到环节，微调是黑盒。且基础模型在迭代，链路方案可平移换模型，微调绑定。</p>
+<p><strong>B1-6. 218 条回归集会不会”改到只对回归集生效”？</strong> &gt;
+有这个风险（过拟合回归集）。措施：回归集留一部分做
+held-out（改策略时不见）；新 Badcase
+持续补充进来；上线后看线上指标和回归指标是否同步变化，不同步就说明过拟合了。</p>
+<h4 id="b2.-指标治理">B2. 指标治理</h4>
+<p><strong>B2-1. 126 个指标怎么选出来的？</strong> &gt;
+三个来源取交集：问数日志里的高频词、财务核心指标（回款/预算/应收这些必问的）、三大业务线（景区/酒店/旅行服务）各自的主线指标。先覆盖最高频的
+126 个，长尾的按需扩。</p>
+<p><strong>B2-2. 别名从哪来的？</strong> &gt;
+问数日志挖掘（用户实际怎么叫）+ 业务方访谈确认 +
+同义词扩展，全部人工审核后入表。别名是会长出来的，治理表是活文档。</p>
+<p><strong>B2-3. 消歧具体怎么实现？</strong> &gt;
+指标解析段让模型输出”命中指标 + 置信度”。多口径指标：置信度高 →
+用默认口径，但<strong>答案里显式标注</strong>”按含税口径”；置信度低 →
+生成澄清问题反问用户，给选项不给开放题。原则：宁可多问一句，不可猜错口径。</p>
+<h4 id="b3.-rag">B3. RAG</h4>
+<p><strong>B3-1. Embedding 用的什么模型？为什么？</strong> &gt; bge
+系列（bge-large-zh-v1.5 / BGE-M3），1024
+维。理由：中文效果好于通用模型、开源可<strong>私有化部署</strong>——央企场景数据不出内网，这是硬约束；生态成熟，配套
+reranker 同系列。</p>
+<p><strong>B3-2. 父子块具体怎么配的？</strong> &gt; 子块约 200
+字、按语义段落切（标题/条款边界优先）；父块约 1000-2000
+字或完整章节。子块入向量库，块记录 parent_id；命中子块后按 parent_id
+取父块（同父的多个子块去重合并）进 Prompt。</p>
+<p><strong>B3-3. Rerank 用的什么？延迟代价？</strong> &gt; bge-reranker
+交叉编码器。海选 top50 → 精排取 top5。每条打分几十毫秒、50
+条总增量两三秒内可控（可批量并行）；换来精度提升明显，值得。</p>
+<p><strong>B3-4. 为什么不用 BM25 关键词检索？</strong> &gt;
+关键词认字面：用户问”优惠”，文档写”减免/打折”就召回不到。语义检索解决这个。但我们不是二选一——保留关键词通道做混合检索（RRF
+融合两者排名），政策编号、景区名这类精确词关键词更稳，语义和精确各取所长。</p>
+<p><strong>B3-5. Metadata Filter 是先过滤还是后过滤？</strong> &gt;
+先过滤（pre-filter）：先用结构化条件把候选集缩小到本景区、当前生效，再在缩小后的集合里做向量检索。反过来（先召回再滤）会出现召回
+50 条滤完只剩 3 条、数量不足的问题。</p>
+<p><strong>B3-6. 剩下 9.8% 没命中的是什么？怎么办？</strong> &gt;
+三类：知识库缺内容（检索再好也无米下锅——补知识库）、问题本身歧义（需澄清）、需要跨文档多跳推理（要
+Agent
+拆解）。我的边界认知：检索优化能解决”找得准”，解决不了”库里没有”。</p>
+<p><strong>B3-7. Top-5 命中率怎么定义的？</strong> &gt; 人工给 326
+个问题标注”标准出处”（正确答案来自哪个文档哪些段落），检索前 5
+块里至少含一个正确出处即算命中。标注有规范，双人标注抽检一致性。</p>
+<h4 id="b4.-回归评测">B4. 回归评测</h4>
+<p><strong>B4-1. 正确率谁来判？</strong> &gt; 人工标注为主。量大时用 LLM
+辅助初判（按评分标准给通过/不通过），但定期人工抽检校准 LLM
+判断的一致率——LLM 当裁判本身也会错，所以只能当初筛。</p>
+<p><strong>B4-2. 回归集多大才够？</strong> &gt;
+没有绝对数，标准是：覆盖的每类高频错误有足够样本（每类至少几十条）、加上等比例的”本来就能答对”的题（否则只防复发不防误伤）。回归集是滚雪球的，新
+Badcase 持续补进来。</p>
+<p><strong>B4-3. 一次迭代的完整流程？</strong> &gt; 线上发现/用户反馈
+Badcase → 归类、补进回归集 → 本地改动（检索/Prompt/工具）→ 全量重跑回归
+→ 出对比报告（每类指标变化）→ 评审通过才上线 → 线上监控正确率。7
+轮迭代就是 7 次这个循环。</p>
+<p><strong>B4-4. 线上怎么发现 Badcase？</strong> &gt;
+三个渠道：用户反馈（点踩）、客服上报（答错被游客投诉的）、定期抽检。回流有责任人和周期，不是等出大事才发现。</p>
+<h3 id="c.-难点与思考类">C. 难点与思考类</h3>
+<p><strong>C1. 这段实习最大的困难？</strong> &gt; “Badcase
+的归因。同一个错误答案，可能是检索没找到、找到了没排进前五、排进了但
+Prompt
+没放好、模型没遵守指令、工具参数错——五环都可能背锅。一开始只看最终答案对错去改，方向判断错过一次：以为是不瞎编的
+Prompt 问题，实际是那批题检索根本没召回，改 Prompt
+无效。后来养成的习惯是<strong>逐环节留痕</strong>：把每次的检索结果、组装后的
+Prompt、工具调用参数都打出来，先定位错在哪一环再动手。这个调试习惯是这段实习最硬的收获。”</p>
+<p><strong>C2. 你怎么定位”跨景区串召”这个问题的？</strong> &gt; 抽
+Badcase
+看系统自带的出处标注（每个回答附带引用的文档块），统计发现召回块的景区
+ID
+和问题景区不符的比例很高；再看根因：各景区优惠政策文本句式高度相似只差景区名，纯向量检索分不出来。结论是这不是”语义不够像”的问题，是”检索范围没锁对”——所以解法是结构化过滤而不是换
+Embedding。</p>
+<p><strong>C3. 做过什么取舍？</strong> &gt; 两个。①Rerank 的精度 vs
+延迟：加精排整体响应增加，但答案错误在客服场景的代价（投诉、口径事故）远高于几百毫秒，值得；②反问澄清
+vs
+直接答：反问多一轮交互、体验有损，但口径错误进了汇报材料是事故级代价——企业场景一律选准确性优先。</p>
+<p><strong>C4. 犯过的错？</strong> &gt; 同 C1 的例子：没做逐环节归因就改
+Prompt，一轮迭代白做。教训：AI
+链路里”最终答案错”≠“生成环节错”，必须先看中间结果。后来我把”打印中间态”固化成了调试规范。</p>
+<p><strong>C5. 如果重来会改进什么？</strong> &gt;
+①回归集从第一天就该建，而不是先改了几轮才补——前几轮改动其实没有护栏；②Badcase
+分类体系一开始定得太粗，中途重构过一次，应该先参考成熟分类（检索类/生成类/工具类）再细化；③治理表的维护流程该更早和业务方明确责任人，否则别名补充会滞后。</p>
+<h3 id="e.-开放延伸类-1">E. 开放延伸类</h3>
+<p><strong>E1. 知识库扩大 100 倍怎么办？</strong> &gt;
+①向量库层面：Milvus 分区（按景区/业务线 partition）、HNSW
+索引参数调优（efSearch
+权衡召回率与延迟）；②检索层面：分层检索——先用轻量分类器把问题路由到业务线，再在子库内检索，避免全库海选；③粗召回通道加关键词/混合检索兜底。</p>
+<p><strong>E2. 怎么评估一个 RAG 系统的好坏？</strong> &gt;
+分层：检索层（Top-K 命中率、MRR）→
+生成层（忠实度：答案是否忠于检索材料；相关性）→
+端到端（最终答案正确率）→
+线上（用户反馈率、人工接管率）。只看端到端无法归因，只看检索层会漏掉生成退化——四层都要有。</p>
+<p><strong>E3. 从零建一个问数系统你会怎么排？</strong> &gt;
+先治理后智能：①先和业务定核心指标口径、建治理表（没有这个，模型再好也映射不对）；②小范围
+MVP（十几个指标内）验证链路；③同步建回归集；④逐步扩指标面和问题复杂度。顺序错了（先上模型后治理）会一直在修口径问题。</p>
+<hr />
+<h2 id="数字口径速查表必须张口就来-1">6.
+数字口径速查表（必须张口就来）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>数字</th>
+<th>含义</th>
+<th>口径 / 构成</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>218 条</td>
+<td>问数回归集</td>
+<td>真实问数 Badcase + 高频问题沉淀，固定不动</td>
+</tr>
+<tr>
+<td>76.1% → 89.4%（+13.3pp）</td>
+<td>SQL 可执行率</td>
+<td>能跑通不报错的比例；<strong>是下界</strong>，另有人工抽检口径正确率</td>
+</tr>
+<tr>
+<td>126 个 / 247 组</td>
+<td>核心指标 / 字段及别名映射</td>
+<td>247 &gt; 126：一个指标平均约 2 个别名/字段</td>
+</tr>
+<tr>
+<td>326 条</td>
+<td>咨询问题回归集</td>
+<td>真实线上问题，人工标注标准出处</td>
+</tr>
+<tr>
+<td>80.4% → 90.2%（+9.8pp）</td>
+<td>Top-5 知识命中率</td>
+<td>前 5 块含 ≥1 个正确出处即命中；剩余 ~10% 是缺知识/歧义/多跳</td>
+</tr>
+<tr>
+<td>137 条 / 7 轮</td>
+<td>典型 Badcase / 策略迭代轮次</td>
+<td>每轮改动全量过回归后才上线</td>
+</tr>
+<tr>
+<td>78.6% → 87.3%（+8.7pp）</td>
+<td>核心问题端到端正确率</td>
+<td>从提问到最终答案全链路算对；pp = 百分点</td>
+</tr>
+</tbody>
+</table>
+<h2 id="红线与自查清单中青旅特有">7. 红线与自查清单（中青旅特有）</h2>
+<ol type="1">
+<li><strong>可执行率 ≠
+正确率</strong>必须随时分清（B1-3），混着说等于邀请追问。</li>
+<li><strong>只说链路工程和 Prompt
+工程，别说”微调/训练了模型”</strong>——简历口径是链路优化，说微调会被追训练细节（数据构造、超参、Loss），接不住。</li>
+<li><strong>模型版本要报得出</strong>：Embedding = bge 系列 1024
+维、Rerank = bge-reranker。记不清细节时说”bge
+系列，具体小版本记不准”，别硬编。</li>
+<li><strong>央企数据保密意识</strong>：被问”回款额具体多少”“数仓什么规模”一律答”涉内部数据不方便透露，我讲方法和口径”。这本身还是央国企面试的加分表现。</li>
+<li><strong>私有化部署</strong>是选型理由（B3-1），主动讲——央企场景数据合规是真实约束，说得越自然越像真待过。</li>
+<li><strong>时间线</strong>：中青旅 2025.06-09 在前，美团 2026.06-09
+在后；成长叙事 = 中青旅学 AI 应用工程化 → 美团学后端稳定性（A3
+的答案）。</li>
+<li><strong>一致性检查</strong>：QueryPlan、AST、Metadata Filter、父子
+Chunk、Rerank、回归集、消歧、口径——每个词都要能按第 3、4
+章的深度讲。</li>
+</ol>
+<hr />
+<p><em>配套：01 · 美团充电宝项目（含 B5 中间件小抄 MQ/Redis、D
+央国企综合面题库）。待补充：03 · 神农大模型平台 / 04 · MSTGN-Wheat / 05
+· DSH-plugin。</em></p>
+<hr />
+<h1 id="mstgn-wheat科研项目-面试全攻略">04 · MSTGN-Wheat（科研项目）——
+面试全攻略</h1>
+<blockquote>
+<p><strong>三遍读法</strong>：第一遍只读各节【先用大白话理解】；第二遍读【展开讲】；第三遍自测第
+7 章问答库。这段是简历上<strong>最经得起下钻的经历</strong>（SCI
+论文可查），策略是<strong>当主力讲、深度拉满</strong>。科研面的追问方式是”为什么这么设计、凭什么有效”，不是工程面的”怎么实现”。</p>
+</blockquote>
+<hr />
+<h2 id="口语稿">1. 口语稿</h2>
+<h3 id="秒版-1">30 秒版</h3>
+<blockquote>
+<p>我的科研课题是冬小麦产量估测模型
+MSTGN-Wheat——融合遥感、气象、土壤三类数据，在田块尺度预测每块地的产量。模型两个核心设计：一是<strong>图注意力网络</strong>建模相邻地块的空间依赖，二是
+<strong>Transformer
+结合生育期</strong>做时序建模，端到端训练。精度相对线性回归、随机森林、LSTM
+等基线提升 10%–18%；训练效率通过混合精度、多进程加载、图缓存优化提升约
+30%。可解释性用<strong>扰动归因</strong>——遮住某段输入看预测变化，得到的重要性排序与农学规律一致。这个工作产出了两篇
+SCI 论文。</p>
+</blockquote>
+<h3 id="分钟版-1">2 分钟版</h3>
+<blockquote>
+<p>任务背景：产量预估关系粮食安全预警、农业保险定损和政策决策，传统人工抽样测产慢、贵、覆盖小，我们用卫星数据加深度学习做大面积、提前、按田块精度的估产。</p>
+<p>数据是三源融合：遥感植被指数看长势、气象数据（积温、降水）看老天、土壤数据看地力，对齐到每个田块的时间序列。</p>
+<p>模型叫
+MSTGN-Wheat——多源数据的时空图网络。空间侧：把田块建成图，节点是地块、边是地理邻近关系，用图注意力网络让每块地按学出来的权重聚合邻居信息，因为小气候、土壤连续性、病虫害传播都是跨地块的。时间侧：用
+Transformer
+的自注意力读生育期内的生长序列，并注入生育期阶段编码——不同阶段对产量贡献不同，灌浆期最关键。整体端到端训练，直接从多源时序学产量。</p>
+<p>实验：相对线性回归、随机森林、LSTM 基线，RMSE 相对下降
+10%–18%；消融实验证明拆掉图模块精度明显掉。训练效率靠混合精度、多进程数据加载、图结构缓存提升约
+30%。可解释性用扰动归因，重要性热力图和农学常识一致——这也是模型学到真实规律而非数据巧合的证据。</p>
+</blockquote>
+<hr />
+<h2 id="先用大白话理解-9">2. 先用大白话理解</h2>
+<p><strong>任务 = 预测每块地能打多少小麦。</strong>
+想象老农站在地头估产，他看三样东西：</p>
+<ol type="1">
+<li><strong>看庄稼脸色</strong>——苗绿不绿（卫星照片代看，叫遥感；“脸色值”叫
+NDVI）；</li>
+<li><strong>看老天爷</strong>——雨水够不够、积温足不足（气象数据）；</li>
+<li><strong>看地本身</strong>——地肥不肥（土壤数据）。</li>
+</ol>
+<p>外加第四样暗知识：<strong>隔壁地的情况</strong>——连片地块的气候、土质、病虫害相通，隔壁长势好，你这块大概率也好。</p>
+<p>我们把老农的直觉变成 AI 模型：喂卫星照片 + 天气记录 + 土壤档案 +
+地块邻居关系，输出每块地的产量，且<strong>必须能解释</strong>（“这块地
+500 公斤/亩，主因是灌浆期降水偏低”），不能黑盒瞎猜。</p>
+<hr />
+<h2 id="术语总表先扫一遍">3. 术语总表（先扫一遍）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>英文术语</th>
+<th>中文</th>
+<th>一句话</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remote Sensing</td>
+<td>遥感</td>
+<td>卫星/无人机从天上给地拍照测温</td>
+</tr>
+<tr>
+<td>NDVI</td>
+<td>归一化植被指数</td>
+<td>“庄稼脸色值”：越绿越健康，−1~1</td>
+</tr>
+<tr>
+<td>Multi-source Fusion</td>
+<td>多源数据融合</td>
+<td>三类来源不同的数据拼在一起用</td>
+</tr>
+<tr>
+<td>Field Scale</td>
+<td>田块尺度</td>
+<td>精确到每一块地，不是全县平均数</td>
+</tr>
+<tr>
+<td>Growth Stage</td>
+<td>生育期</td>
+<td>播种→出苗→越冬→返青→拔节→抽穗→灌浆→成熟</td>
+</tr>
+<tr>
+<td>Graph / Node / Edge</td>
+<td>图 / 节点 / 边</td>
+<td>点线结构；点=田块，线=相邻关系</td>
+</tr>
+<tr>
+<td>GNN</td>
+<td>图神经网络</td>
+<td>专门处理图结构的深度学习</td>
+</tr>
+<tr>
+<td>GAT</td>
+<td>图注意力网络</td>
+<td>邻居分量不同、模型自学听谁的</td>
+</tr>
+<tr>
+<td>GCN</td>
+<td>图卷积网络</td>
+<td>GAT 前辈：邻居权重按度数固定</td>
+</tr>
+<tr>
+<td>Attention / Self-Attention</td>
+<td>注意力 / 自注意力</td>
+<td>给输入分配重视程度的打分；序列内互相打分</td>
+</tr>
+<tr>
+<td>Transformer</td>
+<td>（序列建模架构）</td>
+<td>靠自注意力处理时序的主流架构</td>
+</tr>
+<tr>
+<td>Positional Encoding</td>
+<td>位置编码</td>
+<td>告诉注意力”这是第几期”的标记</td>
+</tr>
+<tr>
+<td>End-to-End</td>
+<td>端到端</td>
+<td>原始数据直接学到输出，无人工特征规则</td>
+</tr>
+<tr>
+<td>Loss / MSE</td>
+<td>损失函数 / 均方误差</td>
+<td>猜错程度的打分；差值平方取平均</td>
+</tr>
+<tr>
+<td>Gradient Descent</td>
+<td>梯度下降</td>
+<td>沿错误降得最快的方向小步调参</td>
+</tr>
+<tr>
+<td>Backpropagation</td>
+<td>反向传播</td>
+<td>把错误责任从输出往回摊到每个参数</td>
+</tr>
+<tr>
+<td>Epoch / Batch / Learning Rate</td>
+<td>轮 / 批 / 学习率</td>
+<td>全数据一遍 / 一次一小撮 / 每步挪多大</td>
+</tr>
+<tr>
+<td>AMP</td>
+<td>自动混合精度</td>
+<td>16 位代替 32 位计算，提速省显存</td>
+</tr>
+<tr>
+<td>Overfitting / Early Stopping / Dropout</td>
+<td>过拟合 / 早停 / 随机失活</td>
+<td>死记硬背 / 及时收手 / 训练时随机关部分神经元</td>
+</tr>
+<tr>
+<td>Data Leakage</td>
+<td>数据泄露</td>
+<td>训练偷看考试内容导致虚高</td>
+</tr>
+<tr>
+<td>Ablation Study</td>
+<td>消融实验</td>
+<td>拆掉一个部件看掉多少分</td>
+</tr>
+<tr>
+<td>Baseline</td>
+<td>基线</td>
+<td>用来比大小的参照模型</td>
+</tr>
+<tr>
+<td>R² / RMSE</td>
+<td>决定系数 / 均方根误差</td>
+<td>拟合优度越大越好 / 平均猜偏越小越好</td>
+</tr>
+<tr>
+<td>Perturbation Attribution</td>
+<td>扰动归因</td>
+<td>遮输入看预测变化，变幅大=重要</td>
+</tr>
+<tr>
+<td>IG (Integrated Gradients)</td>
+<td>积分梯度</td>
+<td>从基线到输入沿路径累加梯度的归因法</td>
+</tr>
+<tr>
+<td>SHAP</td>
+<td>沙普利加和解释</td>
+<td>博弈论”公平分账”式归因</td>
+</tr>
+<tr>
+<td>PyTorch / PyG</td>
+<td>（框架 / 图扩展库）</td>
+<td>深度学习工具 / 图神经网络扩展包</td>
+</tr>
+<tr>
+<td>LSTM</td>
+<td>长短期记忆网络</td>
+<td>Transformer 之前的经典时序模型</td>
+</tr>
+<tr>
+<td>Over-smoothing</td>
+<td>过平滑</td>
+<td>GNN 层数太多、节点特征趋同的经典坑</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="模型三件套名字即卖点">4. 模型三件套（名字即卖点）</h2>
+<p><strong>MSTGN-Wheat</strong> =
+<strong>M</strong>ulti-<strong>s</strong>ource
+<strong>S</strong>patio-<strong>T</strong>emporal <strong>G</strong>raph
+<strong>N</strong>etwork for <strong>Wheat</strong>：多源数据 · 时空 ·
+图网络。名字三个卖点对应三大件。</p>
+<h3 id="图注意力网络gat建模邻居影响">4.1
+图注意力网络（GAT）——建模邻居影响</h3>
+<h4 id="先用大白话理解-10">先用大白话理解</h4>
+<p>把全县田块看成关系网：每块地一个点，挨着的连一条线，消息在网上流动——每块地不但知道自己那点事，还知道邻居的。但<strong>邻居和邻居不一样</strong>：紧挨着、长势典型的影响大，隔条河的可能没关系。<strong>注意力</strong>就是让模型自己学”听哪个邻居的、听几分”。</p>
+<h4 id="展开讲-7">展开讲</h4>
+<ul>
+<li><strong>建图</strong>：节点=田块（携带多源数据特征向量）；边=k
+近邻（K-Nearest Neighbors，地理最近的 k 块）+
+距离阈值结合——太远不连，空间影响有范围；</li>
+<li><strong>GAT
+核心</strong>：每条边算注意力系数——自己的特征和邻居特征拼接过小打分网络得
+0~1 权重，新特征 = 自己 + 按权重加权的邻居特征；权重是学出来的；</li>
+<li><strong>层数</strong>：一层=打听直接邻居，两层=邻居的邻居；用 2-3
+层。层数过多会<strong>过平滑（Over-smoothing）</strong>——所有节点特征趋同一锅粥（主动提这个词加分）。</li>
+</ul>
+<h3 id="transformer-时序模块建模生长过程">4.2 Transformer
+时序模块——建模生长过程</h3>
+<h4 id="先用大白话理解-11">先用大白话理解</h4>
+<p>产量是八九个月”攒”出来的，模型要读一本<strong>生长日记</strong>（每旬一页：脸色值+天气）。但每页重要性不同——<strong>灌浆期那几页最关键</strong>。Transformer
+的本事是读日记时<strong>自动给每页标重要度</strong>，重点时期重点看。</p>
+<h4 id="展开讲-8">展开讲</h4>
+<ul>
+<li><strong>自注意力</strong>：序列里每个时间点给其他时间点打相关分——5
+月降水和 3 月 NDVI
+谁更重要，模型自己学；天然契合”不同生育期贡献不同”的农学事实；</li>
+<li><strong>位置编码 +
+生育期编码</strong>：注意力本身不识先后，需附加”第几旬”标记；我们把<strong>生育期阶段标签</strong>（返青/拔节/灌浆）注入编码——这就是简历”结合生育期信息”的落地；</li>
+<li><strong>为什么不用 LSTM</strong>（必考）：LSTM
+逐格顺序读，长序列前忘后（长程依赖弱）且不能并行训练；Transformer
+全局注意力 + 可并行，长序列和效率都赢。</li>
+</ul>
+<h3 id="多源融合-端到端">4.3 多源融合 + 端到端</h3>
+<h4 id="先用大白话理解-12">先用大白话理解</h4>
+<p>三条线索各有格式（卫星按景、天气按天、土壤一年一档），<strong>融合</strong>=对齐到同一块地同一段时间拼成完整档案；<strong>端到端</strong>=从档案到产量一口气学完，不靠人工定经验规则（“NDVI
+低于 0.4 减产 10%”这种公式不需要人写，模型自己学）。</p>
+<h4 id="展开讲-9">展开讲</h4>
+<ul>
+<li><strong>对齐是最脏最重的活</strong>：空间上遥感像元（Pixel，卫星照片的格子）按田块边界聚合；时间上统一重采样（Resampling）到旬；云遮挡的缺失期用前后插值（Interpolation）补；</li>
+<li><strong>结构</strong>：三路各自过特征提取层，拼接（Concatenate）进时序模块——遥感时序主干，气象、土壤作条件注入；</li>
+<li><strong>端到端</strong>对照传统两段式（人工算指数再回归），能学到人工特征表达不了的组合规律。</li>
+</ul>
+<hr />
+<h2 id="训练流程与效率优化">5. 训练流程与效率优化</h2>
+<h3 id="先用大白话理解-13">先用大白话理解</h3>
+<p>学生刷历年真题：看历史年份的（档案 +
+真实产量），让它猜；猜错把责任往回摊到几百万个参数上，各微调一点；重复几万次就会了。考试用<strong>没见过的年份</strong>考，防背题。<strong>提效
+30% 三件套</strong>：算得快（16 位数代替 32
+位）、备料快（多开工人并行准备数据让 GPU
+不等饭）、不重复劳动（图的邻居关系提前算好存着，不每轮重建）。</p>
+<h3 id="展开讲-10">展开讲</h3>
+<ol type="1">
+<li><strong>按年份划分数据</strong>——不能随机打散（同年地块相关，随机会”泄题”=
+数据泄露）；</li>
+<li>前向传播出预测 → 与真实产量算 MSE 损失 → 反向传播算每个参数的梯度 →
+梯度下降小步调参（步长=学习率）；</li>
+<li>全数据一遍 =
+Epoch，训几百轮，验证集损失不再降就早停（防过拟合）；</li>
+<li><strong>效率三件套</strong>：①AMP 自动混合精度（16
+位浮点参与大部分计算，GPU 更快、显存省半，还能加大 Batch）；②DataLoader
+多进程加载（num_workers，防”GPU
+等饭”空转）；③图结构缓存（邻接结构、邻居索引不变，提前算好不再每轮重建）。</li>
+</ol>
+<hr />
+<h2 id="可解释性扰动归因归因三家族">6.
+可解释性：扰动归因（+归因三家族）</h2>
+<h3 id="先用大白话理解-14">先用大白话理解</h3>
+<p>判断一道菜哪种调料最重要：<strong>每次少放一种，尝味道变了多少</strong>——变化最大的就是灵魂调料。模型同理：把某段输入<strong>遮住或打乱</strong>（比如抹掉灌浆期降水），看预测产量变多少——<strong>变幅大
+= 模型依赖它 = 重要</strong>。</p>
+<h3 id="展开讲-11">展开讲</h3>
+<ul>
+<li>对每个时间步的每种数据源逐个置零/替换均值，记录预测变化幅度，得到<strong>重要性热力图</strong>；</li>
+<li><strong>为什么必须做</strong>：①农学家和决策者不信任黑盒；②验证模型学到真规律（重要性排序和农学常识一致——灌浆期气象、返青期
+NDVI
+权重高——说明不是瞎拟合）；③发现异常（不该重要的输入权重高，往往提示数据泄露或假相关）；④给用户信任依据；</li>
+<li><strong>扰动法的坑</strong>：特征相关时单点扰动误导（遮了降水，模型拿温度补位，低估降水贡献）——缓解：成组扰动（气象变量一起遮）。</li>
+</ul>
+<h3 id="归因三家族对比背这张表">归因三家族对比（背这张表）</h3>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th></th>
+<th>扰动归因</th>
+<th>IG（积分梯度）</th>
+<th>SHAP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>家族</td>
+<td>扰动类</td>
+<td>梯度类</td>
+<td>博弈论分配类</td>
+</tr>
+<tr>
+<td>思路</td>
+<td>改输入看输出变化</td>
+<td>从基线到输入<strong>沿路径累加梯度</strong></td>
+<td>按”边际贡献公平分账”</td>
+</tr>
+<tr>
+<td>模型访问</td>
+<td><strong>黑盒即可</strong></td>
+<td>必须白盒可求导</td>
+<td>黑盒/白盒皆可（采样近似）</td>
+</tr>
+<tr>
+<td>成本</td>
+<td>每特征扰动一次，特征多则贵</td>
+<td>一次反向传播 × 几十步路径</td>
+<td>组合爆炸，采样近似贵</td>
+</tr>
+<tr>
+<td>主要坑</td>
+<td>特征相关时误导</td>
+<td><strong>基线选择敏感</strong></td>
+<td>算不动只能近似</td>
+</tr>
+</tbody>
+</table>
+<p><strong>IG
+白话</strong>（防追问）：直接看梯度会”梯度饱和”——菜咸到头再加盐味道不变、敏感度≈0，单点梯度低估重要输入。IG
+从<strong>基线</strong>（白开水版输入）沿路径一点点加料走到正常版，把全程瞬时敏感度<strong>累加</strong>——咸到头前那段路径已把贡献记足。公式口述：<code>贡献 = (实际值−基线值) × 路径上梯度分量的积分</code>（用几十小步求和近似）。</p>
+<p><strong>“为什么项目用扰动不用 IG”标准答</strong>： &gt; “我们知道
+IG，它理论性质好但要白盒求导、基线选择敏感。选扰动法三个原因：①<strong>语义贴合</strong>——解释单元是’某段时期某数据源’，’遮掉灌浆期降水看预测变多少’天然可读、农学直接可解释；②实现简单稳健，不依赖梯度质量；③数据源少（三类×十几时间步），扰动次数付得起，IG
+的效率优势用不上。”</p>
+<hr />
+<h2 id="问答库">7. 问答库</h2>
+<h3 id="a.-总体类">A. 总体类</h3>
+<p><strong>A1. 用两分钟介绍你的科研</strong> → 第 1
+章口语稿。顺序：背景意义 → 数据 → 模型两核心 → 实验结果 → 可解释性。</p>
+<p><strong>A2. 研究的创新点是什么？</strong> &gt;
+三个：①田块尺度的时空联合建模——多数工作只在区域尺度或只做时序，我们用图结构把空间依赖显式建模；②生育期信息注入注意力编码——让”农时先验”参与建模而不只是排队列；③可解释性验证闭环——用扰动归因验证模型学到的规律与农学一致，而不只报精度数字。</p>
+<p><strong>A3. 科研和工程实习的关系？</strong> &gt; “科研教我从 0
+提出并验证一个方法（假设-实验-消融的完整闭环），工程实习教我把方法变成可靠的服务（可测试、可灰度、可回滚）。我想做
+AI 应用开发，正好两头都要。”</p>
+<h3 id="b.-技术深挖类-2">B. 技术深挖类</h3>
+<p><strong>B1. 为什么要图结构？不用不行吗？</strong> &gt;
+空间依赖是真实物理存在——小气候、土壤连续性、病虫害都跨地块传播。最有说服力的是消融实验：拆掉图模块（其余不变），精度明显下降，证明空间建模本身有效，不是堆料。</p>
+<p><strong>B2. 图怎么建的？边怎么定？</strong> &gt; 节点=田块；k 近邻 +
+距离阈值结合。试过纯地理邻接（太稀疏）和纯 k 近邻（引入无关远邻），阈值
++ k 近邻折中效果最好。</p>
+<p><strong>B3. 节点特征是什么？</strong> &gt;
+每田块的多源时序特征向量：NDVI 时序 + 气象时序（积温、降水）+
+土壤静态特征（肥力等），按旬对齐堆叠。</p>
+<p><strong>B4. GAT 和 GCN 区别？</strong> &gt; GCN
+邻居权重由图的度数固定；GAT
+的注意力权重是训练学出来的自适应权重。我们的场景邻居影响不均等（方向、面积、长势都影响），GAT
+合适。</p>
+<p><strong>B5. GAT 注意力怎么算？</strong> &gt;
+每条边：两节点特征各自过变换矩阵，拼接后过 LeakyReLU 打分得到
+e_ij，对节点所有邻居 softmax 归一化成权重 α_ij，新特征 = 自身 + Σ α_ij ×
+邻居特征，多头（Multi-Head，几套独立注意力各算各的最后拼接）增强稳定性。</p>
+<p><strong>B6. 多源数据粒度不一致怎么办？</strong> &gt;
+时间统一重采样到旬；空间上遥感像元按田块边界聚合均值；土壤静态特征复制到各时间步或作条件注入；缺失期插值补齐。</p>
+<p><strong>B7. 为什么 Transformer 不用 LSTM？</strong> &gt; LSTM
+顺序处理：长序列读到后面忘了前面（长程依赖弱），且逐步计算无法并行、训练慢。Transformer
+自注意力全局直达 + 可并行。生育期序列是典型的”长序列 +
+关键期稀疏”结构，正适合。</p>
+<p><strong>B8. 怎么防过拟合？</strong> &gt;
+按年份划分（防泄露）、早停、Dropout、控制模型容量；数据增强手段有限（农时不可造），主要靠前几项。</p>
+<p><strong>B9. 泛化性？换省份还行吗？</strong> &gt;
+跨区域会掉点——气候、品种、农作制度不同。诚实答”论文里也讨论了这个局限，跨区需要局部微调”，比吹”全国通用”可信。</p>
+<p><strong>B10. 训练效率 30% 怎么来的？</strong> &gt; 三件套：AMP
+混合精度（16 位计算省时省显存）、DataLoader 多进程加载（GPU
+不等饭）、图结构缓存（不每轮重建）。单看各项 10% 上下，合计约 30%。</p>
+<p><strong>B11. 精度 10-18% 为什么是区间？</strong> &gt;
+相对不同基线（线性回归/随机森林/LSTM/消融版）、不同区域年份的测试集，RMSE
+相对下降幅度不同——弱基线（线性回归）提升接近 18%，强基线（LSTM）约
+10%。</p>
+<p><strong>B12. 扰动归因和 IG 是一回事吗？</strong>（高频陷阱题） &gt;
+不是。扰动是<strong>黑盒试错派</strong>（改输入看输出），IG
+是<strong>白盒求导派</strong>（基线到输入积分梯度，解决单点梯度饱和问题），SHAP
+是<strong>博弈论分账派</strong>。我们选扰动：语义贴合”遮某段时期”、实现稳健、特征数少成本可付。详见第
+6 章对比表。</p>
+<h3 id="c.-难点类">C. 难点类</h3>
+<p><strong>C1. 研究里最难的是什么？</strong> &gt;
+“两件：①多源数据对齐——占了大半时间，遥感受云遮挡、气象站点稀疏、土壤一年一档，把三者对齐到’每田块每旬’是纯脏活，但决定了上限；②图的边定义——太稀疏欠表达、太密引入噪声邻居，最后靠消融实验选的阈值+k
+近邻。共同的教训：科研里’怎么定义问题和对齐数据’比’选什么模型’更决定成败。”</p>
+<p><strong>C2. 中间走过什么弯路？</strong> &gt;
+一开始只用时序模型（LSTM），精度卡住；可视化误差地图发现误差呈空间聚集——相邻地块一起错，说明缺空间信息，才引入图结构。这个”从误差分布反推缺失建模维度”的过程比结果更值得讲。</p>
+<p><strong>C3. 如果继续做，下一步是什么？</strong> &gt;
+跨区域泛化（元学习/迁移微调）、极端年份鲁棒性（干旱年样本少）、多作物扩展；工程上想做估测服务化——把模型包成
+API 给保险定损用，正好接我的工程实习方向。</p>
+<hr />
+<h2 id="数字口径速查表">8. 数字口径速查表</h2>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>数字</th>
+<th>口径</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>精度提升 10%–18%</td>
+<td>RMSE
+相对下降幅度，相对四个基线（线性回归/随机森林/LSTM/消融版），不同基线不同区域故为区间；指标另报
+R² 提升</td>
+</tr>
+<tr>
+<td>训练效率 +30%（约）</td>
+<td>每轮 Epoch 耗时下降，来源 = AMP + 多进程加载 + 图缓存三件套</td>
+</tr>
+<tr>
+<td>基线</td>
+<td>线性回归、随机森林、LSTM、自模型消融版（去图模块）</td>
+</tr>
+<tr>
+<td>R² / RMSE</td>
+<td>决定系数越大越好 /
+均方根误差（公斤/亩）越小越好——<strong>别说反</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="红线与自查">9. 红线与自查</h2>
+<ol type="1">
+<li><strong>这段是主场，深度拉满</strong>——公式级追问（B5）要能接；论文是可查的，内容与论文口径一致；</li>
+<li><strong>消融实验（Ablation）主动说</strong>——区分”真做过科研”的最强信号；</li>
+<li><strong>指标方向别说反</strong>（R² 越大越好、RMSE 越小越好）；</li>
+<li><strong>区间数字要能拆来源</strong>（B11），30%
+要能拆三件套（B10）；</li>
+<li><strong>诚实处理局限</strong>（跨区泛化）——讨论局限是科研素养，回避是心虚；</li>
+<li>两篇 SCI
+与本课题的关系按真实情况如实讲，被问期刊/分区/作者顺序不慌。</li>
+</ol>
+<hr />
+<p><em>配套：01 美团 / 02 中青旅 / 03 神农（待写）/ 05
+DSH-plugin（待写）。</em></p>
+</body>
+</html>
