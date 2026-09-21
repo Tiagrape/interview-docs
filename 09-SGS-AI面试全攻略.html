@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>09 · SGS（通标/TIC）AI 面试全攻略</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      white-space: pre-wrap;
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <style>
+  html { scroll-behavior: smooth; }
+  body {
+    max-width: 900px; margin: 0 auto; padding: 40px 28px 80px;
+    font-family: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    line-height: 1.9; color: #2c3e50; font-size: 16px;
+  }
+  h1 { font-size: 1.7em; border-bottom: 3px solid #2980b9; padding-bottom: 10px; color: #1a5276; }
+  h2 { font-size: 1.35em; border-left: 5px solid #2980b9; padding-left: 12px; margin-top: 2.2em; color: #1a5276; }
+  h3 { font-size: 1.12em; color: #21618c; margin-top: 1.8em; }
+  blockquote {
+    background: #fdf6e3; border-left: 5px solid #f1c40f;
+    margin: 1em 0; padding: 12px 18px; border-radius: 4px; color: #6d4c00;
+  }
+  blockquote p { margin: 0.4em 0; }
+  table { border-collapse: collapse; width: 100%; margin: 1.2em 0; font-size: 0.93em; }
+  th { background: #2980b9; color: #fff; padding: 9px 12px; text-align: left; }
+  td { border-bottom: 1px solid #d6eaf8; padding: 8px 12px; }
+  tr:nth-child(even) { background: #eaf2f8; }
+  tr:hover { background: #d4e6f1; }
+  pre { background: #f4f6f7; border: 1px solid #d5dbdb; border-radius: 6px; padding: 14px 16px; overflow-x: auto; line-height: 1.6; font-size: 0.88em; }
+  code { background: #eef2f3; border-radius: 3px; padding: 1px 5px; font-size: 0.9em; }
+  pre code { background: none; padding: 0; }
+  strong { color: #b03a2e; }
+  a { color: #2980b9; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  #back-top {
+    position: fixed; right: 26px; bottom: 30px; width: 42px; height: 42px;
+    background: #2980b9; color: #fff; border-radius: 50%; border: none; font-size: 19px;
+    cursor: pointer; opacity: 0.75; box-shadow: 0 2px 8px rgba(0,0,0,.25);
+  }
+  #back-top:hover { opacity: 1; }
+  </style>
+  <script>
+  window.addEventListener('load', function() {
+    var b = document.createElement('button');
+    b.id = 'back-top'; b.innerHTML = '↑'; b.title = '回目录';
+    b.onclick = function() { window.scrollTo({top: 0, behavior: 'smooth'}); };
+    document.body.appendChild(b);
+  });
+  </script>
+
+<style>
+/* ---- 手机适配（自动注入） ---- */
+@media (max-width: 640px) {
+  body { padding: 14px 12px 64px !important; margin: 0 !important; font-size: 15px !important; line-height: 1.85 !important; }
+  h1 { font-size: 1.35em !important; }
+  h2 { font-size: 1.18em !important; }
+  h3 { font-size: 1.05em !important; }
+  pre { white-space: pre-wrap !important; word-break: break-word !important; font-size: 0.82em !important; padding: 10px 12px !important; }
+  code { font-size: 0.86em !important; word-break: break-all; }
+  table { display: block !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch; }
+  th, td { white-space: normal !important; }
+  img { max-width: 100% !important; }
+  blockquote { padding: 8px 12px !important; margin: 0.8em 0 !important; font-size: 0.95em; }
+}
+</style>
+</head>
+<body>
+<p style="margin:0 0 16px;font-size:15px;"><a href="index.html" style="text-decoration:none;">← 返回目录</a></p>
+
+<header id="title-block-header">
+<h1 class="title">09 · SGS（通标/TIC）AI 面试全攻略</h1>
+</header>
+<h1 id="sgs通标-tic-检测认证ai-面试-全攻略">09 · SGS（通标 / TIC
+检测认证）AI 面试 —— 全攻略</h1>
+<blockquote>
+<p><strong>怎么用这份文档</strong>：第 1~4
+章是背景与对策（理解用，读一遍即可）；<strong>第 5 章是逐题背诵稿——19
+段全文口语稿，问题在前、答案在后，直接背这一章</strong>；第 6 章是 AI
+面之后的轮次预告；面试前 1 小时用第 7 章速答版过一遍。</p>
+<p><strong>信息来源与时效</strong>：题目与流程主要来自牛客网「SGS
+质优生」2022–2025 年的面经帖（AI
+测评、电话面、群面、终面均有实测记录），公司信息来自 SGS
+官网。每年题目可能微调，但<strong>题型结构多年稳定</strong>：宝洁八大问
++ 公司认知 + 英文图表题 + 认知小游戏 +
+心算。如果你面的岗位后续有技术轮，直接用 01/02/04/05/06/07/08
+号文档备战。</p>
+</blockquote>
+<hr />
+<h2 id="先搞清楚sgs-是家什么公司答对-sgs-的了解的弹药库">1.
+先搞清楚：SGS 是家什么公司（答「对 SGS 的了解」的弹药库）</h2>
+<h3 id="先用大白话理解什么是-tic-行业">1.1 先用大白话理解：什么是 TIC
+行业</h3>
+<p>全球贸易里有个天生的信任难题：中国工厂说”我的货合格”，法国买家凭什么都信？</p>
+<p>于是有了第三方检测认证行业，叫
+<strong>TIC</strong>：<strong>T</strong>esting（测试）、<strong>I</strong>nspection（检验）、<strong>C</strong>ertification（认证）。一句话：<strong>给全球商品做”体检
++ 出证明”的裁判员</strong>。工厂说的不算，买家说的不算，SGS
+出的报告说了算——你手机充电器上那些 CE、CCC
+认证标志，背后就是这类机构。</p>
+<p><strong>SGS 就是这个行业的全球老大</strong>：1878
+年成立于瑞士（瑞士人设 =
+精确、中立、严谨），品牌承诺一句话——<strong>“关键时刻，放心托付”（When
+You Need To Be
+Sure）</strong>。它的立身之本只有一个词：<strong>公信力</strong>。报告出错、造假、被客户收买，公司就完了——这是理解
+SGS 一切面试题（价值观题、情景题、英语题）的钥匙。</p>
+<h3 id="硬数字速记挑-5-个记住就够用">1.2 硬数字速记（挑 5
+个记住就够用）</h3>
+<table>
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr>
+<th>数字</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1878 年 / 145+ 年</strong></td>
+<td>成立于瑞士，全球 TIC 行业开创者</td>
+</tr>
+<tr>
+<td><strong>115 个国家 / 2,500+ 实验室</strong></td>
+<td>全球网络（官网口径）</td>
+</tr>
+<tr>
+<td><strong>10 万+ 员工</strong></td>
+<td>全球规模第一的 TIC 机构</td>
+</tr>
+<tr>
+<td><strong>1991 年进入中国</strong></td>
+<td>在华主体「通标标准技术服务有限公司」（SGS-CSTC），与中国标准科技集团合资；100+
+分支机构、200+ 实验室、1.6 万+ 员工</td>
+</tr>
+<tr>
+<td><strong>五大业务板块</strong></td>
+<td>互联与产品、工业与环境、营养与健康、自然资源、管理与保证</td>
+</tr>
+</tbody>
+</table>
+<p>加分弹药（说出来面试官眼睛会亮）： - <strong>EcoVadis
+金奖</strong>（全球企业可持续发展评估前 1%） -
+<strong>福布斯全球上市公司 2000 强</strong>（连续多年上榜） -
+<strong>「中国 100 典范雇主」连续 15
+年</strong>（2010–2024）、「大学生喜爱雇主」（2019–2023） -
+人才体系：新人 <strong>SHINE 计划</strong>、校招管培
+<strong>「质优生」项目</strong>、初阶主管 SDP、管理者加速
+MAP——你要是面「质优生」，这词必须会说</p>
+<h3 id="你ai-应用开发和-sgs-的交集在哪">1.3 你（AI 应用开发）和 SGS
+的交集在哪</h3>
+<p>这是你的<strong>差异化卖点</strong>，“为什么来 SGS”的底料：</p>
+<ol type="1">
+<li><strong>SGS
+正在做数字化转型</strong>：实验室数字化（牛客面经里质优生的工作内容就包含”做检测认证和实验室数字化”）、报告自动生成、AI
+图像质检、智能审单——全是 AI 应用开发的落地场景。</li>
+<li><strong>TIC + AI 的天然课题是”可信”</strong>：检测报告要可信，AI
+输出也要可信。你做的 AST 校验、回归评测、RAG 引用溯源，本质全是”让 AI
+的结果可信、可追溯”——和 SGS
+的品牌承诺是<strong>同一件事换了对象</strong>。</li>
+<li><strong>行业纵深型公司</strong>：不像互联网卷流量，TIC
+是”信任越攒越厚”的行业，AI 开发者在这里做的是”行业 know-how ×
+AI”的深水区，适合想做深的人。</li>
+</ol>
+<hr />
+<h2 id="ai-面试是什么形式知己知彼">2. AI 面试是什么形式（知己知彼）</h2>
+<h3 id="全流程全景图牛客面经实测">2.1 全流程全景图（牛客面经实测）</h3>
+<pre><code>网申投递 ──► 立即发 AI 测评 ──► 电话初联(约10min) ──► HR面/初面(约40min)
+                │                                          │
+                └─ 10天内没收到感谢信 = 还在流程中，别慌       ▼
+                                             专业面(约1h, 项目深挖)
+                                                          │
+                                                          ▼
+                                          群面(游戏形式+复盘) ──► 高管终面(约30min)
+
+整体跨度 1~2 个月，节奏慢是常态（外企流程），耐心等。</code></pre>
+<h3 id="ai-测评三件套你马上要考的部分">2.2 AI
+测评三件套（你马上要考的部分）</h3>
+<p>牛客多位同学的实测构成，约 <strong>1 小时</strong>：</p>
+<table>
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+<col style="width: 25%" />
+</colgroup>
+<thead>
+<tr>
+<th>模块</th>
+<th>时长</th>
+<th>内容</th>
+<th>难点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>① AI 视频问答</strong></td>
+<td>约 1 小时内的大头，<strong>约 6 道题</strong></td>
+<td>对 SGS 的了解、宝洁八大问类行为题</td>
+<td>对着摄像头录答案，没有真人互动</td>
+</tr>
+<tr>
+<td><strong>② 英文图表题</strong></td>
+<td>1 道</td>
+<td>屏幕给一张图表，<strong>英文提问，要求用英文作答</strong></td>
+<td>全场最难：数据解读 × 英语口语双考</td>
+</tr>
+<tr>
+<td><strong>③ 认知游戏 + 计算</strong></td>
+<td>分类游戏 5–10 分钟 + 计算题若干</td>
+<td>分类游戏：给一批东西（如齿轮）分类，<strong>分着分着规则会变</strong>（先按颜色，突然改成按别的标准）；计算题：限时心算</td>
+<td>规则突变考应变；心算考速度（有同学遇到设备卡顿，最后 3 分钟狂做 8
+题——<strong>提前测好设备</strong>）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ai-是怎么给你打分的决定你的答题策略">2.3 AI
+是怎么给你打分的（决定你的答题策略）</h3>
+<p>AI 面试系统（常见的如海纳 AI 等）的评估逻辑大致是：</p>
+<ul>
+<li><strong>关键词命中</strong>：这道题考”团队合作”，你的答案里有没有出现合作、分工、沟通这类词；</li>
+<li><strong>结构化程度</strong>：有没有”第一、第二、最后”这种逻辑信号词；</li>
+<li><strong>表达状态</strong>：语速、流畅度、停顿、眼神（是否看镜头）；</li>
+<li><strong>内容完整度</strong>：有没有情境、行动、结果（STAR
+要素齐全）。</li>
+</ul>
+<p><strong>推论：答案要说”给人听”的话，也要”给机器听”的话——考察关键词必须明说出来，结构必须外显。</strong>
+第 5 章所有背诵稿都已按这个原则写好。</p>
+<hr />
+<h2 id="会被问到什么题目清单面经实证整理">3.
+会被问到什么：题目清单（面经实证整理）</h2>
+<h3 id="a-类宝洁八大问主力题型ai-面-电话面反复出现">3.1 A
+类：宝洁八大问（主力题型，AI 面 + 电话面反复出现）</h3>
+<p>面经原话：“建议可以先准备宝洁八大问，其回答的方法很适用于 SGS
+测评”。电话面实测问题：<strong>自我介绍、遇到的困难及解决、创新的方法、团队合作中的难题</strong>。八大问完整版（中文问法）：</p>
+<ol type="1">
+<li><strong>高目标</strong>：举例说明你制定了一个很高/有难度的目标，并最终完成了它</li>
+<li><strong>主动性/领导力</strong>：举例说明你主动发起、带领他人完成一项重要任务的经历</li>
+<li><strong>信息收集与决策</strong>：举例说明你需要主动搜集信息、界定关键问题、决定行动步骤才拿到结果的经历</li>
+<li><strong>用事实说服</strong>：举例说明你如何用事实/数据说服别人接受你的观点</li>
+<li><strong>团队合作</strong>：举例说明你如何与他人高效合作完成重要任务</li>
+<li><strong>创新</strong>：举例说明你的一个创新想法，并对项目成功做出了重要贡献</li>
+<li><strong>关注他人优先级</strong>：举例说明你如何评估形势、照顾到对方的优先事项，从而取得好结果</li>
+<li><strong>技术学习与应用</strong>：举例说明你如何快速学习一门新技术并转化为实际应用</li>
+</ol>
+<p>变体追问（电话面/HR
+面实录）：为什么转方向？为什么选检测行业？手里还有哪些
+offer？期望薪资？父母做什么工作（外企 HR 常问，考察稳定性）？</p>
+<h3 id="b-类公司与行业认知">3.2 B 类：公司与行业认知</h3>
+<ul>
+<li><strong>对 SGS 的了解？</strong>（AI 面必考）</li>
+<li><strong>对检测认证（TIC）行业的认识？</strong></li>
+<li>为什么选择 SGS / 这个岗位 / 这个城市？</li>
+<li>你对这个岗位的理解、职业规划？</li>
+</ul>
+<h3 id="c-类英文图表题全场最难的-1-道">3.3 C 类：英文图表题（全场最难的
+1 道）</h3>
+<p>面经原话：“有个比较难的题是给一个图表，让我看图表来使用英文回答英文问题。”——<strong>考的不是英语多漂亮，是”能不能用英语把数据讲清楚”</strong>。</p>
+<h3 id="d-类认知游戏与心算不考知识考脑子">3.4 D
+类：认知游戏与心算（不考知识，考脑子）</h3>
+<ul>
+<li><strong>分类游戏</strong>：按规则分类，规则中途会变（实测：先按齿轮颜色分，中途换标准）——考认知灵活性，<strong>能不能快速放下旧规则</strong>；</li>
+<li><strong>计算题</strong>：限时心算——考速度与取舍，<strong>会不会的先做、不会的跳过</strong>。</li>
+</ul>
+<hr />
+<h2 id="回答对策方法层读一遍理解即可全文背诵稿见第-5-章">4.
+回答对策（方法层，读一遍理解即可；全文背诵稿见第 5 章）</h2>
+<h3 id="总方法star-l-骨架-关键词外显">4.1 总方法：STAR-L 骨架 +
+关键词外显</h3>
+<p>每道行为题都用一个骨架（和 01
+号文档的”问题→定位→方案→权衡→结果”同构）：</p>
+<pre><code>S 情境（1句）: 当时在做什么项目、什么背景
+T 任务（1句）: 我具体负责/遇到的具体问题是什么
+A 行动（2-4句，重点）: 我怎么分析的、做了什么、为什么这么做
+R 结果（1句，必须带数字）: 指标从X到Y / 节省多少时间
+L 学到/复盘（1句）: 这件事让我明白了什么
+
+外显技巧（给AI打分机器听的）：
+- 开头点题：&quot;这是一次团队合作/高目标/创新的经历&quot;
+- 结构信号词：&quot;我从两个方面讲&quot;&quot;第一…第二…最后…&quot;
+- 结尾收口：&quot;所以这次经历让我…&quot;（结果+收获一句话收）
+- 每题控制在 1~2 分钟</code></pre>
+<p><strong>不要逐字硬背到僵</strong>——背熟骨架和数字后，临场故意换一两个词，反而自然（AI
+也能识别念稿）。</p>
+<h3 id="ai-面试七条军规形式分-白给的分数">4.2 AI 面试七条军规（形式分 =
+白给的分数）</h3>
+<ol type="1">
+<li><strong>关键词明说</strong>：考什么词就把什么词说出口（“这是一次典型的团队合作…”）；</li>
+<li><strong>结构外显</strong>：总-分-总，“第一/第二/最后”；</li>
+<li><strong>看摄像头说话</strong>：摄像头位置 =
+面试官的眼睛，别看屏幕上的自己；</li>
+<li><strong>语速放慢 10%</strong>，关键数字咬清楚（76.1% 到 89.4%
+这种要说清楚）；</li>
+<li><strong>开头微笑、坐姿前倾</strong>，每题结束明确说”以上是我的回答”再停（防止系统截断）；</li>
+<li><strong>设备与环境提前 1
+天测</strong>：安静房间、正面打光、网络稳定、手机勿扰——面经里有设备卡顿导致心算崩盘的真实案例；</li>
+<li><strong>可以在屏幕边贴提纲小抄</strong>（只写关键词和数字，别写整句——念稿眼神会飘，AI
+识别得出）。</li>
+</ol>
+<h3 id="素材映射表八大问-你的四段经历速查用全文见第-5-章">4.3
+素材映射表：八大问 × 你的四段经历（速查用；全文见第 5 章）</h3>
+<p>每题只配<strong>一个主力故事</strong>，别一个故事答所有题（AI
+面和真人面都会露馅）。数字都来自你 01/02/04/05 号文档：</p>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>八大问</th>
+<th>主力素材</th>
+<th>一句话骨架</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 高目标</td>
+<td><strong>MSTGN-Wheat 科研</strong></td>
+<td>跨学科从零做产量估测模型，两篇 SCI，误差比基线下降 10–18%</td>
+</tr>
+<tr>
+<td>2 主动性</td>
+<td><strong>DSH-plugin 开源</strong></td>
+<td>没人要求、痛点驱动，主动开发并开源两个插件</td>
+</tr>
+<tr>
+<td>3 信息收集与决策</td>
+<td><strong>美团离线误报治理</strong></td>
+<td>回放心跳日志画”误报率 × 发现延迟”权衡曲线，选拐点定阈值</td>
+</tr>
+<tr>
+<td>4 用事实说服</td>
+<td><strong>中青旅回归评测体系</strong></td>
+<td>218 条回归集把问题量化给团队，立”不退化才上线”的规矩</td>
+</tr>
+<tr>
+<td>5 团队合作</td>
+<td><strong>美团工单闭环</strong></td>
+<td>把运营的顾虑变成设计约束，46% 工单自动闭环</td>
+</tr>
+<tr>
+<td>6 创新</td>
+<td><strong>中青旅三段式链路</strong></td>
+<td>一步生成拆成三段 + 语法校验，可执行率 76.1%→89.4%</td>
+</tr>
+<tr>
+<td>7 关注他人优先级</td>
+<td><strong>中青旅口径反问设计</strong></td>
+<td>用户要的不是最快拿数，是口径正确的数——反问澄清 + 标注口径</td>
+</tr>
+<tr>
+<td>8 技术学习与应用</td>
+<td><strong>农大 → 后端+AI 全栈</strong></td>
+<td>自学 Java/Spring + AI 应用栈，两段实习落地生产项目</td>
+</tr>
+</tbody>
+</table>
+<h3 id="英文图表题万能五句式模板示例答案见-5.5">4.4
+英文图表题：万能五句式模板（示例答案见 5.5）</h3>
+<pre><code>① 主题句: This chart shows / illustrates the ... (of A and B) from ... to ...
+② 关键数据1: X increased from A to B. / X accounts for ...% of the total.
+③ 关键数据2: Y decreased slightly / remained stable / peaked at ...
+④ 对比: Compared with ..., ... is significantly higher / nearly twice as high.
+⑤ 结论: Overall, the chart suggests that ...</code></pre>
+<p><strong>趋势词速记</strong>：上升 rise / increase / grow；下降 fall /
+decline / drop；波动 fluctuate；到顶 peak at；走平 remain stable /
+plateau；占比 account for；翻倍 double。</p>
+<p><strong>三个救场技巧</strong>： 1. 没听懂问题就说：“Sorry, could you
+please repeat the question?”（比答非所问好得多）； 2. 流利 &gt;
+高级：用简单词说顺，别追求难词卡壳；语法错了别回头改，继续说； 3.
+<strong>练法</strong>：拿自己项目里的图练——比如”充电宝异常率下降曲线”“模型精度对比柱状图”，每天用英文描述
+1 张，练 3 天就够。</p>
+<h3 id="分类游戏与心算对策">4.5 分类游戏与心算对策</h3>
+<p><strong>分类游戏</strong>（规则会突变）： -
+心态预设：规则一定会变，变了不是你做错了——<strong>这是考点本身</strong>（认知灵活性）；
+-
+变规则那一刻<strong>停一拍，把新规则读完再动手</strong>，别按惯性继续；
+- 平时热身：Stroop 色词测试、“1-2-3
+拍手换规则”这类小游戏，练规则切换的肌肉。</p>
+<p><strong>计算题</strong>（限时心算）： -
+先快速扫一遍，会做的先做，卡住的立刻跳过（面经实测题量大，3 分钟 8
+题的情况存在）； - 平时练两位数乘除、百分比速算； -
+纸笔放手边（规则允许就用），脑记数字最易错。</p>
+<hr />
+<h2 id="逐题背诵稿直接背这一章">5. 逐题背诵稿（★直接背这一章★）</h2>
+<h3 id="使用说明先看这-4-条">5.0 使用说明（先看这 4 条）</h3>
+<ol type="1">
+<li>每段按 <strong>1~2 分钟口播</strong>写的（每分钟约 200
+字），别抢速度，说完”以上是我的回答”再停；</li>
+<li>括号里是提示和动作，<strong>不用背</strong>；</li>
+<li>先背”骨架 + 数字”，背熟后临场故意换一两个词，避免念稿感；</li>
+<li>素材分配是设计过的：<strong>八大问每题一个不同故事</strong>，同一轮面试里绝不重复用一个项目讲两道题。</li>
+</ol>
+<h3 id="开场自我介绍约-60-秒">5.1 开场自我介绍（约 60 秒）</h3>
+<blockquote>
+<p>您好，我叫李方好，是中国农业大学计算机科学与技术专业的硕士研究生。我从科研和工程两方面介绍一下自己。科研上，我用人工智能做农作物产量预估——把卫星遥感、气象、土壤这些数据交给深度学习模型，预测每一块地的产量，这个课题发表了两篇
+SCI 论文。工程上，我有两段实习：一段在一家大型旅游央企做 AI
+应用开发，让管理层用日常说话的方式直接查询经营数据，也做过面向游客的政策智能问答；另一段在美团做后端开发，负责充电宝设备异常的自动发现和自动处理。我的求职方向是后端
+AI
+应用开发——科研给了我方法和深度，实习验证了我能把这些技术做成真实可用的系统。希望我的这些经历和能力，能为贵公司的发展贡献一份力量。</p>
+</blockquote>
+<h3 id="a-类宝洁八大问8-题全文">5.2 A 类·宝洁八大问（8 题全文）</h3>
+<p><strong>第 1 题 ·
+高目标：请举例说明你制定了一个很高/有难度的目标，并最终完成了它</strong></p>
+<blockquote>
+<p>我想讲我的科研课题——冬小麦产量估测模型。我是计算机专业的，农业遥感对我是一个全新的领域，我给自己定的目标是：做出一个比传统方法明显更准的模型，并发表成高水平论文。这个目标难在两头：一头是数据，卫星、气象、土壤三类数据格式和频率都不同，要对齐到每一块地；另一头是模型，一块地的产量不只由它自己决定，还受相邻地块的气候、土壤影响。我的做法是：把每个田块建成图上的节点，用图注意力网络让每块地参考邻居的信息；再用
+Transformer
+建模整个生育期的生长过程，还加入了生育期阶段信息，因为不同阶段对产量的影响不一样。最后，模型的预测误差比线性回归、随机森林这些传统方法下降了
+10% 到
+18%；我还做了可解释性验证，模型认为重要的因素和农学规律一致，说明它学到的是真规律，不是数据巧合。这个课题产出了两篇
+SCI
+论文。这段经历让我明白：高目标不可怕，把它拆成数据、模型、验证三步，一步步啃下来就行。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 2 题 ·
+主动性：请举例说明你主动发起并完成的一项重要任务</strong></p>
+<blockquote>
+<p>我讲一个没有人要求、完全由我主动发起的项目。我平时重度使用一个开源的
+AI
+命令行工具，用下来有两个痛点：一是它按用量计费，但不告诉你花了多少钱；二是工具更新要手动操作，很麻烦。我发现官方一直没解决，就决定自己动手，给它写了两个插件。一个是计费统计插件：我在数据流上加了一层拦截，把每次调用的用量记录下来自动算费用，还支持分时段计价，缓存命中省了多少钱也一目了然。另一个是自动升级插件：我设计了”落后计数”的判断方法——本地比官方落后零条就是最新，同时每次升级前自动备份、失败可以回滚。两个插件都是零依赖的，用户安装时不需要额外装任何东西。整个过程从发现痛点、设计方案、开发到发布维护，都是我主动完成的，也完整走了一遍”自己是用户、自己解决问题”的闭环。这件事给我的启发是：主动性最好的来源就是真实的使用痛点——哪里不舒服，哪里就是机会。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 3 题 ·
+信息收集与决策：举例说明你如何搜集信息、分析问题并做出决策</strong></p>
+<blockquote>
+<p>我在美团实习时遇到一个必须靠信息收集才能决策的问题。充电宝机柜的联网环境差，系统原来只要丢一个心跳就判定设备离线，误报很多；但反过来，判得太慢，用户借还不了充电宝，直接损失收入。方案是改成”连续多个周期没有心跳才判离线”，但这个阈值定多少，拍脑袋是不行的——定小了误报多，定大了发现故障晚，这是一个两难。我的做法是数据驱动决策：把历史心跳日志拿来回放，阈值从
+2 试到
+10，每个取值都算出对应的误报率和发现延迟，画出一条权衡曲线。曲线的形状是前面很陡、后面变平——从
+2 到 3
+改善很大，再往上改善就很小，延迟却越拖越长。所以我把阈值选在曲线由陡变平的拐点上，取
+3。上线后验证了这个决策：同设备的重复异常下降了 58%，误报率下降约
+21%。这段经历让我学会：做决策之前先问自己”我有没有数据”，在两难里找到性价比最高的那个点，才是真正的决策。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 4 题 ·
+用事实说服：举例说明你如何用事实/数据说服别人</strong></p>
+<blockquote>
+<p>讲一个我在旅游央企实习时用数据说服团队的事。我们做 AI
+问数系统，改动很频繁——检索方式、提示词、工具配置经常要调。一开始大家的习惯是改完看着没问题就上线，但线上时不时出现以前修好的问题又复发。我提议立一个规矩：建一套固定的回归测试集，任何改动都要全量重跑，指标不退化才能上线。有同事觉得麻烦，担心拖慢节奏。我没有停在争论上，而是先把
+218
+条真实问题整理成回归集，把当时的通过率、错误率量化出来，然后用一次真实的复发现场给大家看：这次改动让一个已经修复的问题又出现了——如果有回归集，上线前就能拦住。数据摆出来之后，团队很快达成一致。后来这套体系支撑了
+7 轮迭代，核心问题的端到端正确率从 78.6% 提升到
+87.3%，再没出现过退化上线。这件事让我体会到：说服别人最有效的方式不是坚持观点，而是把事实和数字准备好，让数据替你说话。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 5 题 ·
+团队合作：举例说明你如何与他人高效合作完成重要任务</strong></p>
+<blockquote>
+<p>我讲在美团做”工单自动闭环”的经历，这是一次和运营团队紧密合作的过程。背景是：充电宝设备断电离线会自动生成异常工单，但很多时候来电后设备自己就恢复了，旧系统感知不到，工单一直挂着，运营每天要人工处理大量其实已经自愈的工单。我的任务是做自动关单。合作的难点在于：运营一开始有顾虑，担心系统自动关单会误关他们正在处理的单子。我先做的是听懂对方的顾虑，然后把它变成设计约束：收到设备恢复消息后不马上关单，先等
+10
+分钟确认稳定；执行关单前再实时查一遍工单状态，如果运营已经接手，就不动这张单。也就是把”不能打扰人的工作”写进了代码里。上线后，约
+46%
+的工单实现了自动闭环，运营的重复劳动明显减少。这段经历让我明白：团队合作不是分工干活，而是把对方的顾虑当成需求的一部分——方案里主动留出对方的优先级，信任自然就建立起来了。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 6 题 · 创新：举例说明你的一个创新想法及其贡献</strong></p>
+<blockquote>
+<p>我在旅游央企实习时做过一个创新，解决 AI
+查数不准的问题。场景是让管理层用自然语言问经营数据，比如”华东区上半年回款多少”，AI
+要把这句话翻译成数据库查询。原来是”一步生成”，错误率偏高。我的创新是把链路拆成三段：第一段先做指标解析，对照指标词典锁定标准指标，防止问回款查成合同额；第二段把组织、时间这些限定条件强制写成明确的过滤条件；第三段才组装查询，最后再过一道语法校验——用语法树核对每张表、每个字段都真实存在。相当于把一个”张口就答”的翻译，改成”先查词典、再列提纲、最后动笔、写完检查”的流程。效果是：在
+218 条回归测试集上，可执行率从 76.1% 提升到
+89.4%。这个创新不是凭空想的，是把真实答错的案例逐条归类之后长出来的。我的体会是：最好的创新不是追新技术，而是从真实错误里找到结构性原因，再用流程设计把它堵住。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 7 题 ·
+关注他人优先级：举例说明你如何照顾到对方的优先事项并取得好结果</strong></p>
+<blockquote>
+<p>讲一个我在设计 AI
+问数功能时照顾使用者优先级的事。上线后发现一个隐蔽的问题：同一个指标名，不同业务系统的口径不一样，比如”回款额”，有的系统算含税、有的不含税。如果
+AI
+直接甩一个数字，看起来效率很高，但一旦口径错了，这个数字进了汇报材料就是事故。站在使用者角度想，他们真正的优先级不是”最快拿到数字”，而是”拿到的数字必须口径正确、敢往上报”。所以我们做了一个看起来降低效率的设计：遇到多口径的指标，AI
+先反问澄清——您问的是含税还是不含税；给出的答案也会标注所用口径。为了支撑这个设计，我们还梳理了
+126 个核心指标、247
+组别名到标准字段的映射。上线后用户反馈反而更好，因为信任建立起来了。这件事让我明白：理解对方真正的优先级，有时意味着牺牲表面的效率，换来的才是长期价值。以上是我的回答。</p>
+</blockquote>
+<p><strong>第 8 题 ·
+技术学习与应用：举例说明你如何快速学习新技术并用于实践</strong></p>
+<blockquote>
+<p>我的读研经历本身就是一段持续学习新技术并落地的过程。我的科研方向偏人工智能，而求职方向是后端加
+AI 应用开发，中间的技术栈基本靠自学补齐。比如 Java 后端，我从语言基础到
+Spring
+框架系统自学，然后在美团实习直接上手生产项目，参与设备异常处理的服务开发；比如大模型应用技术，检索增强、工具调用这些，我是实习中边学边用，落地了智能问数和智能问答两个系统。我总结了一套自己的学习方法，分两步：第一步，先用一个最小可运行的例子把整条链路跑通，建立全局认知；第二步，再针对生产环境暴露的真实问题逐个深挖——检索不准就去研究切块和过滤，生成不可信就加校验和评测。这套方法让我能在几周内从零上手一个新技术栈、达到能干活水平。我相信到
+SGS
+做数字化相关开发，这套快速学习能力能让我很快进入状态。以上是我的回答。</p>
+</blockquote>
+<h3 id="高频追问电话面-hr-面实测出现过">5.3 高频追问（电话面 / HR
+面实测出现过）</h3>
+<p><strong>追问 1 · 你遇到过最大的困难是什么？怎么解决的？</strong></p>
+<blockquote>
+<p>实习中最大的困难是 AI
+问答系统的”隐性错误”。说它难，是因为很多错误根本不报错——比如问”回款额”，它查成了”合同额”，数字看着挺正常，其实口径错了；再比如旧政策还在库里被检索出来，答案是过期的。这类错误用户自己发现不了，最危险。我的解法分三步。第一步收集：把
+137
+条真实错误案例按原因归类，发现集中在四类——知识没命中、政策过期、工具参数错、无依据编造。第二步逐类解决：比如按景区和生效时间先过滤再检索，小块用于检索、命中后取大块保上下文，再加精排模型。第三步兜底：把
+326 条真实问题固化成测试集，任何改动全量重跑，指标不退化才允许上线。7
+轮迭代下来，端到端正确率从 78.6% 提升到
+87.3%。最大的收获是：面对一堆看似随机的错误，先分类、再逐类解决，比见一个修一个高效得多。以上是我的回答。</p>
+</blockquote>
+<p><strong>追问 2 ·
+你的科研方向和应聘岗位不一致，为什么转方向？</strong></p>
+<blockquote>
+<p>我的科研方向是农业遥感的人工智能，求职方向是后端 AI
+应用开发，这是一个理性选择。科研给了我方法和深度——怎么建模、怎么做实验、怎么验证一个方法真的有效；两段实习证明了我的工程能力，也让我确认自己更喜欢、也更适合把技术做成真实可用的系统。所以求职时我选了实习验证过、也更喜欢的工程方向。这不是放弃科研，而是让科研训练出的深度，在工程方向继续发挥作用。</p>
+</blockquote>
+<p><strong>追问 3 · 你的职业规划是什么？</strong></p>
+<blockquote>
+<p>短期一到两年，我希望快速吃透业务，在 AI
+应用开发和后端工程上都能独当一面，成为团队里能把想法可靠落地的人。中期三到五年，我希望在检测认证行业的数字化上做出有分量的成果——比如把实验室流程、报告生成这些场景的
+AI 应用做深做透，成长为既懂行业又懂技术的骨干。我选择 SGS
+很重要的一点，就是这里有行业纵深：TIC 行业知识壁垒高，值得长期深耕。</p>
+</blockquote>
+<p><strong>追问 4 · 你的期望薪资是多少？</strong></p>
+<blockquote>
+<p>薪资上我更看重平台和培养体系，相信 SGS
+作为成熟的外企有完善的薪酬体系，我尊重公司的标准。如果需要参考，我的期望是与硕士应届生市场水平一致的区间，具体以公司的体系为准。</p>
+</blockquote>
+<p>（若面试官一定让你报数：<strong>“月薪 17K 到
+18K、按公司的年薪月数来，我都可以接受。”</strong>——数字来自牛客 SGS
+硕士薪资投票，不主动说，被逼才说。）</p>
+<p><strong>追问 5 · 你手里还有其他 offer 吗？在面哪些公司？</strong></p>
+<blockquote>
+<p>我目前同时在看互联网公司和央企、外企的机会，有几处还在流程中。但 SGS
+是我优先级很高的选择：它是检测认证行业全球第一，数字化转型正在加速，和我后端
+AI 应用开发的方向非常契合，我希望能在这样的行业纵深里长期发展。</p>
+</blockquote>
+<p><strong>追问 6 · 你父母是做什么工作的？（外企 HR
+常问，考察稳定性）</strong></p>
+<blockquote>
+<p>我父母都在河南老家的水利灌区事业单位工作，家庭很稳定。他们也支持我毕业后自己选择发展的城市和方向，工作地点我会以公司的安排为准。</p>
+</blockquote>
+<h3 id="b-类公司与行业认知2-题全文">5.4 B 类·公司与行业认知（2
+题全文）</h3>
+<p><strong>B1 · 请谈谈你对 SGS 的了解（约 60 秒）</strong></p>
+<blockquote>
+<p>SGS 是全球最大的第三方检测、检验和认证机构，这个行业叫
+TIC——简单说，就是给全球商品做”体检、出证明”的裁判员。SGS 1878
+年成立于瑞士，目前在 115 个国家有 2,500 多个实验室和设施、10
+万多名员工，是这个行业公认的第一。1991
+年进入中国，在华主体是通标标准技术服务有限公司，有 100 多个分支机构和
+200
+多间实验室。业务覆盖五大板块：互联与产品、工业与环境、营养与健康、自然资源、管理与保证——我们日常见到的很多产品认证，背后就是
+SGS
+这样的机构。它的品牌承诺我印象很深，叫”关键时刻，放心托付”——这个行业的根基就是公信力。另外我注意到
+SGS 这几年在推进实验室数字化和 AI
+应用，这正是我的技术方向能发挥作用的地方。以上是我的回答。</p>
+</blockquote>
+<p><strong>B2 · 你为什么选择 SGS？（杀手话术，重点背）</strong></p>
+<blockquote>
+<p>我实习做 AI 应用，发现本质都在解决同一件事：让 AI
+的输出可信——比如查数系统用语法校验保证生成的 SQL
+真的能执行，用回归评测保证指标不退化才能上线。而 SGS
+做检测认证，本质上也是”让结果可信”，品牌承诺就是”关键时刻，放心托付”。所以我觉得我的技术方向和这家公司的立身之本是同一件事，只是对象从”AI
+的输出”换成了”产品的质量”。另外，TIC
+行业的数字化正在加速，实验室数字化、报告自动化、AI 图像质检，都是 AI
+应用能扎下去的真实场景。我想在一个有行业纵深的地方把 AI
+应用做深，而不是追热点——SGS
+是全球第一的检测认证机构，又连续多年被评为中国典范雇主，是我很认可、也愿意长期投入的选择。以上是我的回答。</p>
+</blockquote>
+<h3 id="c-类英文部分2-段">5.5 C 类·英文部分（2 段）</h3>
+<p><strong>C1 · 英文自我介绍（约 45
+秒，备用——题目若要求英文介绍直接用）</strong></p>
+<blockquote>
+<p>Good morning. My name is Li Fanghao. I am a master’s student in
+Computer Science at China Agricultural University. My research uses AI
+for crop yield estimation, and I have published two SCI papers. Besides
+research, I have internship experience in backend and AI application
+development. At a large travel group, I built AI systems that allow
+managers to query business data in natural language. At Meituan, I
+developed backend services for automatic device fault detection and
+handling. I am applying for this position because I believe trustworthy
+AI output and trustworthy testing reports share the same core value —
+being sure when it matters. Thank you.</p>
+</blockquote>
+<p><strong>C2 ·
+英文图表题示例答案（背熟这个框架，考场上只是换数字）</strong></p>
+<p>假设图表是”某公司 2021–2024 年两条业务线收入”：</p>
+<blockquote>
+<p>This chart shows the revenue of two business lines, testing services
+and certification services, from 2021 to 2024. Overall, testing revenue
+increased steadily, from about 400 million to 650 million. Certification
+revenue remained relatively stable, at around 200 million. Compared with
+certification, testing is significantly higher — in 2024 it accounted
+for roughly three quarters of total revenue. Overall, the chart suggests
+that testing services are the main growth driver of the company.</p>
+</blockquote>
+<p>救场句（背下来）： - 没听懂：<strong>Sorry, could you please repeat
+the question?</strong> - 争取思考时间：<strong>Let me take a closer look
+at the chart.</strong> - 说完收尾：<strong>That’s my answer. Thank
+you.</strong></p>
+<h3 id="d-类分类游戏与心算无背诵内容记住-3-条">5.6 D
+类·分类游戏与心算（无背诵内容，记住 3 条）</h3>
+<ol type="1">
+<li>规则一定会变，变了不是你做错——<strong>停一拍，读完全部新规则再动手</strong>；</li>
+<li>心算先扫题：会做的先做，卡住的立刻跳；</li>
+<li>提前测设备：面经有设备卡顿导致 3 分钟做 8 题崩盘的真实案例。</li>
+</ol>
+<hr />
+<h2 id="后续轮次预告ai-面之后会遇到的">6. 后续轮次预告（AI
+面之后会遇到的）</h2>
+<table>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 33%" />
+<col style="width: 33%" />
+</colgroup>
+<thead>
+<tr>
+<th>轮次</th>
+<th>实测情况</th>
+<th>你的准备</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>电话初联</strong>（约 10min）</td>
+<td>聊天式：自我介绍 + 1~2 个八大问；牛客评价”很尊重人，体验良好”</td>
+<td>5.1 自我介绍 + 5.2 对应题</td>
+</tr>
+<tr>
+<td><strong>HR 面</strong>（约 40min）</td>
+<td>个人情况、职业发展、期望薪资、手里
+offer、父母工作（考察稳定性）；有被反复追问的记录</td>
+<td>5.3 追问 1~6 全覆盖；薪资先问体系再报数</td>
+</tr>
+<tr>
+<td><strong>专业面</strong>（约 1h）</td>
+<td>项目深挖：科研课题细节、为什么转方向、对检测行业的认识</td>
+<td>主力上 04 科研文档（最经得起下钻），工程问题用
+01/02；“为什么转方向”背 5.3 追问 2</td>
+</tr>
+<tr>
+<td><strong>群面</strong></td>
+<td>游戏形式（如竞拍游戏）+ 复盘，体验轻松</td>
+<td>考协作不考抢话：先听清规则、贡献结构化观点、拉队友一把，复盘时说清”为什么这么决策”</td>
+</tr>
+<tr>
+<td><strong>高管终面</strong>（约 30min）</td>
+<td>自我介绍 + 课题 + 意向</td>
+<td>考动机与稳定性：背 5.4 B2”为什么选择 SGS” + 5.3 追问 3 职业规划</td>
+</tr>
+</tbody>
+</table>
+<p><strong>节奏提示</strong>：整体 1~2
+个月，中间长期没消息是常态（有同学投完一个月才收到初面电话），10
+天内没感谢信 = 还在流程中。</p>
+<hr />
+<h2 id="速答版面试前-1-小时看">7. 速答版（面试前 1 小时看）</h2>
+<p><strong>公司 5 数字</strong>：1878 瑞士 ｜ 115 国 ｜ 2,500+ 实验室 ｜
+10 万+ 员工 ｜ 中国 1991 / 100+ 分支 / 200+
+实验室。品牌承诺：<strong>关键时刻，放心托付</strong>。</p>
+<p><strong>八大问 × 一句话素材</strong>： 1. 高目标 → MSTGN 两篇
+SCI，误差降 10~18% 2. 主动性 → DSH-plugin 无人要求、痛点驱动、开源闭环
+3. 信息决策 → 回放心跳日志画权衡曲线选阈值 N=3，误报↓21% 4. 事实说服 →
+218 条回归集立规矩，指标不退化才能上线 5. 团队合作 →
+和运营共建工单闭环，46% 自动关单 6. 创新 → 三段式链路 +
+语法校验，76.1%→89.4% 7. 他人优先级 → 多口径指标反问澄清 +
+标注口径，先可信后快速 8. 学习应用 → 自学后端+AI 全栈，两段实习落地</p>
+<p><strong>英语五句式</strong>：This chart shows… / X increased from A
+to B / Y remained stable / Compared with… / Overall, the chart
+suggests…</p>
+<p><strong>形式三查</strong>：设备网络提前测 ｜ 看摄像头说”第一第二最后”
+｜ 每题 1~2 分钟带数字收尾，说完”以上是我的回答”再停。</p>
+<p><strong>心态</strong>：形式分（机器好识别的结构和关键词）+
+内容分（STAR-L 带数字），两头的分都拿到。</p>
+</body>
+</html>
