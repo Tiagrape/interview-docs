@@ -227,6 +227,29 @@
   blockquote { padding: 8px 12px !important; margin: 0.8em 0 !important; font-size: 0.95em; }
 }
 </style>
+
+<style>
+/* ---- 目录跳转（自动注入） ---- */
+nav#TOC { background: #eef4fa; border: 1px solid #cfe0f0; border-radius: 10px; padding: 12px 20px 14px; margin: 1.4em 0 2.2em; }
+nav#TOC::before { content: none; }
+nav#TOC h2#toc-title { border: none; padding: 0; margin: 0 0 6px; font-size: 1.05em; color: #1a5276; }
+nav#TOC ul { list-style: none; padding-left: 0.9em; margin: 0.25em 0; }
+nav#TOC > ul > li { margin-top: 0.4em; font-weight: 600; }
+nav#TOC ul ul li { font-weight: 400; font-size: 0.94em; }
+nav#TOC a { color: #1a5276; text-decoration: none; }
+nav#TOC a:hover { text-decoration: underline; color: #b03a2e; }
+#back-toc { position: fixed; right: 26px; bottom: 82px; width: 42px; height: 42px; background: #1a5276; color: #fff; border-radius: 50%; border: none; font-size: 17px; cursor: pointer; opacity: 0.75; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+#back-toc:hover { opacity: 1; }
+@media (max-width: 640px) { #back-toc { right: 14px; bottom: 76px; width: 38px; height: 38px; } }
+</style>
+<script>
+window.addEventListener('load', function() {
+  var t = document.createElement('button');
+  t.id = 'back-toc'; t.innerHTML = '☰'; t.title = '回目录';
+  t.onclick = function() { var toc = document.getElementById('TOC'); if (toc) window.scrollTo({ top: toc.getBoundingClientRect().top + window.scrollY - 10, behavior: 'smooth' }); };
+  document.body.appendChild(t);
+});
+</script>
 </head>
 <body>
 <p style="margin:0 0 16px;font-size:15px;"><a href="index.html" style="text-decoration:none;">← 返回目录</a></p>
@@ -235,6 +258,92 @@
 <h1 class="title">微步在线产品经理 · 面试全攻略（含第三轮 HR
 面专项）</h1>
 </header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">📑 目录（点标题直达）</h2>
+<ul>
+<li><a href="#微步在线产品经理面试准备问题-答案"
+id="toc-微步在线产品经理面试准备问题-答案">微步在线产品经理面试准备（问题
++ 答案）</a>
+<ul>
+<li><a href="#一微步在线速览"
+id="toc-一微步在线速览">一、微步在线速览</a></li>
+<li><a href="#二预测高频问题与个性化回答"
+id="toc-二预测高频问题与个性化回答">二、预测高频问题与个性化回答</a>
+<ul>
+<li><a href="#q1.-请做个自我介绍" id="toc-q1.-请做个自我介绍">Q1.
+请做个自我介绍</a></li>
+<li><a href="#q2.-为什么选微步在线为什么从之前的赛道转到安全"
+id="toc-q2.-为什么选微步在线为什么从之前的赛道转到安全">Q2.
+为什么选微步在线？为什么从之前的赛道转到安全？</a></li>
+<li><a href="#q3.-详细介绍你在绿盟的一段经历防火墙产品相关"
+id="toc-q3.-详细介绍你在绿盟的一段经历防火墙产品相关">Q3.
+详细介绍你在绿盟的一段经历（防火墙产品相关）</a></li>
+<li><a
+href="#q4.-介绍一下你在绿盟接触的防火墙产品它是怎么做的防火墙功能怎么描述"
+id="toc-q4.-介绍一下你在绿盟接触的防火墙产品它是怎么做的防火墙功能怎么描述">Q4.
+介绍一下你在绿盟接触的防火墙产品，它是怎么做的？（防火墙功能怎么描述）</a></li>
+<li><a
+href="#q5.-分享一次你面对客户需求时没有只听客户说而是深挖背后真正痛点的经历纷享销客-扫码下单案例"
+id="toc-q5.-分享一次你面对客户需求时没有只听客户说而是深挖背后真正痛点的经历纷享销客-扫码下单案例">Q5.
+分享一次你面对客户需求时，没有只听客户说，而是深挖背后真正痛点的经历（纷享销客
+· 扫码下单案例）</a></li>
+<li><a href="#q6.-你接到一个需求时作为产品经理怎么判断做不做"
+id="toc-q6.-你接到一个需求时作为产品经理怎么判断做不做">Q6.
+你接到一个需求时，作为产品经理怎么判断做不做？</a></li>
+<li><a href="#q7.-客户提的需求模糊或互相冲突你怎么处理"
+id="toc-q7.-客户提的需求模糊或互相冲突你怎么处理">Q7.
+客户提的需求模糊或互相冲突，你怎么处理？</a></li>
+<li><a href="#q7-追问.-你刚说的售卖潜力评估具体是怎么做的项目展开"
+id="toc-q7-追问.-你刚说的售卖潜力评估具体是怎么做的项目展开">Q7-追问.
+你刚说的”售卖潜力评估”具体是怎么做的？（项目展开）</a></li>
+<li><a href="#q8.-如果让你给微步某个产品设计一个新功能你会怎么做"
+id="toc-q8.-如果让你给微步某个产品设计一个新功能你会怎么做">Q8.
+如果让你给微步某个产品设计一个新功能，你会怎么做？</a></li>
+<li><a href="#q9.-安全产品里误报和漏报怎么权衡"
+id="toc-q9.-安全产品里误报和漏报怎么权衡">Q9.
+安全产品里”误报”和”漏报”怎么权衡？</a></li>
+<li><a href="#q10.-一个安全产品功能上线后你怎么判断它成功"
+id="toc-q10.-一个安全产品功能上线后你怎么判断它成功">Q10.
+一个安全产品功能上线后，你怎么判断它成功？</a></li>
+<li><a href="#q11.-你怎么看-ai-在安全产品里的机会与风险"
+id="toc-q11.-你怎么看-ai-在安全产品里的机会与风险">Q11. 你怎么看 AI
+在安全产品里的机会与风险？</a></li>
+<li><a href="#q12.-你觉得自己最大的短板是什么"
+id="toc-q12.-你觉得自己最大的短板是什么">Q12.
+你觉得自己最大的短板是什么？</a></li>
+<li><a href="#q13.-你有什么想问我的反问选-1-2-个"
+id="toc-q13.-你有什么想问我的反问选-1-2-个">Q13.
+你有什么想问我的（反问，选 1-2 个）</a></li>
+</ul></li>
+<li><a href="#三第三轮-hr-面专项2026-09-22-联网调研"
+id="toc-三第三轮-hr-面专项2026-09-22-联网调研">三、第三轮 HR
+面专项（2026-09-22 联网调研）</a>
+<ul>
+<li><a href="#微步在线情报速览谈薪和反问的弹药"
+id="toc-微步在线情报速览谈薪和反问的弹药">3.1
+微步在线情报速览（谈薪和反问的弹药）</a></li>
+<li><a href="#hr-面专用自我介绍两版-三原则"
+id="toc-hr-面专用自我介绍两版-三原则">3.2 HR 面专用自我介绍（两版 +
+三原则）</a></li>
+<li><a href="#hr-面会问什么问题清单-答法口径"
+id="toc-hr-面会问什么问题清单-答法口径">3.3 HR 面会问什么（问题清单 +
+答法口径）</a></li>
+<li><a href="#谈薪攻略什么时候报数报多少怎么守住"
+id="toc-谈薪攻略什么时候报数报多少怎么守住">3.4
+谈薪攻略（什么时候报数、报多少、怎么守住）</a></li>
+<li><a href="#反问-hr-环节挑-34-个别贪多"
+id="toc-反问-hr-环节挑-34-个别贪多">3.5 反问 HR 环节（挑 3–4
+个，别贪多）</a></li>
+<li><a href="#谈薪与假期福利明细清单钱的六问-假期五问-对比表"
+id="toc-谈薪与假期福利明细清单钱的六问-假期五问-对比表">3.6
+谈薪与假期福利明细清单（钱的六问 + 假期五问 + 对比表）</a></li>
+<li><a href="#一页速答卡面试前-10-分钟看"
+id="toc-一页速答卡面试前-10-分钟看">3.7 一页速答卡（面试前 10
+分钟看）</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
 <h1
 id="微步在线产品经理面试准备问题-答案">微步在线产品经理面试准备（问题 +
 答案）</h1>
