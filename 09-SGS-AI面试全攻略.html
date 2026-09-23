@@ -227,6 +227,29 @@
   blockquote { padding: 8px 12px !important; margin: 0.8em 0 !important; font-size: 0.95em; }
 }
 </style>
+
+<style>
+/* ---- 目录跳转（自动注入） ---- */
+nav#TOC { background: #eef4fa; border: 1px solid #cfe0f0; border-radius: 10px; padding: 12px 20px 14px; margin: 1.4em 0 2.2em; }
+nav#TOC::before { content: none; }
+nav#TOC h2#toc-title { border: none; padding: 0; margin: 0 0 6px; font-size: 1.05em; color: #1a5276; }
+nav#TOC ul { list-style: none; padding-left: 0.9em; margin: 0.25em 0; }
+nav#TOC > ul > li { margin-top: 0.4em; font-weight: 600; }
+nav#TOC ul ul li { font-weight: 400; font-size: 0.94em; }
+nav#TOC a { color: #1a5276; text-decoration: none; }
+nav#TOC a:hover { text-decoration: underline; color: #b03a2e; }
+#back-toc { position: fixed; right: 26px; bottom: 82px; width: 42px; height: 42px; background: #1a5276; color: #fff; border-radius: 50%; border: none; font-size: 17px; cursor: pointer; opacity: 0.75; box-shadow: 0 2px 8px rgba(0,0,0,.25); }
+#back-toc:hover { opacity: 1; }
+@media (max-width: 640px) { #back-toc { right: 14px; bottom: 76px; width: 38px; height: 38px; } }
+</style>
+<script>
+window.addEventListener('load', function() {
+  var t = document.createElement('button');
+  t.id = 'back-toc'; t.innerHTML = '☰'; t.title = '回目录';
+  t.onclick = function() { var toc = document.getElementById('TOC'); if (toc) window.scrollTo({ top: toc.getBoundingClientRect().top + window.scrollY - 10, behavior: 'smooth' }); };
+  document.body.appendChild(t);
+});
+</script>
 </head>
 <body>
 <p style="margin:0 0 16px;font-size:15px;"><a href="index.html" style="text-decoration:none;">← 返回目录</a></p>
@@ -234,6 +257,111 @@
 <header id="title-block-header">
 <h1 class="title">09 · SGS（通标/TIC）AI 面试全攻略</h1>
 </header>
+<nav id="TOC" role="doc-toc">
+<h2 id="toc-title">📑 目录（点标题直达）</h2>
+<ul>
+<li><a href="#sgs通标-tic-检测认证ai-面试-全攻略"
+id="toc-sgs通标-tic-检测认证ai-面试-全攻略">09 · SGS（通标 / TIC
+检测认证）AI 面试 —— 全攻略</a>
+<ul>
+<li><a href="#先搞清楚sgs-是家什么公司答对-sgs-的了解的弹药库"
+id="toc-先搞清楚sgs-是家什么公司答对-sgs-的了解的弹药库">1.
+先搞清楚：SGS 是家什么公司（答「对 SGS 的了解」的弹药库）</a>
+<ul>
+<li><a href="#先用大白话理解什么是-tic-行业"
+id="toc-先用大白话理解什么是-tic-行业">1.1 先用大白话理解：什么是 TIC
+行业</a></li>
+<li><a href="#硬数字速记挑-5-个记住就够用"
+id="toc-硬数字速记挑-5-个记住就够用">1.2 硬数字速记（挑 5
+个记住就够用）</a></li>
+<li><a href="#你ai-应用开发和-sgs-的交集在哪"
+id="toc-你ai-应用开发和-sgs-的交集在哪">1.3 你（AI 应用开发）和 SGS
+的交集在哪</a></li>
+</ul></li>
+<li><a href="#ai-面试是什么形式知己知彼"
+id="toc-ai-面试是什么形式知己知彼">2. AI 面试是什么形式（知己知彼）</a>
+<ul>
+<li><a href="#全流程全景图牛客面经实测"
+id="toc-全流程全景图牛客面经实测">2.1
+全流程全景图（牛客面经实测）</a></li>
+<li><a href="#ai-测评三件套你马上要考的部分"
+id="toc-ai-测评三件套你马上要考的部分">2.2 AI
+测评三件套（你马上要考的部分）</a></li>
+<li><a href="#ai-是怎么给你打分的决定你的答题策略"
+id="toc-ai-是怎么给你打分的决定你的答题策略">2.3 AI
+是怎么给你打分的（决定你的答题策略）</a></li>
+</ul></li>
+<li><a href="#会被问到什么题目清单面经实证整理"
+id="toc-会被问到什么题目清单面经实证整理">3.
+会被问到什么：题目清单（面经实证整理）</a>
+<ul>
+<li><a href="#a-类宝洁八大问主力题型ai-面-电话面反复出现"
+id="toc-a-类宝洁八大问主力题型ai-面-电话面反复出现">3.1 A
+类：宝洁八大问（主力题型，AI 面 + 电话面反复出现）</a></li>
+<li><a href="#b-类公司与行业认知" id="toc-b-类公司与行业认知">3.2 B
+类：公司与行业认知</a></li>
+<li><a href="#c-类英文图表题全场最难的-1-道"
+id="toc-c-类英文图表题全场最难的-1-道">3.3 C 类：英文图表题（全场最难的
+1 道）</a></li>
+<li><a href="#d-类认知游戏与心算不考知识考脑子"
+id="toc-d-类认知游戏与心算不考知识考脑子">3.4 D
+类：认知游戏与心算（不考知识，考脑子）</a></li>
+<li><a href="#e-类应变与方法论题接到新任务怎么办一族ai-面和真人面都高发"
+id="toc-e-类应变与方法论题接到新任务怎么办一族ai-面和真人面都高发">3.5 E
+类：应变与方法论题（“接到新任务怎么办”一族，AI
+面和真人面都高发）</a></li>
+</ul></li>
+<li><a href="#回答对策方法层读一遍理解即可全文背诵稿见第-5-章"
+id="toc-回答对策方法层读一遍理解即可全文背诵稿见第-5-章">4.
+回答对策（方法层，读一遍理解即可；全文背诵稿见第 5 章）</a>
+<ul>
+<li><a href="#总方法star-l-骨架-关键词外显"
+id="toc-总方法star-l-骨架-关键词外显">4.1 总方法：STAR-L 骨架 +
+关键词外显</a></li>
+<li><a href="#ai-面试七条军规形式分-白给的分数"
+id="toc-ai-面试七条军规形式分-白给的分数">4.2 AI 面试七条军规（形式分 =
+白给的分数）</a></li>
+<li><a href="#素材映射表八大问-你的四段经历速查用全文见第-5-章"
+id="toc-素材映射表八大问-你的四段经历速查用全文见第-5-章">4.3
+素材映射表：八大问 × 你的四段经历（速查用；全文见第 5 章）</a></li>
+<li><a href="#英文图表题万能五句式模板示例答案见-5.5"
+id="toc-英文图表题万能五句式模板示例答案见-5.5">4.4
+英文图表题：万能五句式模板（示例答案见 5.5）</a></li>
+<li><a href="#分类游戏与心算对策" id="toc-分类游戏与心算对策">4.5
+分类游戏与心算对策</a></li>
+</ul></li>
+<li><a href="#逐题背诵稿直接背这一章" id="toc-逐题背诵稿直接背这一章">5.
+逐题背诵稿（★直接背这一章★）</a>
+<ul>
+<li><a href="#使用说明先看这-4-条" id="toc-使用说明先看这-4-条">5.0
+使用说明（先看这 4 条）</a></li>
+<li><a href="#开场自我介绍约-60-秒" id="toc-开场自我介绍约-60-秒">5.1
+开场自我介绍（约 60 秒）</a></li>
+<li><a href="#a-类宝洁八大问8-题全文"
+id="toc-a-类宝洁八大问8-题全文">5.2 A 类·宝洁八大问（8 题全文）</a></li>
+<li><a href="#高频追问电话面-hr-面实测出现过"
+id="toc-高频追问电话面-hr-面实测出现过">5.3 高频追问（电话面 / HR
+面实测出现过）</a></li>
+<li><a href="#b-类公司与行业认知2-题全文"
+id="toc-b-类公司与行业认知2-题全文">5.4 B 类·公司与行业认知（2
+题全文）</a></li>
+<li><a href="#c-类英文部分2-段" id="toc-c-类英文部分2-段">5.5 C
+类·英文部分（2 段）</a></li>
+<li><a href="#e-类应变与方法论题接到新任务怎么办一族7-题全文"
+id="toc-e-类应变与方法论题接到新任务怎么办一族7-题全文">5.6 E
+类·应变与方法论题（“接到新任务怎么办”一族，7 题全文）</a></li>
+<li><a href="#d-类分类游戏与心算无背诵内容记住-3-条"
+id="toc-d-类分类游戏与心算无背诵内容记住-3-条">5.7 D
+类·分类游戏与心算（无背诵内容，记住 3 条）</a></li>
+</ul></li>
+<li><a href="#后续轮次预告ai-面之后会遇到的"
+id="toc-后续轮次预告ai-面之后会遇到的">6. 后续轮次预告（AI
+面之后会遇到的）</a></li>
+<li><a href="#速答版面试前-1-小时看" id="toc-速答版面试前-1-小时看">7.
+速答版（面试前 1 小时看）</a></li>
+</ul></li>
+</ul>
+</nav>
 <h1 id="sgs通标-tic-检测认证ai-面试-全攻略">09 · SGS（通标 / TIC
 检测认证）AI 面试 —— 全攻略</h1>
 <blockquote>
