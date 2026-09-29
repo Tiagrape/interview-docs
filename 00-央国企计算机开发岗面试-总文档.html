@@ -872,6 +872,19 @@ Mac/Windows 都行，代码在本地写，但跑在 Linux
 容器里、和线上一致——“我电脑上能跑”不算数，容器里能跑才算。 &gt; -
 “Docker 一句话？”→
 把应用连同依赖打包成镜像、到哪都一致运行，解决”在我电脑上明明能跑”；容器互相隔离，一台机器按需跑多个服务实例。</p>
+<p class="q"><strong>Q15. 用的什么语言写？为什么不是
+Java？（部署题的必然追问）</strong> &gt; 我们这条业务线的栈是
+Python——服务用 FastAPI，巡检任务也是 Python 写的。团队里 Java
+居多，但公司内部语言不设限，数据、脚本、AI 相关的场景 Python
+是主流，我负责的部分就是 Python 实现的。Java
+我有基础：课程学过、也自学过 SpringBoot，为了保持手感，我还专门用 Java
+把巡检的分片逻辑重写了一遍——线程池、分片、幂等这套思想完全一样，差异只在语法和生态。如果岗位需要
+Java，我上手会很快。 &gt; 追问下限：①Java 线程池怎么写→
+ThreadPoolExecutor 三个关键参数：核心线程数、队列容量、拒绝策略；②Python
+和 Java 什么区别→ 动态 vs 静态类型、GIL vs 真多线程、FastAPI 轻量 vs
+Spring 全家桶，思想相通换语法不换思想。 &gt; 红线：<strong>别说”项目用了
+Java”</strong>——被追问 Maven/Spring/JVM 细节会露馅；诚实的口径是”Python
+实现 + Java 有基础 + 已用 Java 重写过核心逻辑”。</p>
 <p><a id="s42"></a></p>
 <h3 id="中青旅-text-to-sql-rag-agent详版02">4.2 中青旅 · Text-to-SQL /
 RAG / Agent（详版：02）</h3>
